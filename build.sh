@@ -1,5 +1,8 @@
 #!/bin/sh
+clear
+
 echo " Prusa Research epic build script for Firmware \n"
+
 
 rm -r -f /home/arduino/Prusa-i3-Plus/Firmware/hex_files/*
 
