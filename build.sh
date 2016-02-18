@@ -27,7 +27,7 @@ do
 	rm -r -f /home/arduino/output/*
 	rm -r -f /home/arduino/logs/*
 	echo "Compiling ..."
-	sh /home/arduino/arduino-1.6.0/arduino-cli --pref build.path=/home/arduino/output/ --verify --board marlin:avr:rambo  /home/arduino/Prusa-i3-Plus/Firmware/Firmware.ino > /home/arduino/logs/$filename$extension 
+	sh /home/arduino/arduino-1.6.0/arduino-cli --pref build.path=/home/arduino/output/ --verify --board marlin:avr:rambo  /home/arduino/Prusa-i3-Plus/Firmware/Firmware.ino >> /home/arduino/logs/$filename$extension 
 	echo "Moving hex file"
 	cp /home/arduino/output/Firmware.cpp.hex /home/arduino/Prusa-i3-Plus/Firmware/hex_files/$filename$extension
 
