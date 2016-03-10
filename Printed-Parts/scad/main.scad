@@ -17,20 +17,20 @@ difference(){
     // Bottom
     translate([35/2,9.8,15]) rotate([-90,0,0]) cylinder(r=8.13, h=3.7, $fn=120);
     // Main body
-    translate([35/2,13,15]) rotate([-90,0,0]) cylinder(r=11.53, h=31.001, $fn=120);
+    translate([35/2,13,15]) rotate([-90,0,0]) cylinder(r=11.53, h=33.001, $fn=80);
     
 // Extruder cables path
     translate([33+4,10,-1]) cylinder(r=2, h=17,$fn=30);
     translate([33+4,12,9]) cube([4,4,20], center=true);  
 // Nozzle cooling airway
-    translate([31.001,43-15,15])rotate([0,90,0])cylinder(r2=14, r1=11.5, h=4, $fn=120);
-    translate([-1,43-15-2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=120);
-    translate([-1,43-15,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=120);
-    translate([-1,43-15+2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=120);
+    translate([31.001,43-15,15])rotate([0,90,0])cylinder(r2=14, r1=11.5, h=4, $fn=100);
+    translate([-1,43-15-2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
+    translate([-1,43-15,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
+    translate([-1,43-15+2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
     
 // Fan screws 
-    translate([35.001,40,3])rotate([0,-90,0])cylinder(r=1.5, h=8, $fn=30);   
-    translate([35.001,40-24,3])rotate([0,-90,0])cylinder(r=1.35, h=8, $fn=30);
+    translate([35.001,40,3])rotate([0,-90,0])cylinder(r=1.5, h=8, $fn=20);   
+    translate([35.001,40-24,3])rotate([0,-90,0])cylinder(r=1.35, h=8, $fn=20);
 
 
 }
@@ -49,8 +49,9 @@ difference(){
         translate([0,13,14.5]) rotate([0,0,0]) cube([4,30,0.5]);
     }
     // Trim
-    translate([-35,0,0])cube([35,43,15]);
+    translate([-35.001,0,-0.1])cube([35,43,16]);
 }
+
 }
 
 mirror([1,0,0]){
@@ -66,7 +67,7 @@ mirror([1,0,0]){
 difference(){
    union(){
 //small in front
-translate([-10,-9.5,0])cube([10,5,5]);
+//translate([-10,-9.5,0])cube([10,5,5]);
 
 // base
 difference(){
@@ -87,7 +88,7 @@ translate([-35/2-3,-19,15-4])cube([6,10,4]);
 difference(){
 translate([-35/2-3,-8.4+2+1.2,0.4]) rotate([45,0,0]) cube([6,15,15]);
 translate([-35/2-4,-15,15]) cube([8,15,15]);
-translate([-35/2-4,-1,0]) cube([8,15,15]);
+translate([-35/2-4,-1,2]) cube([8,15,15]);
     
 }
 }
