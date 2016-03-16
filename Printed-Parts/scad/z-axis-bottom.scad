@@ -6,9 +6,9 @@
 // http://prusamendel.org
 
 module z_bottom_base(){
- translate([0,0,0]) cube([8,48,16+25]); // plate touching the base
- translate([0,-5,0]) cube([30,5.01,22]); // plate touching the base
- translate([0,42.5,0]) cube([30,5.01,22]); // plate touching the base
+ translate([0,-1.5,0]) cube([8,49,16+25]); // plate touching the base
+ translate([0,-5,0]) cube([30,4.01,22]); // plate touching the base
+ translate([0,41.5,0]) cube([30,6.01,22]); // plate touching the base
  translate([0,-5,0]) cube([50,52.5,5]); // plate touching the base
 }
 
@@ -42,11 +42,11 @@ module z_bottom_holes(){
  translate([4,10+10-3.1,10+20+5]) cube([10,6.2,10]);
 
  // Z rod holder
- translate([25+4.3,4.2,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.125, $fn=15);
+ translate([25+4.3,3,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.125, $fn=15);
  translate([25+4.3-1,3,0.6]) cube([2,10,7]); // it's bit up because it helps with printing
 
  // motor mounting
- translate([25+4.3,21,-1]){
+ translate([25+4.3,20,-1]){
  //translate([15.5,15.5,-1]) cylinder(h = 20, r=1.8, $fn=30);
  
  translate([15.5,15.5,-1]) cylinder(h = 20, r=1.8, $fn=30);

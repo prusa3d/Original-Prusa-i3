@@ -7,8 +7,8 @@
 
 module z_top_base(){
  translate([0,-5,0]) cube([8,45,16]); // plate touching the base
- translate([0,-5,0]) cube([30,5.01,12]); // plate touching the base
- translate([0,-5,0]) cube([38,15,5]); // plate touching the base
+ translate([0,-5,0]) cube([30,4.01,12]); // plate touching the base
+ translate([0,-5,0]) cube([38,14,5]); // plate touching the base
 }
 
 module z_top_fancy(){
@@ -21,7 +21,7 @@ module z_top_fancy(){
     
     translate([6,0,12]) rotate([0,-45, 0]) translate([0,-5,0]) cube([30,50,30]);
     
-    translate([8,5,10]) rotate([0,-45, 0]) translate([0,-5,0]) cube([30,50,30]);
+    translate([8,4,10]) rotate([0,-45, 0]) translate([0,-5,0]) cube([30,50,30]);
  
  translate([38-2.5,-5+2.5,0]) rotate([0,0,-45-90]) translate([-15,0,-1]) cube([30,30,51]);
  translate([38-1.5,10-1.5,0]) rotate([0,0,-45]) translate([-15,0,-1]) cube([30,30,51]);
@@ -45,7 +45,7 @@ module z_top_holes(){
  translate([4,10+20-3.1,10]) cube([10,6.2,10]);
 
  // Z rod holder
- translate([25+4.3,4.2,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.1, $fn=15);
+ translate([25+4.3,3.2,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.1, $fn=15);
  translate([25+4.3-1,3,0.6]) cube([2,10,7]); // it's bit up because it helps with printing
 }
 
