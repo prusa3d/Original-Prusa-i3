@@ -4,7 +4,11 @@ difference(){
     // Main
     union(){
         cube([35,44,15]);
-        translate([-12,41,0])cube([45,3,12]); // P.I.N.D.A. Probe mount
+        // P.I.N.D.A. Probe mount
+        difference(){
+        translate([-14,40,0])cube([20,5,14]);
+         translate([9,41,-1]) rotate([0,0,45]) translate([0,-5,-0.1]) cube([10,12,20]);    
+        }
         translate([-7.5,17,0])cube([8,8.5,2]); // P.I.N.D.A. and Fan cable tray guide
         //fan nice look
         translate([35,0,0]) cube([10,12,15]);
@@ -13,21 +17,23 @@ difference(){
     translate([+52.6,-3.49,0]) rotate([0,0,-45-180]) translate([0,-5,-0.1]) cube([10,10,20]);  
     
     // P.I.N.D.A. Probe mount edge cut
-    translate([-32,40,5]) rotate([0,45,0]) translate([0,-5,-0.1]) cube([10,10,20]);   // Top
-    translate([-32,40,-7]) rotate([0,45,0]) translate([0,-5,-0.1]) cube([10,10,20]); // Bottom
+    translate([-28.5,40,5]) rotate([0,30,0]) translate([0,-5,-0.1]) cube([10,12,20]);   // Top
+    translate([-32,40,-5]) rotate([0,60,0]) translate([0,-5,-0.1]) cube([10,12,20]); // Bottom
+    
     
     // P.I.N.D.A. probe mount hole
      translate([35/2,0,6]){
-        translate([-23,32.99,0])rotate([-90,0,0])cylinder(r=14/2, h=8, $fn=20);
+        translate([-23,35,0])rotate([-90,0,0])cylinder(r=14/2, h=8, $fn=6);
+        translate([-23,32.99,0])rotate([-90,0,0])cylinder(r=14/2, h=7, $fn=20);
         translate([-23,0,0])rotate([-90,0,0])cylinder(r=8/2, h=50, $fn=20);
      }
-    
+     
      // P.I.N.D.A. and Fan cable tray cut
      translate([-4.5,20,-1]) cube([4.499,3.5+5,5]);
      // P.I.N.D.A. and Fan cable tray edge cut
      translate([-10,22,-1])rotate([0,0,45]) cube([10,5,10]);
      translate([-13,16.5,-1])rotate([0,0,-45]) cube([10,5,10]);
-     
+    
      extruder_nozzle_cut();  
      // larger groove for easy entry
     translate([35/2,0,15]) rotate([-90,0,0]) cylinder(r=7.13, h=20, $fn=120);
@@ -272,10 +278,16 @@ translate([21,-21,0]){
 module extruder_nozzle_cooling(){
     
     // Nozzle cooling airway
+    difference(){
+        union(){
     translate([31.001,43-15,15])rotate([0,90,0])cylinder(r2=14, r1=11.5, h=4, $fn=100);
     translate([-1,43-15-2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
     translate([-1,43-15,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
-    translate([-0.01,43-15+2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
+    translate([-1,43-15+2.5,15])rotate([0,90,0])cylinder(r=11.5, h=40, $fn=80);
+        }
+    translate([-10,40,0])cube([10,12,14]);     
+    translate([-9,40,8])cube([10,10,4]);   
+    }
     
 // Fan screws 
     translate([35.001,40,3])rotate([0,-90,0])cylinder(r=1.5, h=8, $fn=20);   
