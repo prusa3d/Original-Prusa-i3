@@ -50,10 +50,7 @@ difference(){
     
 }
 
-module x_carriage_beltcut(){
 
-
-}
 
 module x_carriage_holes(){
  // Small bearing holder holes cutter
@@ -72,7 +69,7 @@ module x_carriage_holes(){
   // Cables keepout
   translate([-12,-18.1,-1])cube([10,6,30]);  
   translate([-27,-12.5,0])cube([25,0.5,12]);
-   
+  translate([0,10+3,-2])cube([5,10,5]);  
     
   // Carriage slimer
     translate([-55.5+3,19,-1])cube([10,40,30]);
@@ -98,19 +95,42 @@ module x_carriage_fancy(){
  translate([-33-13.5,-5,0]) translate([0,45+11.5,-1]) rotate([0,0,135]) translate([0,-15,0]) cube([30,30,20]);	
 }
 
+module cable_tray(){
+    
+    //Left cable tray
+    translate([-38.9,11,0]) cube([8,2,15]); 
+    translate([-38.9,5.5,0]) cube([8,2,15]); 
+    
+    //Right cable tray
+    translate([-2,5.5,0]) cube([9.45,2,15]);
+    translate([-2,11,7]) cube([9.45,2,8]);
+    difference(){ 
+    translate([0,11,0]) cube([7.45,12,7]);
+    translate([0,6,-0.1])rotate([-30,0,0]) cube([5,12,7]);
+    translate([0,10+3,-2])cube([5,10,5]);    
+    }
+    
+    }
+
 // Final part
 module x_carriage(){
  difference(){
    
   x_carriage_base();
- 
-  x_carriage_beltcut();
+
   x_carriage_holes();
   x_carriage_fancy();
      
+      
+     
  }
+ 
+ cable_tray();
+ 
 }
 
+// belt keepout
+%translate([-42-9,30-16,7])cube([70,16,10]);
 
 x_carriage();
 
