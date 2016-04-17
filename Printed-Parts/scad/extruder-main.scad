@@ -178,12 +178,18 @@ difference(){
 translate([6,33,27])rotate([0,0,67]) cube([8,24,3]);    // Connecting cube
 translate([35/2+12-42.75,6.5+38.5,25])cylinder(r=5.8, h=5, $fn=6); // Hexagon at the end
 
+// Print fan nozzle mount
+translate([5,61-5,24])cylinder(r=7.5/2, h=6, $fn=6);
+
 // Print colling airway
-translate([10,44,28])rotate([0,0,0]) cube([25,9,2]); 
-     translate([10,51.6,28.5])rotate([-45,0,0]) cube([25,7,2]);
-    
-     translate([34,44,22])rotate([0,0,0]) cube([1,16,8]);  
-     translate([10,44,24])rotate([0,0,0]) cube([1,14,6]);  
+     translate([8,44,28])rotate([0,0,0]) cube([27,9,2]);
+difference(){
+     translate([8,51.6,28.5])rotate([-45,0,0]) cube([27,7,2]);
+     translate([7,57,20])rotate([0,0,0]) cube([29,7,12]);
+     translate([7,53,22])rotate([0,0,0]) cube([29,7,2]);
+}    
+     translate([34,44,24])rotate([0,0,0]) cube([1,13,6]);  
+     translate([8-5,44,24])rotate([0,0,0]) cube([1+5,13,6]);  
 
 
 // Cooling grill
@@ -225,7 +231,9 @@ difference(){
     translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r=3.2, h=6, $fn=6);  // Nut trap    
     translate([35/2+12+11,6.5-2,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
     
-        
+    // Fan nozzle mount hole
+    translate([5,61-5,20])cylinder(r=3/2, h=12, $fn=30);
+     
     // 5015 print fan top left mount hole 
     translate([35/2+12,6.5,-0.01])cylinder(r=1.65, h=35, $fn=30); // Screw cut
     translate([35/2+12,6.5,11]) rotate([0,0,30])cylinder(r=3.2, h=17.01, $fn=6); // Nut Trap
