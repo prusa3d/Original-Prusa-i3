@@ -223,8 +223,11 @@ difference(){
     translate([35/2-12,6.5,6.5+0.2])cylinder(r=1.65, h=5, $fn=30); // Middle hole
     translate([35/2-12,6.5,12.5+0.2])cylinder(r=1.65, h=14.3-0.2, $fn=30); // Top hole
     translate([35/2-12,6.5,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
-    translate([35/2-12-6.5,6.5-2.85,10])rotate([0,0,0]) cube([10,5.7,2.5]); // Nut Trap top
-    translate([35/2-12-6.5,6.5-2.85,4])rotate([0,0,0]) cube([10,5.7,2.5]); // Nut trap bottom
+    translate([35/2-12-6.5,6.5-2.85,10])rotate([0,0,0]) cube([7,5.7,2.5]); // Nut Trap top
+    translate([35/2-12,6.5,10])cylinder(r=3.3, h=2.5, $fn=6);
+     
+    translate([35/2-12-6.5,6.5-2.85,4])rotate([0,0,0]) cube([7,5.7,2.5]); // Nut trap bottom
+    translate([35/2-12,6.5,4])cylinder(r=3.3, h=2.5, $fn=6);
      
     // Carriage mount left
     translate([35/2+12+11,6.5-2,6.2])cylinder(r=1.7, h=20.8-0.2, $fn=30);    // Screw hole
