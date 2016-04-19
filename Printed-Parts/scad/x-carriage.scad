@@ -13,18 +13,31 @@ module x_carriage_base(){
  // Long bearing holder
  translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_base(2);
  // Base plate
- translate([-33,-12.5,0]) cube([33,69,7]);
+ translate([-33,-12,0]) cube([33,68.5,7]);
 
  // Extruder cable tray
  difference(){   
  union(){
-    translate([-33/2 - 2.5-3.5,-17,3])cube([3.5,9.75,22]);
+    translate([-33/2 - 2.5-11.5,-17-3,3])cube([11.5,14,22]);
+    translate([-33/2 + 2.5,-17-3,3])cube([11.5,14,22]);   
     translate([-33/2 + 2.5,-17,3])cube([3.5,9.75,22]);   
     }
-    translate([-33/2 -10,-17,-8])rotate([30,0,0])cube([20,9.75,25]); 
+    translate([-33/2 -15,-16.5,-8])rotate([30,0,0])cube([35,9.75,25]); 
     
-    translate([-33/2 -13,-19,15])rotate([45,0,0])cube([20,5,5]);
-    translate([-33/2 -13,-5,15])rotate([45,0,0])cube([20,5,5]);
+    translate([-33/2 -15,-9,10])rotate([-20,0,0])cube([35,9.75,25]); 
+    
+    translate([-33/2 -4.5-1,-24,20])rotate([0,0,0])cube([2,20,4]);
+    translate([-33/2 +2.5+1,-24,20])rotate([0,0,0])cube([2,20,4]);
+    
+    translate([-33/2 + 6.5-0.1,0,12]) rotate([0,90,0])cylinder(r = 11.6, h=4.2, $fn=50);
+    
+    translate([-33/2 -6.5 - 4.1,0,12]) rotate([0,90,0])cylinder(r = 11.6, h=4.2, $fn=50);
+    
+     translate([-10,-30,0]) translate([0,-11.5,-1]) rotate([0,0,45]) translate([0,-15,0]) cube([30,30,34]);
+    
+    
+    //translate([-33/2 -13,-19,15])rotate([45,0,0])cube([20,5,5]);
+    //translate([-33/2 -13,-5,15])rotate([45,0,0])cube([20,5,5]);
   
  }   
     
@@ -102,7 +115,7 @@ module x_carriage_fancy(){
  translate([-52.9,36.5+3,23.5]) rotate([45,0,0]) translate([0,-15,0]) cube([20,10,10]);   
     
  // Bottom ĺeft corner
- translate([-33,2,0]) translate([0,-11.5,-1]) rotate([0,0,-135]) translate([0,-15,0]) cube([30,30,20]);
+ translate([-34,2,0]) translate([0,-11.5,-1]) rotate([0,0,-135]) translate([0,-15,0]) cube([30,30,34]);
  // Top left corner
  translate([-33-13.5,-5,0]) translate([0,45+11.5,-1]) rotate([0,0,135]) translate([0,-15,0]) cube([30,30,20]);	
 }
