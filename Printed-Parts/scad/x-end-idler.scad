@@ -7,33 +7,66 @@
 
 use <x-end.scad>
 
-module x_end_idler_base(){
- x_end_base();
-}
+
 
 module x_end_idler_holes(){
- x_end_holes();
- translate([0,3.5,0]){
- translate(v=[0,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
- translate(v=[1.5,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 10, r=3.1, $fn=30);
- translate(v=[-21.5,-22,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 80, r=3.2, $fn=6);
+    x_end_holes();
+    translate([0,3.5,0]){
+    translate(v=[0,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
+    translate(v=[1.5,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 10, r=3.1, $fn=30);
+    translate(v=[-21.5,-22,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 80, r=3.2, $fn=6);
+        
  }
 }
- 
-// Final part
+
+
+module waste_pocket(){
+ // waste pocket
+    translate([-15,-1,6]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);     
+    translate([-15,-1,51]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);    
+
+    
+    //M3 thread
+    translate([-15,8.5,6]) rotate([90,0,0]) cylinder( h=12, r=1.4, $fn=30); 
+    translate([-15,8.5,51]) rotate([90,0,0]) cylinder( h=12, r=1.4, $fn=30); 
+
+    //M3 heads
+    translate([-15,11.5,6]) rotate([90,0,0]) cylinder( h=4, r=2.9, $fn=30); 
+    translate([-15,11.5,51]) rotate([90,0,0]) cylinder( h=4, r=2.9, $fn=30); 
+
+    //M3 nut traps
+    translate([-15,3.5,6]) rotate([90,90,0]) cylinder( h=3, r=3.3, $fn=6); 
+    translate([-15,3.5,51]) rotate([90,90,0]) cylinder( h=3, r=3.3, $fn=6);
+    translate([-17.9,0.5,52]) cube([5.8,3.1,20]);
+    translate([-17.9,0.5,-10]) cube([5.8,3.1,16]);
+}
+
+
+module x_end_idler_base(){
+    union(){
+        difference(){
+            x_end_base();
+            x_end_idler_holes();
+        }
+        translate([-15,8.5,6]) rotate([90,0,0]) cylinder( h=11, r=6, $fn=30);
+        translate([-15,8.5,51]) rotate([90,0,0]) cylinder( h=11, r=6, $fn=30);
+    }
+}
+
+
 module x_end_idler(){
- mirror([0,1,0]) difference(){
-  x_end_idler_base();
-  x_end_idler_holes();
- }
+    mirror([0,1,0]) 
+    difference(){
+        x_end_idler_base();
+        waste_pocket();
+        
+    }
+    
 }
 
+//difference(){
 x_end_idler();
-
-//
-//height = 53.5;
-//distance = 36.5;
-//#difference(){
-//translate(v=[-15,9+1,height/2+2]) cube(size = [17,39,height], center = true);
-//translate(v=[-15,9+1,distance/2+2+8.5]) cube(size = [18,40,distance], center = true);
+//translate([-15,-50,0])   cube([100,100,100]);
 //}
+
+

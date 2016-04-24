@@ -56,9 +56,29 @@ module x_end_motor_holes(){
   // Material saving cutout
   translate(v=[-10,40,-30]) rotate(a=[45,0,0])  cube(size = [60,42,42], center = true);
   // Motor shaft cutout
-  translate(v=[0,0,0]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=17, $fn=6);
+  //#translate(v=[0,0,0]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=17, $fn=6);
  }
 }
+
+// Motor shaft cutout
+module x_end_motor_shaft_cutout(){
+    union(){
+    difference(){
+        translate(v=[0,32,30]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=17, $fn=6);
+       
+        translate(v=[-10,-17+32,30]) cube(size = [60,2,10], center = true);
+        translate(v=[-10,-8+32,-15.5+30]) rotate(a=[60,0,0]) cube(size = [60,2,10], center = true); ///
+        translate(v=[-10,8+32,-15.5+30]) rotate(a=[-60,0,0]) cube(size = [60,2,10], center = true);
+        
+        
+    }
+    translate(v=[-30,25.2,-11.8 +30]) rotate(a=[0,90,0]) cylinder(h = 30, r=3, $fn=30);
+    translate(v=[-30,19.05,30]) rotate(a=[0,90,0]) cylinder(h = 30, r=3.5, $fn=100);
+}
+}
+
+
+
 
 // Final part
 module x_end_motor(){
@@ -67,9 +87,14 @@ module x_end_motor(){
             x_end_motor_base();
             x_end_motor_endstop_base();
          }
-  
+  x_end_motor_shaft_cutout();
   x_end_motor_holes();
-  x_end_motor_endstop_holes();       
+  x_end_motor_endstop_holes();    
+      
+      
+      translate([-15,8.5,6]) rotate([90,0,0]) cylinder(h=5, r=5, $fn=30);   
+      translate([-15,8.5,51]) rotate([90,0,0]) cylinder(h=5, r=5, $fn=30);   
+      //#translate([-16,-40,0])cube([50,100,100]);   
  }
  
 }
