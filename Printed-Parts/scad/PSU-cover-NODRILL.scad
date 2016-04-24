@@ -1,8 +1,15 @@
+// PRUSA iteration3
+// PSU Cover
+// GNU GPL v3
+// Josef Průša <iam@josefprusa.cz> and contributors
+// http://www.reprap.org/wiki/Prusa_Mendel
+// http://prusamendel.org
 
-
-
+module PSU_COVER()
+{
 difference(){
 union(){
+    
 translate([0,0,-1])cube([95,50+15,56]); // Base
 
 translate([0,0,-3.5])cube([14-0.5,50+15,5]); // Back pillar 1
@@ -23,7 +30,9 @@ translate([0,35,46.5])scale([1.2,1,0.2])rotate([-28,-50,-58])cube([45,45,30]);
 translate([-1.6,0,0])cube([1.65,65,2]); // Frame skirt 1
 translate([-1.6,0,0])cube([1.65,30,55]); // Frame skirt 2
 translate([-1.6,0,51])cube([1.65,65,4]); // Frame skirt 3
+  
 }
+
 
 //pretty corners
 translate([-11,-2,-2])rotate([0,0,-45])cube([10,10,58]);
@@ -101,3 +110,38 @@ translate([20+i,6,-10])cylinder(r=3,h=50); //  left back mounthole cutout
 
 
 }
+}
+
+module PSU_Y_REINFORCEMENT()
+{
+difference()
+{
+    union()     // base shape
+        {
+            translate([ 59.5, 0, -18 ]) cube([ 33, 6, 19 ]);  // reinforcement plate
+            translate([ 73.5, 6, -18 ]) cube([ 5, 15, 19 ]);  // vertical_reinforcement    
+        }
+    union ()    // cutouts
+        {
+            
+            translate([ 88, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A
+            translate([ 68, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B
+            
+            translate([ 87.5, -8, -20 ]) rotate([ 0, 45, 0 ]) cube([ 10, 20, 10 ]);  //corner cut
+            translate([ 52.5, -8, -20 ]) rotate([ 0, 45, 0 ]) cube([ 10, 20, 10 ]);  //corner cut
+            translate([ 68.5, 20, -34 ]) rotate([ 45, 0, 0 ]) cube([ 15, 23, 20 ]);  //vertical reinf cutout
+        }
+}
+}
+
+module FINAL_PART(){
+    union()
+        {
+            PSU_COVER();
+            PSU_Y_REINFORCEMENT();
+        }   
+}
+
+FINAL_PART();
+
+
