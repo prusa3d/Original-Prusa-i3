@@ -21,40 +21,62 @@ module x_carriage_base(){
     translate([-33/2 - 2.5-11.5,-17-3,3])cube([11.5,14,22]);
     translate([-33/2 + 2.5,-17-3,3])cube([11.5,14,22]);   
     translate([-33/2 + 2.5,-17,3])cube([3.5,9.75,22]);   
+    translate([-33/2 -2.5,-9,3])cube([5,2,22]);
     }
+    
+    
+    
+    translate([-33/2 +7,-22,-8]) rotate([0,-25,0]) cube([5,10,22]);
+    translate([-33/2 -11.5,-22,-6.5]) rotate([0,25,0]) cube([5,10,22]);
+
+    
+    translate([-33/2 -21,-22,25]) rotate([0,45,0]) cube([8,20,8]);
+    translate([-33/2 +10,-22,25]) rotate([0,45,0]) cube([8,20,8]);
+    
     translate([-33/2 -15,-16.5,-8])rotate([30,0,0])cube([35,9.75,25]); 
     
     translate([-33/2 -15,-9,10])rotate([-20,0,0])cube([35,9.75,25]); 
     
-    translate([-33/2 -4.5-1,-24,20])rotate([0,0,0])cube([2,20,4]);
-    translate([-33/2 +2.5+1,-24,20])rotate([0,0,0])cube([2,20,4]);
+    //zip tie holes
+    translate([-33/2 -4.5-1.3,-24,20])rotate([0,0,0])cube([2,20,4]);
+    translate([-33/2 +2.5+1.3,-24,20])rotate([0,0,0])cube([2,20,4]);
     
     translate([-33/2 + 6.5-0.1,0,12]) rotate([0,90,0])cylinder(r = 11.6, h=4.2, $fn=50);
     
     translate([-33/2 -6.5 - 4.1,0,12]) rotate([0,90,0])cylinder(r = 11.6, h=4.2, $fn=50);
     
-     translate([-10,-30,0]) translate([0,-11.5,-1]) rotate([0,0,45]) translate([0,-15,0]) cube([30,30,34]);
-    
-    
-    //translate([-33/2 -13,-19,15])rotate([45,0,0])cube([20,5,5]);
-    //translate([-33/2 -13,-5,15])rotate([45,0,0])cube([20,5,5]);
-  
+    //right cutout
+    translate([-10,-30,0]) translate([0,-11.5,-1]) rotate([0,0,45]) translate([0,-15,0]) cube([30,30,34]);
+
+      
  }   
     
  // Belt holder base
  translate([-42.5,20,0]) cube([52,16,7]);
- translate([-16.5-12,24.5,0])cylinder(r=4.5, h=15, $fn=25);
- translate([-16.5+12,24.5,0])cylinder(r=4.5, h=15, $fn=25); 
+ translate([-16.5-12,24.5,0])cylinder(r=4.5, h=14, $fn=25);
+ translate([-16.5+12,24.5,0])cylinder(r=4.5, h=14, $fn=25); 
+ 
+ translate([-16.5-12,24.5,14])cylinder(r1=4.5, r2=3.8, h=2, $fn=25);
+ translate([-16.5+12,24.5,14])cylinder(r1=4.5, r2=3.8, h=2, $fn=25);
  
   // Endstop trigger nipple
-  scale([1.6,1.1,1])translate([1.5,-11.5,0])rotate([0,0,90])cylinder(r=5, h=12, $fn=6);  
-    
-    // Belt Insert R
+     difference(){  
+     union(){
+       translate([-2.5,-16,0]) cube([12,5.8,12]);
+       translate([-2.2,-12,0])cylinder(r=4.6, h=12, $fn=6); 
+       }
+       translate([5,-17,-1]) rotate([0,45,0]) cube([10,10,10]);
+       translate([-16.8,-22.6,-5]) rotate([45,45,0]) cube([10,15,10]);
+       translate([-4,-20,0]) rotate([45,-45,0]) cube([15,15,10]);
+       
+     }
+     
+ // Belt Insert R
     difference(){
     union(){
     translate([2,27,0]) cube([10,6,15]);
- translate([2,27-2.3-4.5,0]) cube([10,4.5,15]);
- translate([-0.5,27,0]) cube([8,7,2]);
+    translate([2,27-2.3-4.5,0]) cube([10,4.5,15]);
+    translate([-0.5,27,0]) cube([8,7,2]);
     }
     translate([-3,25,5.5]) rotate([0,0,-40]) cube([5,5.5,10]);
 }
@@ -83,7 +105,8 @@ module x_carriage_holes(){
  translate([-33/2,0,0]) rotate([0,0,90]) horizontal_bearing_holes(1);
  // Long bearing holder holes cutter
  translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_holes(2);
-  // Extruder mounting holes
+  
+    // Extruder mounting holes
   translate([-16.5+12,24.5,-1])cylinder(r=1.7, h=20, $fn=25);
   translate([-16.5+12,24.5,12])cylinder(r=5.8/2, h=20, $fn=25); 
   translate([-16.5-12,24.5,-1])cylinder(r=1.7, h=20, $fn=25);
@@ -103,7 +126,7 @@ module x_carriage_holes(){
     translate([-55.5+6.7+2,19,-10])rotate([0,-90+65,0])cube([10,40,30]);
     
   // Filament hole
-   translate([-33/2,7,1])rotate([-15,0,0])cylinder(r=1.52, h=20, $fn=10); 
+   translate([-33/2,7,1]) rotate([-15,0,0])cylinder(r=1.52, h=40, $fn=10); 
    
 }
 
@@ -115,7 +138,7 @@ module x_carriage_fancy(){
  translate([-52.9,36.5+3,23.5]) rotate([45,0,0]) translate([0,-15,0]) cube([20,10,10]);   
     
  // Bottom ĺeft corner
- translate([-34,2,0]) translate([0,-11.5,-1]) rotate([0,0,-135]) translate([0,-15,0]) cube([30,30,34]);
+ translate([-34,2,0]) translate([2,-11.5,-1]) rotate([0,0,-145]) translate([0,-15,0]) cube([30,30,34]);
  // Top left corner
  translate([-33-13.5,-5,0]) translate([0,45+11.5,-1]) rotate([0,0,135]) translate([0,-15,0]) cube([30,30,20]);	
 }
@@ -129,6 +152,9 @@ module cable_tray(){
     //Right cable tray
     translate([-2,5.5,0]) cube([9.45,2,15]);
     translate([-2,11,7]) cube([9.45,2,8]);
+    
+    translate([-31,11.5,7]) cube([30,2,10]);
+        
     difference(){ 
     translate([0,11,0]) cube([7.45,12,7]);
     translate([0,6,-0.1])rotate([-30,0,0]) cube([5,12,7]);
@@ -137,21 +163,73 @@ module cable_tray(){
     
     }
 
+
+
+module upper_ziptie_holder()
+    {
+        
+        // body
+        difference(){
+            translate([-19,18,7]) cube([5,15,9]);   
+            translate([-20,29,10]) rotate([45,0,0])cube([10,10,10]);   
+            translate([-20,29,10]) cube([7,5,20]);   
+        }
+
+        difference(){
+            union(){    
+                difference(){
+                    translate([-23,17.5,7]) cube([13,5,17]);
+                    translate([-23,19,6]) rotate([0,0,45]) cube([5,5,19]);    
+                    translate([-10,19,6]) rotate([0,0,45]) cube([5,5,19]);   
+                    translate([-15,21,17])rotate([0,0,0])cube([5,2,5]);
+                    translate([-23,21,17])rotate([0,0,0])cube([5,2,5]);
+                    }    
+                difference(){
+                    translate([-23,11.5,15]) cube([13,7,9]);  
+                    translate([-30,15.5,15]) rotate([0,90,0]) cylinder(r=2, h=22, $fn=30); 
+                    translate([-24,11,18]) rotate([45,0,0]) cube([20,10,10]); 
+                    }
+                }
+
+            //zip ties
+            translate([-20,5,17])rotate([0,0,0])cube([2,20,5]);
+            translate([-15,5,17])rotate([0,0,0])cube([2,20,5]);    
+            
+            // corners    
+            translate([-28,12,25]) rotate([0,45,0]) cube([5,15,5]); 
+            translate([-12,12,25]) rotate([0,45,0]) cube([5,15,5]); 
+        }
+    }
+
+
+module final_cutout(){
+    
+    translate([-19,-16.4,13]) rotate([-45,0,0]) cube([5,5,5]);
+    translate([-43,0,16]) rotate([0,45,0]) cube([5,15,5]);
+    translate([5,0,16]) rotate([0,45,0]) cube([5,15,5]);
+    
+    translate([-4.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
+    translate([-34.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
+    
+   
+    translate([-19,7,13.5]) rotate([-15,0,0]) cube([5,5,50]);      
+    }
+
 // Final part
 module x_carriage(){
  difference(){
+      union(){
+         difference(){
+      x_carriage_base();
+      x_carriage_holes();
+      x_carriage_fancy();
+     }
+    cable_tray();
+    upper_ziptie_holder();
+    }
    
-  x_carriage_base();
-
-  x_carriage_holes();
-  x_carriage_fancy();
-     
-      
-     
+    final_cutout();
  }
- 
- cable_tray();
- 
 }
 
 // belt keepout
@@ -160,7 +238,7 @@ module x_carriage(){
 x_carriage();
 
 // Cable hole vis
-%translate([-33/2 - 2.5,-17,1])cube([5,30,30]);
+//%translate([-33/2 - 2.5,-17,1])cube([5,25,30]);
 
 
 
