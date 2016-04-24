@@ -7,7 +7,7 @@
 
 
 module corner_base(){	
- translate([-9,-11,0])cube([18,22,47]);
+ translate([-9,-11,0])cube([18,22,49]);
 }
 
 module corner_holes(){
@@ -24,17 +24,17 @@ module corner_holes(){
 
   // Top smooth rod insert
   // Smooth rod place
-  translate([11,2,45]) rotate([0,90,90]) cylinder(h = 12, r=4.2, $fn=30); 
+  translate([11,1.5,47]) rotate([0,90,90]) cylinder(h = 12.5, r=4.2, $fn=30); 
   // Ziptie
-  translate([-5,9,39])  cube([30,3.5,2]);
+  translate([-5,9,41])  cube([30,3.5,2]);
   
   // LM8UU keepout
   difference(){
-  translate([11,14,45]) rotate([0,90,90]) cylinder(h = 270, r=8, $fn=30);
-     translate([21,14,60]) rotate([0,90,90]) cube([20,20,30]);
+    translate([11,14,46]) rotate([0,90,90]) cylinder(h = 270, r=8, $fn=30);
+    translate([21,14,62]) rotate([0,90,90]) cube([20,20,30]);
   } 
-   translate([21,14,60-0.2]) rotate([0,90,90]) cube([20,20,0.2]);
-   translate([21,14,40]) rotate([0,90,90]) cube([0.2,20,20]);
+   translate([21,14,62-0.2]) rotate([0,90,90]) cube([20,20,0.2]);
+   translate([21,14,42]) rotate([0,90,90]) cube([0.2,20,20]);
      
  }
 }
@@ -44,10 +44,10 @@ module corner_fancy(){
   translate([-8,-9,0]) rotate([0,0,-45-180]) translate([-15,0,-1]) cube([30,30,51]);
   translate([8,-9,0]) rotate([0,0,45-180]) translate([-15,0,-1]) cube([30,30,51]);
  // Top corner cutouts
-  translate([7,0,49-2]) rotate([0,45,0]) translate([-15,-15,0]) cube([30,30,30]);
-  translate([-7,0,49-2]) rotate([0,-45,0]) translate([-15,-15,0]) cube([30,30,30]);
+  translate([7,0,49]) rotate([0,45,0]) translate([-15,-15,0]) cube([30,30,30]);
+  translate([-7,0,49]) rotate([0,-45,0]) translate([-15,-15,0]) cube([30,30,30]);
   rotate([0,0,90]){
-   translate([-9,0,49-2]) rotate([0,-45,0]) translate([-15,-15,0]) cube([30,30,30]);
+   translate([-9.5,0,49]) rotate([0,-45,0]) translate([-15,-15,0]) cube([30,30,30]);
   }
 }
 

@@ -32,15 +32,10 @@ module horizontal_bearing_holes(bearings=1){
   // bearing holder then add each bearign lenght and then center again
   translate(v=[0,-holder_lenght/2,0]) translate(v=[0,one_holder_lenght/2+i*25,0]) difference(){
    union(){
-    if(bearings == 1){
     translate(v=[0,2-8.5,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 4, r=11.5, $fn=50);
     translate(v=[0,2+8.5,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 4, r=11.5, $fn=50);
-    }else{
-     translate(v=[0,2-6,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 4, r=11.5, $fn=50);
-    translate(v=[0,2+6,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 4, r=11.5, $fn=50);   
    }
-   }
-   translate(v=[0,11,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 25, r=9, $fn=50);
+   translate(v=[0,12,12]) rotate(a=[90,0,0]) translate(v=[0,0,0]) cylinder(h = 24, r=9, $fn=50);
   }
  }
  
@@ -73,12 +68,14 @@ module vertical_bearing_base(){
 
 module vertical_bearing_holes(){
   translate(v=[0,0,-1]) poly_cylinder(h = 62, r=bearing_diameter/2);
-  rotate(a=[0,0,-70]) translate(v=[bearing_diameter/2-2.9,-0.5,0.5]) cube(size = [thinwall*2,1,62]);
+  rotate(a=[0,0,-40]) translate(v=[bearing_diameter/2-2.9,-0.5,0.5]) cube(size = [thinwall*2,1,62]);
 
 }
 
-difference(){
-vertical_bearing_base();
-vertical_bearing_holes();
-}
+//difference(){
+//vertical_bearing_base();
+//vertical_bearing_holes();
+//}
 //horizontal_bearing_test();
+  horizontal_bearing_base(1);
+  horizontal_bearing_holes(1);
