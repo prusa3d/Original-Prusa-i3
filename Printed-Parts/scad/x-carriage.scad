@@ -6,6 +6,10 @@
 // http://prusamendel.org
 
 use <bearing.scad>
+use <extruder-body.scad>
+
+
+//translate([-34,31,0]) rotate([0,180,180]) ext_body();
 
 module x_carriage_base(){
  // Small bearing holder
@@ -14,8 +18,10 @@ module x_carriage_base(){
  translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_base(2);
  // Base plate
  translate([-33,-12,0]) cube([33,68.5,7]);
-
- // Extruder cable tray
+ // upper motor srew block
+ translate([-19,57,0]) rotate([0,0,0]) cube([28.5,16,12]); 
+ 
+    // Extruder cable tray
  difference(){   
  union(){
     translate([-33/2 - 2.5-11.5,-17-3,3])cube([11.5,14,22]);
@@ -53,6 +59,7 @@ module x_carriage_base(){
     
  // Belt holder base
  translate([-42.5,20,0]) cube([52,16,7]);
+ 
  translate([-16.5-12,24.5,0])cylinder(r=4.5, h=14, $fn=25);
  translate([-16.5+12,24.5,0])cylinder(r=4.5, h=14, $fn=25); 
  
@@ -122,7 +129,7 @@ module x_carriage_holes(){
     translate([-55.5+3,19,-1])cube([10,40,30]);
     translate([+12.5-3,19,-1])cube([10,40,30]);
     
-    translate([+12.5-3.5-2,19,-1])rotate([0,90-65,0])cube([10,40,30]);
+    translate([+12.5-3.5-2,19,-1])rotate([0,90-65,0])cube([10,55,30]);
     translate([-55.5+6.7+2,19,-10])rotate([0,-90+65,0])cube([10,40,30]);
     
   // Filament hole
@@ -132,7 +139,7 @@ module x_carriage_holes(){
 
 module x_carriage_fancy(){
  // Top right corner
- translate([13.5,-5,0]) translate([0,45+11.5,-1]) rotate([0,0,45]) translate([0,-15,0]) cube([30,30,20]);
+ translate([11.5,8,0]) translate([0,45+11.5,-1]) rotate([0,0,45]) translate([0,-15,0]) cube([30,30,20]);
  // Belt Smooth insert
  translate([0,36.5,23.5]) rotate([45,0,0]) translate([0,-15,0]) cube([20,10,10]);
  translate([-52.9,36.5+3,23.5]) rotate([45,0,0]) translate([0,-15,0]) cube([20,10,10]);   
@@ -141,12 +148,18 @@ module x_carriage_fancy(){
  translate([-34,2,0]) translate([2,-11.5,-1]) rotate([0,0,-145]) translate([0,-15,0]) cube([30,30,34]);
  // Top left corner
  translate([-33-13.5,-5,0]) translate([0,45+11.5,-1]) rotate([0,0,135]) translate([0,-15,0]) cube([30,30,20]);	
+ translate([-23,72,14]) rotate([0,45,0]) translate([0,-15,0]) cube([5,25,5]);	   
+ translate([-23,84,21]) rotate([45,0,0]) translate([0,-15,0]) cube([45,5,5]);	   
+
+    translate([-8,64,5]) rotate([0,0,0]) cylinder(r=6, h=22, $fn=6); 
+    translate([-10,64,5]) rotate([0,0,0]) cylinder(r=6, h=22, $fn=6); 
+    
 }
 
 module cable_tray(){
     
     //Left cable tray
-    translate([-38.9,11,0]) cube([8,2,15]); 
+   translate([-38.9,11,0]) cube([8,2,15]); 
     translate([-38.9,5.5,0]) cube([8,2,15]); 
     
     //Right cable tray
@@ -157,8 +170,9 @@ module cable_tray(){
         
     difference(){ 
     translate([0,11,0]) cube([7.45,12,7]);
-    translate([0,6,-0.1])rotate([-30,0,0]) cube([5,12,7]);
-    translate([0,10+3,-2])cube([5,10,5]);    
+    translate([0,6,1])rotate([-30,0,0]) cube([5.5,12,7]);
+    translate([0,3.5,6])rotate([-60,0,0]) cube([5.5,12,7]);
+    translate([0,10+3,-1])cube([5.5,11,6]);    
     }
     
     }
@@ -235,7 +249,17 @@ module x_carriage(){
 // belt keepout
 //%translate([-42-9,30-16,7])cube([70,16,10]);
 
-x_carriage();
+difference(){
+union(){
+    x_carriage();
+    
+}
+translate([2.5,67.5,-50]) rotate([0,0,0]) cylinder(r=1.5, h=100, $fn=30);
+translate([2.5,67.5,5]) rotate([0,0,0]) cylinder(r=3.2, h=8, $fn=30);
+translate([0,21,0]) rotate([0,90,0]) cylinder(r=5.2, h=5.5, $fn=25);
+//translate([2 ,-5,-5])cube([20,50,30]);
+}
+
 
 // Cable hole vis
 //%translate([-33/2 - 2.5,-17,1])cube([5,25,30]);

@@ -6,7 +6,7 @@ difference(){
         cube([35,44,15]);
         // P.I.N.D.A. Probe mount
         difference(){
-        translate([-14,40,0])cube([20,5,14]);
+       translate([-15.5,40,0])cube([21.5,5,14]);
          translate([9,41,-1]) rotate([0,0,45]) translate([0,-5,-0.1]) cube([10,12,20]);    
         }
         translate([-7.5,17,0])cube([8,8.5,2]); // P.I.N.D.A. and Fan cable tray guide
@@ -18,7 +18,7 @@ difference(){
     
     // P.I.N.D.A. Probe mount edge cut
     translate([-28.5,40,5]) rotate([0,30,0]) translate([0,-5,-0.1]) cube([10,12,20]);   // Top
-    translate([-32,40,-5]) rotate([0,60,0]) translate([0,-5,-0.1]) cube([10,12,20]); // Bottom
+    translate([-33,40,-5]) rotate([0,60,0]) translate([0,-5,-0.1]) cube([12,12,20]); // Bottom
     
     
     // P.I.N.D.A. probe mount hole
@@ -156,12 +156,16 @@ difference(){
     // Main
     union(){
         translate([0,0,15]) cube([35,44,15]);
-    
+        
+        translate([34,42,23]) cube([1,18,7]);
+        translate([34,56,23]) cube([4,5,7]);
         //fan nice look
         translate([35,0,15]) cube([10,12,15]);
     }
     // Fan nice look edge cut
     translate([+52.6,-3.49,0]) rotate([0,0,-45-180]) translate([0,-5,-0.1]) cube([10,10,32]);  
+    
+    translate([38,58.3,20]) rotate([0,0,45]) cube([5,5,15]);
     
      extruder_nozzle_cut();  
 
@@ -178,20 +182,31 @@ difference(){
 translate([6,33,27])rotate([0,0,67]) cube([8,24,3]);    // Connecting cube
 translate([35/2+12-42.75,6.5+38.5,25])cylinder(r=5.8, h=5, $fn=6); // Hexagon at the end
 
-// Print fan nozzle mount
-translate([5,61-5,24])cylinder(r=7.5/2, h=6, $fn=6);
+// Print fan nozzle mount - right
+    translate([5,61-5,24])cylinder(r=7.5/2, h=6, $fn=6);
+    
 
 // Print colling airway
      translate([8,44,28])rotate([0,0,0]) cube([27,9,2]);
-difference(){
+    difference(){
      translate([8,51.6,28.5])rotate([-45,0,0]) cube([27,7,2]);
      translate([7,57,20])rotate([0,0,0]) cube([29,7,12]);
      translate([7,53,22])rotate([0,0,0]) cube([29,7,2]);
-}    
-     translate([34,44,24])rotate([0,0,0]) cube([1,13,6]);  
-     translate([8-5,44,24])rotate([0,0,0]) cube([1+5,13,6]);  
-
-
+    }    
+    
+    translate([34,44,24])rotate([0,0,0]) cube([1,13,6]);  
+    translate([8-5,44,24])rotate([0,0,0]) cube([1+5,13,6]);  
+    
+// Print fan nozzle mount - left
+    //#difference(){
+        //union(){
+           //    #translate([34,44,24])rotate([0,0,0]) cube([5,10,6]);  
+             //  #translate([37,61-5,24])cylinder(r=7.5/2, h=6, $fn=6);
+        //}
+        //#translate([24,51.6,30.5])rotate([-45,0,0]) cube([10,7,8]);
+        //translate([37,61-5,23])cylinder(r=1.4, h=8, $fn=30);
+    //}
+    
 // Cooling grill
 difference(){
     union(){
@@ -232,7 +247,8 @@ difference(){
     // Carriage mount left
     translate([35/2+12+11,6.5-2,6.2])cylinder(r=1.7, h=20.8-0.2, $fn=30);    // Screw hole
     translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r=3.2, h=6, $fn=6);  // Nut trap    
-    translate([35/2+12+11,6.5-2,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
+     translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r2=3.2, r1=4, h=3, $fn=6);  // Nut trap  
+     translate([35/2+12+11,6.5-2,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
     
     // Fan nozzle mount hole
     translate([5,61-5,20])cylinder(r=3/2, h=12, $fn=30);
@@ -312,5 +328,5 @@ module extruder_nozzle_cooling(){
         //extruder_mount_holes();
 
 
-       
+       //extruder_cover();
 
