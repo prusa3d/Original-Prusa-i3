@@ -22,6 +22,7 @@ module upper_shape()
                 translate([ 0, 11, 2 ]) cube([ 5.5, 15, 12 ]);   
                 translate([ -8, 22, 2 ]) cube([ 49, 4, 12 ]);   
                 translate([ 0, 13, 2 ]) cube([ 25, 13, 12 ]);   
+                translate([ 25, 16, -1 ]) cube([ 15.5, 10, 15 ]);  
                 }
                 translate([ 12, 18, 0 ]) cylinder( h = 14, r = 7.2, $fn=30 );  // upper belt cutaway
             }
@@ -44,6 +45,7 @@ module screw_holes(){
     translate( [ -4 , 28 , 7.5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);  //screw hole
     translate( [ 37 , 28 , 7.5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);  //screw hole
     translate( [ -4 , 22 , 7.5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 2.9, $fn=30);  //screw hole
+    translate( [ 37 , 22 , 7.5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 2.9, $fn=30);  //screw hole
 }
 
 module belt_insert_chamfer(){
