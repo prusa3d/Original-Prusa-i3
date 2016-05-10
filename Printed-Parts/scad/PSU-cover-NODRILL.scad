@@ -119,7 +119,7 @@ difference()
     union()     // base shape
         {
             translate([ 59.5, 0, -18 ]) cube([ 33, 6, 19 ]);  // reinforcement plate
-            translate([ 73.5, 6, -18 ]) cube([ 5, 15, 19 ]);  // vertical_reinforcement    
+            translate([ 73.5, 5, -18 ]) cube([ 5, 16, 19 ]);  // vertical_reinforcement    
         }
     union ()    // cutouts
         {
