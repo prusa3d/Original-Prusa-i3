@@ -24,7 +24,7 @@ module corner_holes(){
 
   // Top smooth rod insert
   // Smooth rod place
-  translate([11,1.5,47]) rotate([0,90,90]) cylinder(h = 12.5, r=4.2, $fn=30); 
+  translate([11,2.75,47]) rotate([0,90,90]) cylinder(h = 11.25, r=4.2, $fn=30); 
   // Ziptie
   translate([-5,9,41])  cube([30,3.5,2]);
   
