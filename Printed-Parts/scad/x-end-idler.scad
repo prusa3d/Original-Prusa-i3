@@ -35,10 +35,8 @@ module waste_pocket(){
     translate([-15,11.5,51]) rotate([90,0,0]) cylinder( h=4, r=2.9, $fn=30); 
 
     //M3 nut traps
-    translate([-15,3.5,6]) rotate([90,90,0]) cylinder( h=3, r=3.3, $fn=6); 
-    translate([-15,3.5,51]) rotate([90,90,0]) cylinder( h=3, r=3.3, $fn=6);
-    translate([-17.9,0.5,52]) cube([5.8,3.1,20]);
-    translate([-17.9,0.5,-10]) cube([5.8,3.1,16]);
+    translate([-17.9,0.5,52-3-1.6]) cube([5.8,3.1,20]);
+    translate([-17.9,0.5,-10+1.5+1.6]) cube([5.8,3.1,16]);
 }
 
 
