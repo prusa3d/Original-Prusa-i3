@@ -22,8 +22,10 @@ module x_end_idler_holes(){
 
 module waste_pocket(){
  // waste pocket
-    translate([-15,-1,6]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);     
-    translate([-15,-1,51]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);    
+    translate([-15,-1,6]) rotate([90,0,0]) cylinder( h=5, r=5.5, $fn=30);     
+    translate([-15,-1,51]) rotate([90,0,0]) cylinder( h=5, r=5.5, $fn=30);    
+    translate([-15,-5.9,6]) rotate([90,0,0]) cylinder( h=3, r1=5.5, r2=4.3, $fn=30);     
+    translate([-15,-5.9,51]) rotate([90,0,0]) cylinder( h=3, r=5.5, r2=4.3, $fn=30);      
 
     
     //M3 thread
