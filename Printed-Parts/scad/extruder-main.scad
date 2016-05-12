@@ -25,7 +25,7 @@ difference(){
      translate([35/2,0,6]){
         translate([-23,35,0])rotate([-90,0,0])cylinder(r=14/2, h=8, $fn=6);
         translate([-23,32.99,0])rotate([-90,0,0])cylinder(r=14/2, h=7, $fn=20);
-        translate([-23,0,0])rotate([-90,0,0])cylinder(r=8/2, h=50, $fn=20);
+        translate([-23,0,0])rotate([-90,0,0])cylinder(r=8.5/2, h=50, $fn=20);
      }
      
      // P.I.N.D.A. and Fan cable tray cut
@@ -90,16 +90,16 @@ difference(){
     translate([-21,-21,-2]) cylinder(r=11.5, h=33, $fn=200);
     
     //filament hole
-    translate([-35/2,-42,15])rotate([-90,0,0])cylinder(r=2.2/2, h=20, $fn=20);
+    translate([-35/2,-42,15])rotate([-90,0,0])cylinder(r=2.5/2, h=20, $fn=20);
     translate([-35/2,-42,15])rotate([-90,0,0])cylinder(r2=2.2/2,r1=3.6/2, h=1.5, $fn=20);
 }
 
 //filament guide
-translate([-35/2-3,-19,15-4])cube([6,10,8]);
+translate([-35/2-3,-19,15-4])cube([6,10,6.5]);
 difference(){
 union(){
 translate([-35/2-3,-8.4+2+1.2,0.4]) rotate([45,0,0]) cube([6,15,15]);
-translate([-35/2-3,-8.4+2+1.2,0.4+8]) rotate([45,0,0]) cube([6,15,15]);    
+translate([-35/2-3,-8.4+2+1.2,0.4+6.5]) rotate([45,0,0]) cube([6,15,15]);    
 }
 translate([-35/2-4,-1,2]) cube([8,15,25]);
     
@@ -113,8 +113,8 @@ translate([-35/2-4,-1,2]) cube([8,15,25]);
         translate([-35/2 - 7.5/2,-3.99,21])rotate([-90,0,0])cube([7.5,6,8]);            // Slot cut
     
         // PTFE tube slot
-        translate([-35/2,-23,15])rotate([-90,0,0]) cylinder(r=4.2/2, h=25, $fn=50);     // Main hole
-        translate([-35/2,-9,15])rotate([-60,0,0]) rotate([0,0,10])cylinder(r=4.2/2, h=25, $fn=50); // Top hole
+        translate([-35/2,-23,15])rotate([-90,0,0]) cylinder(r=4.3/2, h=25, $fn=50);     // Main hole
+        translate([-35/2,-9,15])rotate([-60,0,0]) rotate([0,0,10])cylinder(r=4.3/2, h=25, $fn=50); // Top hole
         // Slot cut
         difference(){
         translate([-35/2,-8,14])rotate([-60,0,0]) rotate([0,0,30])cylinder(r=4.85/2, h=25, $fn=6);
@@ -238,11 +238,16 @@ difference(){
     translate([35/2-12,6.5,6.5+0.2])cylinder(r=1.65, h=5, $fn=30); // Middle hole
     translate([35/2-12,6.5,12.5+0.2])cylinder(r=1.65, h=14.3-0.2, $fn=30); // Top hole
     translate([35/2-12,6.5,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
-    translate([35/2-12-6.5,6.5-2.85,10])rotate([0,0,0]) cube([7,5.7,2.5]); // Nut Trap top
-    translate([35/2-12,6.5,10])cylinder(r=3.3, h=2.5, $fn=6);
+    translate([35/2-12-6.5,6.5-2.85,10])rotate([0,0,0]) cube([9.5,5.7,2.5]); // Nut Trap top
+    //translate([35/2-12,6.5,10])cylinder(r=3.3, h=2.5, $fn=6);
      
-    translate([35/2-12-6.5,6.5-2.85,4])rotate([0,0,0]) cube([7,5.7,2.5]); // Nut trap bottom
-    translate([35/2-12,6.5,4])cylinder(r=3.3, h=2.5, $fn=6);
+    translate([35/2-12-6.5,6.5-2.85,4])rotate([0,0,0]) cube([9.5,5.7,2.5]); // Nut trap bottom
+    //translate([35/2-12,6.5,4])cylinder(r=3.3, h=2.5, $fn=6);
+     
+    translate([35/2-12-6.5+5,6.5-2.85-2.5,3])rotate([0,0,0]) cube([5,0.4,10.5]); // Nut Trap reinforcement
+    
+    translate([35/2-12-6.5+5,6.5-2.85+2.5+5,3])rotate([0,0,0]) cube([5,0.4,10.5]); // Nut Trap reinforcement 
+     
      
     // Carriage mount left
     translate([35/2+12+11,6.5-2,6.2])cylinder(r=1.7, h=20.8-0.2, $fn=30);    // Screw hole
@@ -324,9 +329,7 @@ module extruder_nozzle_cooling(){
     
     }
 
-        //extruder_body();
-        //extruder_mount_holes();
-
-
+       //extruder_body();
+       //extruder_mount_holes();
        //extruder_cover();
 
