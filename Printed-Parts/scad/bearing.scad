@@ -19,7 +19,7 @@ module horizontal_bearing_holes(bearings=1){
  
  // Main bearing cut
  difference(){
-  translate(v=[0,0,12]) rotate(a=[90,0,0]) translate(v=[0,0,-cutter_lenght/2]) cylinder(h = cutter_lenght, r=bearing_diameter/2, $fn=50);
+  translate(v=[0,0,12]) rotate(a=[90,0,0]) translate(v=[0,0,-cutter_lenght/2]) cylinder(h = cutter_lenght, r=(bearing_diameter/2)+0.2, $fn=50);
   // Bearing retainers
   translate(v=[0,1-holder_lenght/2,3]) cube(size = [24,6,8], center = true);
   translate(v=[0,-1+holder_lenght/2,3]) cube(size = [24,6,8], center = true);
@@ -67,15 +67,15 @@ module vertical_bearing_base(){
 }
 
 module vertical_bearing_holes(){
-  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=bearing_diameter/2);
+  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=(bearing_diameter/2)+0.1);
   rotate(a=[0,0,-40]) translate(v=[bearing_diameter/2-2.9,-0.5,0.5]) cube(size = [thinwall*2,1,62]);
 
 }
 
 //difference(){
-//vertical_bearing_base();
-//vertical_bearing_holes();
+vertical_bearing_base();
+vertical_bearing_holes();
 //}
 //horizontal_bearing_test();
-  horizontal_bearing_base(1);
-  horizontal_bearing_holes(1);
+//horizontal_bearing_base(1);
+//horizontal_bearing_holes(1);

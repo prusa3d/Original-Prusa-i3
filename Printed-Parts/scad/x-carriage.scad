@@ -199,8 +199,12 @@ module upper_ziptie_holder()
                     translate([-23,21,17])rotate([0,0,0])cube([5,2,5]);
                     }    
                 difference(){
-                    translate([-23,11.5,15]) cube([13,7,9]);  
-                    translate([-30,15.5,15]) rotate([0,90,0]) cylinder(r=2, h=22, $fn=30); 
+                    union(){
+                    translate([-23,11.5,16.5]) cube([13,7,7.5]);  
+                    translate([-23,13,15.5]) rotate([45,0,0])cube([13,2,2]);  
+                    translate([-23,17.5,16]) rotate([45,0,0])cube([13,1,1]);
+                    }
+                    //translate([-30,15.5,14]) rotate([0,90,0]) cylinder(r=3, h=22, $fn=30); 
                     translate([-24,11,18]) rotate([45,0,0]) cube([20,10,10]); 
                     }
                 }
@@ -222,8 +226,8 @@ module final_cutout(){
     translate([-43,0,16]) rotate([0,45,0]) cube([5,15,5]);
     translate([5,0,16]) rotate([0,45,0]) cube([5,15,5]);
     
-    translate([-4.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
-    translate([-34.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
+    translate([-4.5,0,18.7]) rotate([0,45,0]) cube([5,15,5]);
+    translate([-34.5,0,18.7]) rotate([0,45,0]) cube([5,15,5]);
     
    
     translate([-19,7,13.5]) rotate([-15,0,0]) cube([5,5,50]);      
