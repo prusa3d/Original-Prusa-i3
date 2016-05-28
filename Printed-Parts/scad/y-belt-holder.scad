@@ -30,10 +30,10 @@ module upper_shape()
         translate([ 5.5, 12.5, 0 ]) cylinder( h = 14, r = 1.5, $fn=30 );  
         translate([ 18.5, 12.5, 0 ]) cylinder( h = 14, r = 1.5, $fn=30 ); 
         translate([ 4.5, 7.2, 0 ]) cylinder( h = 14, r = 1.7, $fn=30 );  
-        translate([ 20.5, 7.2, 0 ]) cylinder( h = 14, r = 1.5, $fn=30 );  
+        translate([ 20.5, 7.4, 0 ]) cylinder( h = 14, r = 1.5, $fn=30 );  
 
         translate([ 0, 0, 3 ] ) cube([ 4.5, 8.9, 11 ]);  
-        translate([ 20.5, 0, 2 ] ) cube([ 4.5, 8.7, 12] );  
+        translate([ 20.5, 0, 2 ] ) cube([ 4.5, 8.9, 12] );  
         translate([ 1, 0, 3 ] ) cube([ 4.5, 7, 11 ]);  
         translate([ 19.5, 0, 2 ] ) cube([ 4.5, 7, 12 ]);  
         translate([ -8, 16, -1 ]) cube([ 8, 10, 15 ]);
@@ -80,12 +80,3 @@ module final_part(){
 }
 
 final_part();
-
-
-
-
-
-
-
-
-
