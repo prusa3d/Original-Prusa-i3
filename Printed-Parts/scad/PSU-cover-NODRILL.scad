@@ -56,7 +56,7 @@ translate([95,60,65])rotate([-55,48,-48])cube([20,20,20]);
 
 translate([79,-5,68.5])rotate([0,45,0])cube([20,90,20]);
 
-translate([79,-5,-14.5])rotate([0,45,0])cube([20,90,20]);
+translate([79,4,-14.5])rotate([0,45,0])cube([20,90,20]);
 
 
 translate([-14,-5,68.5])rotate([0,45,0])cube([20,90,20]);
@@ -124,17 +124,31 @@ difference()
     union ()    // cutouts
         {
             
-            translate([ 88-0.5, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A1
-            translate([ 88, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A
-            translate([ 88+0.5, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A2
+            //translate([ 88-0.5, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A1
+            //translate([ 88, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A
+            //translate([ 88+0.5, 8, -10.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole A2
             
-            translate([ 68-0.5, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B1
-            translate([ 68, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B
-            translate([ 68+0.5, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B2
+            //translate([ 68-0.5, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B1
+            //translate([ 68, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B
+            //translate([ 68+0.5, 8, -10.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.6, $fn=30 );  //hole B2
             
             translate([ 87.5, -8, -20 ]) rotate([ 0, 45, 0 ]) cube([ 10, 20, 10 ]);  //corner cut
             translate([ 52.5, -8, -20 ]) rotate([ 0, 45, 0 ]) cube([ 10, 20, 10 ]);  //corner cut
             translate([ 68.5, 20, -34 ]) rotate([ 45, 0, 0 ]) cube([ 15, 23, 20 ]);  //vertical reinf cutout
+            
+            
+            
+            
+            translate([ 88, 8, -11.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.8, $fn=30 );  //hole A
+            translate([ 68, 8, -11.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.8, $fn=30 );  //hole B
+            
+            translate([ 88, 8, -9.5 ]) rotate([ 90, 0, 0]) cylinder( h = 10, r = 1.8, $fn=30 );  //hole A
+            translate([ 68, 8, -9.5 ]) rotate([ 90, 0, 0 ]) cylinder( h = 10, r = 1.8, $fn=30 );  //hole B
+            
+            translate([ 86.2, -10, -11.5 ]) cube([ 3.6, 20, 2 ]);  // hole cut extension
+            translate([ 66.2, -10, -11.5 ]) cube([ 3.6, 20, 2 ]);  // hole cut extension
+            
+            
         }
 }
 }
