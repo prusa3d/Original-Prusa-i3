@@ -50,14 +50,14 @@ translate(v=[-15,-41.5,rod_distance+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 
 // TR Nut trap
    // Hole for the nut
-    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 6.55, $fn = 25);
+    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 6.6, $fn = 25);
 
 // Screw holes for TR nut
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -1]) cylinder(h = 10, r = 1.55, $fn=25);
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -1]) cylinder(h = 10, r = 1.55, $fn=25);
 
 // Nut traps for TR nut screws
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.2, $fn=6);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.3, $fn=6);
 
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, 6]) rotate([0, 0, 30])cylinder(h = 3, r = 3.2, $fn=6);
     translate([-5.5,-17.2,6]) rotate([0,0,30]) cube([5,5,3]);
