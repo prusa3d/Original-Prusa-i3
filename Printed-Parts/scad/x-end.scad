@@ -7,7 +7,9 @@
 
 use <bearing.scad>
 use <polyholes.scad>
-rod_distance = 45;
+
+// Parameters 
+rod_distance = 45; // Distance between vertical rods
 
 module x_end_base(){
 // Main block
