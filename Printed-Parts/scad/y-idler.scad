@@ -21,6 +21,7 @@ module y_idler_holes(){
 
 // Final part
 module y_idler(){
+ $fn=30;
  translate(v = [0,0,8])rotate([0,-90,0]) difference(){
   y_idler_base();
   y_idler_holes();
