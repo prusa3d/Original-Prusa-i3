@@ -1,3 +1,11 @@
+// PRUSA iteration3
+// Heatbed cable cover
+// GNU GPL v3
+// Josef Průša <iam@josefprusa.cz> and contributors
+// http://www.reprap.org/wiki/Prusa_Mendel
+// http://prusamendel.org
+
+
 module cover()
 {
     translate([ -17.5, 0, 0 ]) cube([ 35, 21, 8 ]);  // cover
@@ -39,12 +47,12 @@ module inside_cut(){
 
     module filament_holder(){
         difference(){
-        translate([ -2.5,15, 2 ]) rotate([0,0,0])  cube( [5,7,6 ] );     // body
+        #translate([ -3.5,15, 2 ]) rotate([0,0,0])  cube( [7,7,6 ] );     // body ; previous translate([ -2.5,15, 2 ]) cube( [5,7,6 ] );
         translate( [ 0 , 24 , 4.5 ] ) rotate( [90,0,0] ) cylinder( h = 10, r = 1.4, $fn=12);  // filament
         translate( [ 0 , 22.1 , 4.5 ] ) rotate( [90,0,0] ) cylinder( h = 1.5, r1 = 1.8, r2=1.4, $fn=12);  // filament
 
-        translate([ -5,15, 1 ]) rotate([0,45,0])  cube( [3,15,3 ] );     // corners            
-        translate([ 1,15, 1 ]) rotate([0,45,0])  cube( [3,15,3 ] );     // corners
+        #translate([ -6,15, 2 ]) rotate([0,45,0])  cube( [4,15,3 ] );     // corners ; previous ([ -5,15, 1 ]) cube( [3,15,3 ] )           
+        #translate([ 1,15, 1 ]) rotate([0,45,0])  cube( [3,15,4 ] );     // corners ; previous  cube( [3,15,3 ] ) 
         }
     }
     module m3_screw(){
@@ -56,7 +64,8 @@ module inside_cut(){
     
     module nut_trap(){
     translate( [ 0 , 7.5 , 4.5 ] ) rotate( [0,0,90] ) cylinder( h = 2.5, r = 4.6, $fn=6);  // M3 HEAD
-    translate( [ 0 , 7.5 , 4 ] ) rotate( [0,0,0] ) cylinder( h = 1, r = 3, $fn=30);      
+    translate( [ 0 , 7.5 , 4 ] ) rotate( [0,0,0] ) cylinder( h = 1, r = 3, $fn=30);    
+    
     }
     
     difference(){
@@ -69,6 +78,8 @@ module inside_cut(){
         nut_trap();
     }   
     m3_screw();
+      translate( [ 0 , 7.5 , 6.2 ] ) rotate( [0,0,0] ) cube( [5.7,3,1], center=true);   
+    translate( [ 0 , 7.5 , 5.7 ] ) rotate( [0,0,0] ) cube( [3,3,1], center=true); 
     }
     
     filament_holder();

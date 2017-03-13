@@ -25,6 +25,7 @@ union(){
 
 module cutout()
     {
+
     translate([ 22, 4 , -2 ]) cylinder( h = 20, r = 1.6, $fn=30);  // M3 hole A
     translate([ 22, 4 , -1 ]) cylinder( h = 10, r = 3.2, $fn=6);  // M3 nut body A        
     translate([ 22, 4 , -1 ]) cylinder( h = 14, r1 = 3.2, r1 = 5, $fn=6);  // M3 nut hole fillet A

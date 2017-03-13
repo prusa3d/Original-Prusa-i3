@@ -14,12 +14,11 @@ translate([-10, 23, -1 ]) cube([ 52, 3, 15 ]);
 
 module belt_holders()
 {
-    
    translate([ 16, 18, 0 ]) cylinder( h=11, r=3.5, $fn=30 );  // upper belt holder
-    translate([ 16, 18, 11 ]) cylinder( h=3, r1=3.5, r2=2.5, $fn=30 );  // upper belt holder cone
+   translate([ 16, 18, 11 ]) cylinder( h=3, r1=3.5, r2=2.5, $fn=30 );  // upper belt holder cone
     
-    translate([ 12, 5, 0 ]) cylinder( h=11, r=3.5, $fn=30 );  // lower belt holder
-    translate([ 12, 5, 11 ]) cylinder( h=3 , r1=3.5, r2=2.5, $fn=30 );  // lower belt holder cone
+   translate([ 12, 5, 0 ]) cylinder( h=11, r=3.5, $fn=30 );  // lower belt holder
+   translate([ 12, 5, 11 ]) cylinder( h=3 , r1=3.5, r2=2.5, $fn=30 );  // lower belt holder cone
 }
 
 module screws()
@@ -41,15 +40,16 @@ module screws()
     translate([35.5, 15, 4.5 ]) cube([ 6, 7, 6 ]);
 }
 
-belt_holders();
+//belt_holders();
+module main()
 
+{
 difference()
 {
 main_body();
     
 translate([ 16, 18, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // upper belt space cutaway
 translate([ 12, 5, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // lower belt space cutaway
-
 translate([-20, 9, 2]) cube([ 28, 2.1, 16 ]); 
 rotate([0,0,40]) translate([11, 1, 2 ]) cube([ 10, 4, 16 ]);     
     
@@ -57,23 +57,9 @@ translate([10, 7, 2 ]) cube([ 32, 2.1, 16 ]);
     
 translate([16, 8, 11 ]) rotate([45,0,0]) cube([ 15, 5, 5 ]);     
 translate([-2, 10, 11 ]) rotate([45,0,0]) cube([ 10, 5, 5 ]);     
-
 screws();
     
-
-
-    // print part reinforcement
-    translate([1,0.5,-0.5]) cube([0.1,5,13]);     
-    translate([3,0.5,-0.5]) cube([0.1,5,13]);     
-    translate([21.2,0.5,-0.5]) cube([0.1,4,12]);
-    translate([23.5,0.5,-0.5]) cube([0.1,4,12]);
-    translate([25.5,0.5,-0.5]) cube([0.1,4,12]);
-    translate([11.5,3,-0.5]) cube([1,0.3,12]);
-    translate([10,5,-0.5]) cube([4,0.3,12]);
-    translate([11.5,6.5,-0.5]) cube([1,0.3,12]);
-    translate([15.5,16,-0.5]) cube([1,0.3,12]);
-    translate([14,18,-0.5]) cube([4,0.3,12]);
-    translate([15.5,20,-0.5]) cube([1,0.3,12]);    
+ 
  
  
     // corner cutoff
@@ -82,5 +68,48 @@ screws();
     
     
 }
+}
 
+module selective_infill()
+{
+    // print part reinforcement
+    translate([1,    0.5, -0.5]) cube([0.1,5,13]);     
+    translate([3,    0.5, -0.5]) cube([0.1,5,13]);     
+    translate([21.5, 0.5, -0.5]) cube([0.1,4,12]);
+    translate([23.5, 0.5, -0.5]) cube([0.1,4,12]);
+    translate([25.5, 0.5, -0.5]) cube([0.1,4,12]);
+    translate([11.5, 3,   -0.5]) cube([1,0.2,12]);
+    translate([10,   5,   -0.5]) cube([4,0.2,12]);
+    translate([11.5, 6.5, -0.5]) cube([1,0.2,12]);
+    translate([15.5, 16,  -0.5]) cube([1,0.2,12]);
+    translate([14,   18,  -0.5]) cube([4,0.2,12]);
+    translate([15.5, 20,  -0.5]) cube([1,0.2,12]);   
+   
+    translate([1, 5.5, -0.5]) cube([0.1,14,2]);    
+    translate([3, 5.5, -0.5]) cube([0.1,14,2]);   
+    translate([5, 0.5, -0.5]) cube([0.1,19,2]);   
+    translate([7, 0.5, -0.5]) cube([0.1,19,2]);   
+    
+    translate([19.5, 0.5, -0.5]) cube([0.1,18,2]);
+    translate([21.5, 4.5, -0.5]) cube([0.1,14,2]);
+    translate([23.5, 4.5, -0.5]) cube([0.1,14,2]);
+    translate([25.5, 4.5, -0.5]) cube([0.1,14,2]);
+    }
+    
+    
+module final_part()
+{
+difference()
+    {
+    union()
+    {
+    main();
+    belt_holders();  
+    }
+    selective_infill();
+}
+}    
+   
+final_part();
 
+   

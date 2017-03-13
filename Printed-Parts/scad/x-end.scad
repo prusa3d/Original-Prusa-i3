@@ -21,8 +21,20 @@ translate(v=[-15,-9,height/2]) cube(size = [17,39,height], center = true);
  // Hexagon
  //translate(v=[0,-17,0]) rotate([0,0,30]) cylinder(h = 8, r=8, $fn = 6);
 translate(v=[-6,-10.6,10]) rotate([0,0,48.2]) cube(size = [10,5,1], center = true);
+    
+  rotate([90,0,-15,]) translate ([-1, 8, 24])linear_extrude(height = 4) polygon( points=[[0,0],[0,12],[8,0]] ); //vzpera lozisek
+  rotate([90,0,-50,]) translate ([9, 8, -0.6])linear_extrude(height = 4) polygon( points=[[0,0],[0,12],[8,0]] ); 
+    
 }
-
+module reinforcement_selective_infill(){
+    rotate([90,0,-15,]) translate ([-1.5, 8, 26])linear_extrude(height = 0.2) polygon( points=[[-2,0],[0,12],[8,0]] ); //vzpera lozisek
+    
+  rotate([90,0,-50,]) translate ([8.5, 8, 1.4])linear_extrude(height = 0.2) polygon( points=[[0,0],[0,12],[12,0]] ); //vzpera tela
+    
+    }
+    
+   //reinforcement_selective_infill();
+    
 module x_end_holes(){
  vertical_bearing_holes();
 // Belt hole
@@ -44,20 +56,21 @@ difference(){
 }
 
 // Bottom pushfit rod
-translate(v=[-15,-41.5,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
+translate(v=[-15,-41,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 // Top pushfit rod
 translate(v=[-15,-41.5,rod_distance+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 
 // TR Nut trap
    // Hole for the nut
-    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 6.6, $fn = 25);
+    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 7, $fn = 25);
+    translate(v=[0,-17, -0.1]) cylinder(h = 0.5, r1 = 6.8+0.8,r2 = 7, $fn = 25);
 
 // Screw holes for TR nut
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -1]) cylinder(h = 10, r = 1.55, $fn=25);
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -1]) cylinder(h = 10, r = 1.55, $fn=25);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -1]) cylinder(h = 10, r = 1.8, $fn=25);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -1]) cylinder(h = 10, r = 1.8, $fn=25);
 
 // Nut traps for TR nut screws
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.3, $fn=6);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.45, $fn=6);
 
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, 6]) rotate([0, 0, 30])cylinder(h = 3, r = 3.2, $fn=6);
     translate([-5.5,-17.2,6]) rotate([0,0,30]) cube([5,5,3]);
@@ -82,6 +95,5 @@ module pushfit_rod(diameter,length){
  	translate(v=[0,-diameter/2.85,length/2]) rotate([0,0,45]) cube(size = [diameter/2,diameter/2,length], center = true);
  	translate(v=[0,-diameter/4-diameter/2-0.4,length/2]) rotate([0,0,0]) cube(size = [diameter,diameter/2,length], center = true);
  }
- //translate(v=[0,-diameter/2-2,length/2]) cube(size = [diameter,1,length], center = true);
-}
+ }
 
