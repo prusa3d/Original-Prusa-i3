@@ -25,9 +25,9 @@ difference()
 {
     union()
         {
-            translate(v=[0, 0, 1]) cylinder(r1=8, r2=4.5, h = 4);
+            translate(v=[0, 0, 1]) cylinder(r1=8, r2=4.6, h = 4);
             cylinder(r=8, h = 1, $fn=60);
         }
         translate(v=[0, 0, -1]) cylinder(r=4.2, h = 7, $fn=60);
-        cylinder(r1=4.3, r2=4.2, h = 1, $fn=60);
+        cylinder(r1=4.5, r2=4.2, h = 1, $fn=60);
 }

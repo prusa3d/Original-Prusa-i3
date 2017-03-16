@@ -1,3 +1,10 @@
+// PRUSA iteration3
+// Spool holder
+// GNU GPL v3
+// Josef Průša <iam@josefprusa.cz> and contributors
+// http://www.reprap.org/wiki/Prusa_Mendel
+// http://prusamendel.org
+
 module dxf_holder(){
 linear_extrude(height = 8, center = true, convexity = 5)
    import (file = "spool holdahMK3.dxf", layer = "0");

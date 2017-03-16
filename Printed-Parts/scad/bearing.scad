@@ -7,7 +7,7 @@
 
 use <polyholes.scad>
 
-bearing_diameter = 14.5;
+bearing_diameter = 14.95;
 
 module horizontal_bearing_base(bearings=1){
  translate(v=[0,0,6]) cube(size = [24,8+bearings*25,12], center = true);	
@@ -67,13 +67,14 @@ module vertical_bearing_base(){
 }
 
 module vertical_bearing_holes(){
-  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=(bearing_diameter/2)+0.1);
+  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=(bearing_diameter/2));
+  translate(v=[0,0,-0.1]) cylinder(r1=(bearing_diameter/2)+0.7,r2=(bearing_diameter/2), h=0.5);
   rotate(a=[0,0,-40]) translate(v=[bearing_diameter/2-2.9,-0.5,0.5]) cube(size = [thinwall*2,1,62]);
 
 }
 
 //difference(){
-vertical_bearing_base();
+//vertical_bearing_base();
 vertical_bearing_holes();
 //}
 //horizontal_bearing_test();

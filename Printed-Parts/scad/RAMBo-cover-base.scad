@@ -1,5 +1,5 @@
 // PRUSA iteration3
-// RAMBo cover base
+// RAMBo base
 // GNU GPL v3
 // Josef Průša <iam@josefprusa.cz> and contributors
 // http://www.reprap.org/wiki/Prusa_Mendel
@@ -9,254 +9,315 @@
 
 // main body
 module main_body(){
-cube( [ 114.5 , 92 , 2 ] );  
-cube( [ 1.5 , 92 , 35 ] );  
-translate( [ 0 , 90 , 0 ] ) cube( [ 105.5 , 2 , 35 ] );  
-translate( [ 63 , 88.5 , 0.5 ] ) cube( [ 6.5 , 2 , 34.5 ] );  
+    // side panel
+    cube( [ 118.5 , 92 , 2 ] );  
 
-translate( [ 0 , 0 , 1 ] ) cube( [ 5.5 , 7 , 34 ] );  
-translate( [ 0 , 0 , 1 ] ) cube( [ 9 , 92 , 3 ] );  
-translate( [ 98 , 0 , 0 ] ) cube( [ 9 , 92 , 4 ] );  
-translate( [ 98 , 86 , 0 ] ) cube( [ 7.5 , 6 , 35 ] );  
-translate( [ 0 , 85 , 0 ] ) cube( [ 5.5 , 7 , 35 ] );  
-translate( [ 54 , 84 , 0 ] ) cube( [ 9.5 , 7 , 35 ] );  
-translate( [ 20 , 0 , 0 ] ) cube( [ 80 , 3 , 5 ] );  
+    // upper panel
+    cube( [ 1.5 , 92 , 35 ] );  
+    // rear panel
+    translate( [ 0 , 90 , 0 ] ) cube( [ 105.5 , 2 , 35 ] );  
+    // heatbed ziptie reinforcement
+    translate( [ 63 , 88.5 , 0.5 ] ) cube( [ 6.5 , 2 , 34.5 ] );   
 
-// RAMBo mounting holes
-translate( [ 102.5 , 14 , 1 ] ) rotate([0,0,90]) cylinder( h = 7, r = 5.5, $fn=6); 
-translate( [ 102.5 , 75 , 1 ] ) rotate([0,0,90]) cylinder( h = 7, r = 5.5, $fn=6); 
-translate( [ 7.5 , 14 , 1 ] ) cylinder( h = 7, r = 5.5, $fn=6); 
-translate( [ 7.5 , 75 , 1 ] ) cylinder( h = 7, r = 5.5, $fn=6); 
+    // upper panel frame reinforcement
+    translate( [ 0 , 0 , 1 ] ) cube( [ 5.5 , 7 , 34 ] );  
 
-// corners reinforcement
-translate( [ 0 , 75 , 1 ] ) cube( [ 13 , 16 , 6 ] );  
-translate( [ 0 , 70.25 , 1 ] ) cube( [ 7.5 , 11 , 6 ] ); 
-translate( [ 0 , 7.75 , 1 ] ) cube( [ 7.5 , 11 , 6 ] ); 
-translate( [ 0 , 0 , 1 ] ) cube( [ 13 , 14 , 6 ] ); 
+    // side panel reinforcement
+    translate( [ 0 , 0 , 1 ] ) cube( [ 9 , 92 , 3 ] );  
+    translate( [ 98 , 0 , 0 ] ) cube( [ 9 , 92 , 4 ] ); 
 
-// frame mounting screw blocks
-translate( [ 98 , 0 , 0 ] ) cube( [ 16.5 , 8 , 8 ] ); 
-translate( [ 1 , 0 , 0 ] ) cube( [ 19.5 , 8 , 8 ] );  
-translate( [ 16.5 , 8 , 5 ] ) rotate([90,0,0]) cylinder( h = 8, r = 5, $fn=30);   
-translate( [ 110.5 , 8 , 5 ] ) rotate([90,90,0]) cylinder( h = 8, r = 5, $fn=30);
-translate( [ 18.45 , 0 , 0 ] ) cube( [ 3 , 8 , 5.5] ); 
-
-// heatbed filament holder body
-translate( [ 81.6 , 90.35 , 24 ] ) rotate([0,90,0]) cylinder( h = 17, r = 5, $fn=6); 
-
-// door closing corner
-translate( [ 102 , 88.5 , 35 ] ) cylinder( h = 3, r1=2.5, r2=1, $fn=30);   
-
-translate( [ 2 , 85 , 31 ] ) cube( [ 6 , 7 , 4] ); 
-translate( [ 4 , 88.5 , 35 ] ) cylinder( h = 3, r1=2.5, r2=1, $fn=30);   
-translate( [ 89 , 2 , 0 ] ) cylinder( h = 5, r = 6, $fn=6);   
-
-}
-
-
-
-module inside_cable_holder(){
-    
-translate( [ 50 , 6 , 0.5 ] ) cube( [ 30, 2, 20] ); 
-difference(){
-translate( [ 50 , 8 , 25 ] ) rotate([0,90,0]) cylinder( h = 30, r = 6, $fn=6);   
-translate( [ 49 , 8 , 25 ] ) rotate([0,90,0]) cylinder( h = 34, r = 4, $fn=6);  
-translate( [ 49 , 8 , 10 ] ) cube( [ 34, 10, 25] );     
-}
-    
+difference()
+    {
+    // bottom side reinforcement    
+    translate( [ 98 , 86 , 0 ] ) cube( [ 7.5 , 6 , 35 ] ); 
+    translate( [ 96 , 79 , 0 ] ) rotate([0,0,45]) cube( [ 7.5 , 6 , 36 ] ); 
     }
+    translate( [ 0 , 85 , 0 ] ) cube( [ 5.5 , 7 , 35 ] ); 
+
+    // screw mounting block
+    translate( [ 54 , 84 , 0 ] ) cube( [ 9.5 , 7 , 35 ] );  
+
+    // frame side panel
+    translate( [ 20 , 0 , 0 ] ) cube( [ 80 , 3 , 5 ] );  
+
+    // RAMBo mounting holes
+    translate( [ 102.5 , 14 , 1 ] ) rotate([0,0,90]) cylinder( h = 7, r = 5.5, $fn=6); 
+    translate( [ 102.5 , 75 , 1 ] ) rotate([0,0,90]) cylinder( h = 7, r = 5.5, $fn=6); 
+    translate( [ 7.5 , 14 , 1 ] ) cylinder( h = 7, r = 5.5, $fn=6); 
+    translate( [ 7.5 , 75 , 1 ] ) cylinder( h = 7, r = 5.5, $fn=6); 
+
+    // corners reinforcement
+    translate( [ 0 , 75 , 1 ] ) cube( [ 13 , 16 , 6 ] );  
+    translate( [ 0 , 70.25 , 1 ] ) cube( [ 7.5 , 11 , 6 ] ); 
+    translate( [ 0 , 7.75 , 1 ] ) cube( [ 7.5 , 11 , 6 ] ); 
+    translate( [ 0 , 0 , 1 ] ) cube( [ 13 , 14 , 6 ] ); 
+
+    // frame mounting screw blocks
+    //upper
+    translate( [ 1 , 0 , 0 ] ) cube( [ 28 , 4 , 10 ] );  
+    translate( [ 18.45 , 0 , 0 ] ) cube( [ 3 , 4 , 5.5] ); 
+
+    //lower
+    translate( [ 98 , 0 , 0 ] ) cube( [ 20.5 , 4 , 10 ] ); 
+
+    // heatbed filament holder body
+    translate( [ 81.6 , 90.35 , 24 ] ) rotate([0,90,0]) cylinder( h = 18, r = 5, $fn=6); 
+
+    // door closing corner
+    translate( [ 102 , 88.5 , 35 ] ) cylinder( h = 3, r1=2.5, r2=1, $fn=30);   
+
+    // doors pin upper
+    translate( [ 2 , 85 , 31 ] ) cube( [ 6 , 7 , 4] ); 
+    translate( [ 4 , 88.5 , 35 ] ) cylinder( h = 3, r1=2.5, r2=1, $fn=30);   
+
+    // x-axis cables entry hole body
+    translate( [ 89 , 2 , 0 ] ) cylinder( h = 5, r = 6, $fn=6);   
+}
+
+
+    module ventilation_holes()
+    {
+     for ( i = [-6 : 8] ){
+      translate([46 + (i*5.5),10.5,-1]) cube([3.65,19+50,1.2]);
+      translate([46 + (i*5.5),10.5,-1]) cube([3.65,19,10]);
+      translate([46 + (i*5.5),10.5+25,-1]) cube([3.65,19,10]);
+      translate([46 + (i*5.5),10.5+50,-1]) cube([3.65,19,10]);
+    }
+}
 
 module cutouts(){
-// side     
-translate( [ 12 , 19 , 1 ] ) cube( [ 85.5 , 51 , 3 ] );   
+    // side     
+    translate( [ 12 , 19 , 1 ] ) cube( [ 85.5 , 51 , 3 ] );   
 
-// RAMBo M3 screws
-translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 10, r = 1.7, $fn=30);  
-translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 10, r = 1.7, $fn=30);  
-translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 10, r = 1.7, $fn=30);  
-translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 10, r = 1.7, $fn=30);     
+    // RAMBo M3 screws
+    translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 10, r = 1.9, $fn=30);  
+    translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 10, r = 1.9, $fn=30);  
+    translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 10, r = 1.9, $fn=30);  
+    translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 10, r = 1.9, $fn=30);     
+
+    translate( [ 7.5 , 14 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);  
+    translate( [ 102.5 , 14 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);  
+    translate( [ 102.5 , 75 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);  
+    translate( [ 7.5 , 75 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);     
+
+    translate( [ 2 , 0 , 0 ] )ventilation_holes();
     
-// frame mounting screws
-translate( [ 16.5 , 8 , 5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);   
-translate( [ 110.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);   
-translate( [ 16.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 5, r = 3, $fn=30);   
-translate( [ 110.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 5, r = 3, $fn=30);       
-translate( [ 114.5 , -2 , -1 ] ) cube( [ 5 , 15 , 10] ); 
-
-// USB connector hole
-translate( [ -1 , 41.5 , 11 ] ) cube( [ 5.5 , 13 , 11 ] );  
-
-// reset button
-translate( [ -2 , 65 , 14 ] ) rotate([0,90,0]) cylinder( h = 10, r = 2, $fn=30);  
-
-// door closing screw
-translate( [ 58.5 , 88 , -1 ] ) cylinder( h = 43, r = 1.8, $fn=30);  
+    // frame mounting screws
+    //upper    
+    translate( [ 18.5, -2 , 15.6 ] ) rotate([0,45,0]) cube( [ 15 , 10 , 10] );     
+    translate( [ 16.5 , 8 , 5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);   
+    translate( [ 16.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 5, r = 3, $fn=30);   
+    translate( [ 15.15 , -2 , 5 ] ) cube( [ 2.7 , 15 , 10] ); 
+    translate( [ 15.1 , -2 , 7 ] ) rotate([0,5,0]) cube( [ 2.8 , 15 , 10] ); 
+    translate( [ 15.1 , -2 , 7 ] ) rotate([0,-5,0]) cube( [ 2.8 , 15 , 10] ); 
 
 
-// heatbed cable opening hole
-translate( [ 75.5 , 94 , 24 ] ) rotate([90,90,0]) cylinder( h = 5, r = 7, $fn=6); 
-translate( [ 77.6 , 80 , 20.5 ] ) cube( [ 4 , 15 , 15] ); 
-translate( [ 69.4 , 95 , 27.5 ] ) rotate([90,60,0]) cube( [ 5 , 10 , 10] ); 
+    //lower
+    translate( [ 110.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 10, r = 1.6, $fn=30);   
+    translate( [ 110.5 , 9 , 5 ] ) rotate([90,0,0]) cylinder( h = 5, r = 3, $fn=30);       
+    translate( [ 118.5 , -2 , 6 ] ) rotate([0,-45,0]) cube( [ 5 , 15 , 15] ); 
+    translate( [ 94.5 , -2 , 8.5 ] ) rotate([0,45,0]) cube( [ 5 , 8 , 15] ); 
+    translate( [ 0 , -2 , -5 ] ) cube( [ 120 , 15 , 5] ); 
+    translate( [ 109.15 , -2 , 5 ] ) cube( [ 2.7 , 15 , 10] ); 
+    translate( [ 109.3 , -2 , 6.5 ] ) rotate([0,5,0]) cube( [ 2.5 , 15 , 10] ); 
+    translate( [ 109.2 , -2 , 6.5 ] ) rotate([0,-5,0]) cube( [ 2.5 , 15 , 10] ); 
 
-// heatbed cable ziptie holes
-translate( [ 64 , 87 , 30 ] ) cube( [ 4 , 10 , 2 ] ); 
-translate( [ 64 , 87 , 16 ] ) cube( [ 4 , 10 , 2 ] );  
+    // USB connector hole
+    translate( [ -1 , 41.5 , 11 ] ) cube( [ 5.5 , 13 , 11 ] );  
 
+    // reset button
+    translate( [ -2 , 65 , 14 ] ) rotate([0,90,0]) cylinder( h = 10, r = 2, $fn=30);  
 
-
-// heatbed filament holder hole
-translate( [ 81 , 89 , 24 ] ) rotate([0,90,0]) cylinder( h = 17, r = 1.6, $fn=30); 
-translate( [ 81 , 89 , 24 ] ) rotate([0,90,0]) cylinder( h = 2, r = 2, r2=1.6, $fn=30);  
-translate( [ 70 , 92 , 15 ] ) cube( [ 30 , 10 , 15] ); 
-
-
-// nut traps
-translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=6);  
-translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=6);  
-translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=6);  
-translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=6);  
-
-translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-translate( [ 58.5 , 88 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=30);   
+    // door closing screw
+    translate( [ 58.5 , 88 , -1 ] ) cylinder( h = 43, r = 1.9, $fn=30);  
 
 
-// door closing corners
-translate( [ 8 , 80 , 28 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 10] ); 
-translate( [ 106 , 81 , 4 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 40] ); 
+    // heatbed cable opening hole
+    difference()
+    {
+    translate( [ 75.5 , 94 , 24 ] ) rotate([90,90,0]) cylinder( h = 5, r = 7, $fn=6); 
+    translate( [ 71 , 80 , 13.5 ] ) cube( [ 8 , 15 , 5] ); 
+    }
+    translate( [ 73 , 80 , 20.5 ] ) cube( [ 5 , 15 , 15] ); 
+
+
+    // heatbed cable ziptie holes
+    translate( [ 64 , 87 , 30 ] ) cube( [ 4 , 10 , 2 ] );   
+    translate( [ 64 , 87 , 16 ] ) cube( [ 4 , 10 , 2 ] );   
 
 
 
-// x axis cable hole
-translate( [ 89 , 2 , -1 ] ) cylinder( h = 10, r = 4, $fn=6);   
-translate( [ 80 , -5 , -1 ] ) cube( [ 15, 5, 10] ); 
+    // heatbed filament holder hole
+    translate( [ 81 , 89 , 24 ] ) rotate([0,90,0]) cylinder( h = 17, r = 1.8, $fn=30);   
+    translate( [ 81 , 89 , 24 ] ) rotate([0,90,0]) cylinder( h = 2, r = 2, r2=1.8, $fn=30);   
+    translate( [ 70 , 92 , 15 ] ) cube( [ 30 , 10 , 15] ); 
 
 
+    // nut traps HEX  
+    translate( [ 7.5 , 14 , -1 ] ){
+    cylinder( h = 4, r = 3.2, $fn=6);  
+    rotate([0,0,0]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,60]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,120]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    }
 
-// large corner coutout
-translate( [ -25 , 80 , -54 ] ) rotate([50,0,45]) cube( [ 50, 50, 50] ); 
-translate( [ 137.5 , 60 , -10 ] ) rotate([0,0,45]) cube( [ 50, 50, 50] ); 
+    translate( [ 102.5 , 14 , -1 ] ){
+    cylinder( h = 4, r = 3.2, $fn=6);  
+    rotate([0,0,0]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,60]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,120]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    }
+
+    translate( [ 102.5 , 75 , -1 ] ){
+    cylinder( h = 4, r = 3.2, $fn=6);  
+    rotate([0,0,0]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,60]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,120]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    }
+
+    translate( [ 7.5 , 75 , -1 ] ){
+    cylinder( h = 4, r = 3.2, $fn=6);  
+    rotate([0,0,0]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,60]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    rotate([0,0,120]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
+    }
+
+    translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
+    translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
+    translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
+    translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
+    translate( [ 58.5 , 88 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=30);   
+
+    // door closing corners
+    translate( [ 8 , 80 , 28 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 10] ); 
+    translate( [ 106 , 81 , 4 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 40] ); 
+
+    // inner edges cutout
+    translate( [ 54 , 79.5 , 2 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 50] ); 
+    translate( [ 70 , 82.5 , 2 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 50] ); 
+    translate( [ 6 , 80 , 7 ] ) rotate([0,0,45]) cube( [ 5 , 5 , 24] ); 
+    translate( [ 5.5 , 4 , 7 ] ) rotate([0,0,45]) cube( [ 3 , 5 , 29] ); 
+
+    // x axis cable hole
+    translate( [ 89 , 2 , -1 ] ) cylinder( h = 10, r = 4, $fn=6);   
+    translate( [ 80 , -5 , -1 ] ) cube( [ 15, 5, 10] ); 
+
+    // large corner coutout
+    translate( [ -27 , 80 , -54 ] ) rotate([50,0,45]) cube( [ 50, 50, 50] ); 
+    translate( [ 137.5 , 60 , -10 ] ) rotate([0,0,45]) cube( [ 50, 50, 50] ); 
+
 
 }
 
-module ext_ziptie(){
-difference(){
-translate( [ -6 , 28 , 27 ] ) rotate([0,90,0]) cylinder( h = 3, r = 15, $fn=30);       
-translate( [ -7 , 28 , 27 ] ) rotate([0,90,0]) cylinder( h = 5, r = 7, $fn=30);       
-}
-}
-
-
+// extruder cable holder
 module ext_cable_holder()
 {
 difference()
 {
+    // body
     union(){
-        rotate([90,0,0]) translate([-8, 26, -28]) rotate([0,90,0]) cylinder( h = 4, r1 = 7, r2=10, $fn=6);    
-        rotate([90,0,0]) translate([-4, 26, -28]) rotate([0,90,0]) cylinder( h = 4, r1 = 10, r2=10, $fn=6);    
-        rotate([90,0,0]) translate( [ 1.5 , 26 , -28 ] ) rotate([0,90,0]) cylinder( h = 10, r1 = 10, r2=7, $fn=6);
-        translate( [ -4.1 , 28 , 17.5 ] ) rotate([0,45,0]) cube( [ 7 , 5 , 8 ] );           
+        rotate([90,0,0]) translate([-8, 26, -28]) rotate([0,90,0]) cylinder( h = 4, r1 = 8, r2=11, $fn=6);    
+        rotate([90,0,0]) translate([-4, 26, -28]) rotate([0,90,0]) cylinder( h = 4, r1 = 11, r2=11, $fn=6);    
+        rotate([90,0,0]) translate( [ 1.5 , 26 , -28 ] ) rotate([0,90,0]) cylinder( h = 10, r1 = 13, r2=7.5, $fn=6);
+        translate( [-4, 28, 16.5 ] ) rotate([0,45,0]) cube( [ 6 , 5.5 , 7 ] );          
     }
     
+    // upper cut
     translate( [ -15 , 13 , 15] ) cube( [ 15 , 15 , 25 ] );  
-    translate( [ 1.5 , 26 , 10] ) cube( [ 15 , 15 , 25 ] );   
+    // lower cut
+    translate( [ 1.5 , 26 , 10] ) cube( [ 15 , 15 , 26 ] );  
  
+    // ziptie holder
     difference(){
-        rotate([90,0,0]) translate([-4, 26, -28]) rotate([0,90,0]) cylinder( h = 3.5, r = 8,  $fn=30);    
-        rotate([90,0,0]) translate([-5, 26, -28]) rotate([0,90,0]) cylinder( h = 5.5, r = 6.5,  $fn=30);    
+        rotate([90,0,0]) translate([-4, 26, -28]) rotate([0,90,0]) cylinder( h = 3.5, r = 8.5,  $fn=30);    
+        rotate([90,0,0]) translate([-5, 26, -28]) rotate([0,90,0]) cylinder( h = 5.5, r = 6.2,  $fn=30);    
         }
 }
 }
 
 
-
-
-
-
-
 module rambo_cover()
 {
-    difference()
-    {
+    ext_cable_holder();   
+    difference(){
     main_body();
     cutouts();
+    
     }
 }
 
+difference(){
+    union(){
+        // extruder cable filament holder body
+        translate( [ 4.5 , 25.5 , 26 ] ) rotate([0,90,0]) cylinder( h = 7, r = 3.5, $fn=6);  
+        translate( [ 4.5 , 22.5 , 22.5] ) cube( [ 7 , 3 , 7 ] );   
+        translate( [ 4.5 , 23.5 , 20.8] ) cube( [ 7 , 2.5 , 7 ] );   
+        translate( [ 4.5 , 24.7 , 26 ] ) rotate([0,90,0]) cylinder( h = 7, r = 3, $fn=30);   
+        }
+    // extruder filament inner hole
+    translate( [ -5 , 25 , 26 ] ) rotate([0,90,0]) cylinder( h = 20, r = 1.75, $fn=30);   
+    translate( [ 4, 25 , 26 ] ) rotate([0,90,0]) cylinder( h =3, r1 = 1.9, r2=1.75, $fn=30);   
+}
+
 
 difference(){
 
-union(){
 rambo_cover();
-    translate( [ 10 , 89 , 3] ) cube( [ 6 , 1 , 32 ] ); 
-    translate( [ 12 , 89 , 1] ) cube( [ 4 , 1 , 2 ] ); 
-}
 
-translate( [ 25 ,89 , 20.8] ) cube( [ 7.4 , 5 , 16 ] );  //Cube018   
-translate( [ 25 , 95 , 25 ] ) rotate([90,90,0]) cylinder( h = 7, r = 8.5, $fn=6);   
 
-// extruder cable zipties
-translate( [ 11 , 87 , 30 ] ) cube( [ 4 , 10 , 2 ] );  
-translate( [ 11 , 87 , 16 ] ) cube( [ 4 , 10 , 2 ] );  
+    // upper extruder cable opening
+    translate( [ -5 , 28 , 26 ] ) rotate([0,90,-15]) cylinder( h = 20, r = 1.4, $fn=30);  
     
+    // main hole
+    translate( [ -10 , 28 , 26 ] ) rotate([0,90,0]) cylinder( h = 24, r = 5.5, $fn=30);   
+    // cable opening slot
+    translate( [ -15 , 26.5 , 30 ] ) cube( [ 30 , 3 , 10 ] ); 
+    
+    // flatten on door side 
+    translate( [ -15 , 20 , 35 ] ) cube( [ 30 , 20 , 20 ] );  
+
+    // opening slot cuts
+    translate( [ -1.5 , 26 , 33] ) rotate([45,0,45]) cube( [ 3 , 3 , 3 ] );  
+    translate( [ 1 , 28 , 33] ) rotate([45,0,45]) cube( [ 3 , 3 , 3 ] );  
+
+
+    // screw body edge
+    translate( [ 65 ,74.2 , 2] ) rotate([0,0,45]) cube( [ 10 , 10 , 50 ] );     
+    
+    // lightening slots
+    translate( [ 100 ,21 , 2] ) cube( [ 5 , 48 , 5 ] );     
+    translate( [ 3 ,21 , 2] ) cube( [ 4.5, 48 , 5 ] );     
+
+
+    // bottom holes print supports
+    translate( [ 7.5 , 14 ,0] ){
+    translate( [ 0 , 0 , 2.5 ] ) cube([3.2,5.6,2], center=true);
+    translate( [ 0 , 0 , 3 ] ) cube([3.2,3.8,2], center=true);
+    }
+
+    translate( [ 102.5 , 14 ,0] ){
+    translate( [ 0 , 0 , 2.5 ] ) cube([3.2,5.6,2], center=true);
+    translate( [ 0 , 0 , 3 ] ) cube([3.2,3.8,2], center=true);
+    }
+
+    translate( [ 102.5 , 75 ,0] ){
+    translate( [ 0 , 0 , 2.5 ] ) cube([3.2,5.6,2], center=true);
+    translate( [ 0 , 0 , 3 ] ) cube([3.2,3.8,2], center=true);
+    }
+
+    translate( [ 7.5 , 75 ,0] ){
+    translate( [ 0 , 0 , 2.5 ] ) cube([3.2,5.6,2], center=true);
+    translate( [ 0 , 0 , 3 ] ) cube([3.2,3.8,2], center=true);
+    }
+
+    translate( [ 58.5 , 88 ,0] ){
+       intersection(){cylinder(r=3.2, h=10, $fn=30);
+    translate( [ 0 , 0 , 2.5 ] ) cube([3.8,8,2], center=true);}
+    translate( [ 0 , 0 , 3 ] ) cube([3.8,3.8,2], center=true);
+    }
 
 
 }
-
-module extruder_filament_holder()
-{
-difference(){
-translate( [ 33 , 90 , 25 ] ) rotate([0,90,0]) cylinder( h = 22, r = 8, $fn=4);  
-translate( [ 30 , 88 , 25 ] ) rotate([0,90,0]) cylinder( h = 22, r = 1.6, $fn=30);  
-translate( [ 32 , 88 , 25 ] ) rotate([0,90,0]) cylinder( h = 3, r1 = 2, r2=1.6, $fn=30); 
-translate( [ 26 ,79 , 20.8] ) cube( [ 30 , 5 , 16 ] );          
-translate( [ 26 ,91 , 15] ) cube( [ 30 , 15 , 16 ] );     
-}
-}
-
-extruder_filament_holder();
-
-// print part support
-translate([0,1,0])
-difference(){
-translate( [ 18 ,90 , 15] ) cube( [ 7 , 1 , 19 ] );    
-translate( [ 17 ,90.6 , 29.4] ) rotate([0,60,0]) cube( [ 1 , 1 , 19 ] );    
-translate( [ 30 ,90.6 , 13.1] ) rotate([0,-60,0]) cube( [ 1 , 1 , 19 ] );    
-translate( [ 30 ,89 , 13] ) rotate([0,-60,0]) cube( [ 10 , 3 , 10 ] );    
-
-translate( [ 20 ,100, 20 ] ) rotate([90,0,0]) cylinder( h = 33, r = 1, $fn=30);     
-translate( [ 21 ,99, 31 ] ) rotate([90,0,0]) cylinder( h = 33, r = 1, $fn=30);     
-}
-
-
-
-// print part support
-difference()
-{
-translate( [ 70 ,90.5 , 15] ) cube( [ 7.5 , 1 , 19 ] );     
-translate( [ 69 ,91 , 27.8] ) rotate([0,60,0]) cube( [ 1 , 1 , 19 ] );    
-translate( [ 80 ,91 , 13.9] ) rotate([0,-60,0]) cube( [ 1 , 1 , 19 ] );    
-translate( [ 81.5 ,90 , 10] ) rotate([0,-60,0]) cube( [ 10 , 2 , 10 ] );    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

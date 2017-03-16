@@ -1,13 +1,18 @@
-
+// PRUSA iteration3
+// Extruder idler
+// GNU GPL v3
+// Josef Průša <iam@josefprusa.cz> and contributors
+// http://www.reprap.org/wiki/Prusa_Mendel
+// http://prusamendel.org
 
 module part_body(){
     
     //bottom round edge
     translate([ -7, 4, 6 ]) rotate([0,90,0]) cylinder(r=4, h=21.5, $fn=200 );
     translate([ -7, 4, 4 ]) rotate([0,90,0]) cylinder(r=4, h=21.5, $fn=200 );
-
     translate([ 11, 8, 4 ])  cube([3.5,4,6]);
     
+
     difference()
     {
         translate([ -7, 0, 4 ])  cube([21.5,5,6]);
@@ -15,9 +20,7 @@ module part_body(){
     }
     
     translate([ -7, 8, 4 ]) rotate([0,90,0]) cylinder(r=4, h=21.5, $fn=200 );
-
     translate([ 11, 0, 4]) cube([3.5,12,2]);
-    
     translate([ 11, 4, 8]) cube([3.5,4,2]);
     translate([ 11, 4, 0]) cube([3.5,4,2]);
     

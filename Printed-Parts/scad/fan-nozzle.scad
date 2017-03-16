@@ -1,3 +1,10 @@
+// PRUSA iteration3
+// Fan nozzle
+// GNU GPL v3
+// Josef Průša <iam@josefprusa.cz> and contributors
+// http://www.reprap.org/wiki/Prusa_Mendel
+// http://prusamendel.org
+
 module fan_nozzle(){
     
 difference(){    
@@ -5,14 +12,16 @@ union(){
 cube([32,10,17]); // Main cube
 translate([30,5,0])cylinder(r=5.8,h = 17, $fn=6);    
 translate([-3,0,-6]) cube([3,10,23]);
-//#translate([-2,5,0])cylinder(r=5.8,h = 17, $fn=6);        
 }
+
 // Mounting screw
 translate([30,5,-10])cylinder(r=3.2/2,h = 24.5-0.2, $fn=15); // Screw cut
+intersection(){
+translate([30,5,9])cylinder(r=3.1,h = 25, $fn=15); // head cut
+translate([30,5,17-3.5]) cube([6.2,3.2,1], center=true);
+}
+translate([30,5,17-4]) cube([3.2,3.2,1], center=true);
 translate([30,5,17-3.5])cylinder(r=3.1,h = 20, $fn=15); // head cut
-
-//#translate([-2,5,-10])cylinder(r=3.2/2,h = 24.5-0.2, $fn=15); // Screw cut
-//#translate([-2,5,17-3.5])cylinder(r=3.1,h = 20, $fn=15); // head cut
 
 // Fan entry hole
 translate([1,10-1.5,-1])cube([20,3,16.5]);
@@ -25,8 +34,8 @@ translate([0,0,10])rotate([45,0,0])cube([30,8,16.5]);
 translate([-1,-10,-1])rotate([0,0,45])cube([10,8,30]); 
 translate([20,0,16])rotate([0,20,0])cube([10,20,10]);    
 }
+
 translate([2,-1,-4.5])cube([24,3,5]);
-//#translate([-2,-1,-2])rotate([0,45,0])cube([5,10,5]);
 translate([22,-1,-2])rotate([0,45,0])cube([5,10,5]);
     
 }
