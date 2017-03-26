@@ -19,7 +19,7 @@ module x_carriage_base(){
  // Base plate
  translate([-33,-12,0]) cube([33,68.5,7]);
  // upper motor srew block
- translate([-19,57,0]) rotate([0,0,0]) cube([28.5,16,12]); 
+ translate([-19,56.8,0]) rotate([0,0,0]) cube([28.5,16.2,12]); 
  
     // Extruder cable tray
  difference(){   
@@ -114,9 +114,11 @@ module x_carriage_holes(){
  translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_holes(2);
   
     // Extruder mounting holes
-  translate([-16.5+12,24.5,-1])cylinder(r=1.7, h=20, $fn=25);
+  translate([-16.5+12,24.5,-1])cylinder(r=1.8, h=20, $fn=25);
+  translate([-16.5+12,24.5,-0.1])cylinder(r1=2.1,r2=1.8, h=0.5, $fn=25);
   translate([-16.5+12,24.5,12])cylinder(r=5.8/2, h=20, $fn=25); 
-  translate([-16.5-12,24.5,-1])cylinder(r=1.7, h=20, $fn=25);
+  translate([-16.5-12,24.5,-1])cylinder(r=1.8, h=20, $fn=25);
+  translate([-16.5-12,24.5,-0.1])cylinder(r1=2.1,r2=1.8, h=0.5, $fn=25);
   translate([-16.5-12,24.5,12])cylinder(r=5.8/2, h=20, $fn=25); 
    
   // Carriage alignment
@@ -199,12 +201,8 @@ module upper_ziptie_holder()
                     translate([-23,21,17])rotate([0,0,0])cube([5,2,5]);
                     }    
                 difference(){
-                    union(){
-                    translate([-23,11.5,16.5]) cube([13,7,7.5]);  
-                    translate([-23,13,15.5]) rotate([45,0,0])cube([13,2,2]);  
-                    translate([-23,17.5,16]) rotate([45,0,0])cube([13,1,1]);
-                    }
-                    //translate([-30,15.5,14]) rotate([0,90,0]) cylinder(r=3, h=22, $fn=30); 
+                    translate([-23,11.5,15]) cube([13,7,9]);  
+                    #translate([-30,15.5,14.8]) rotate([0,90,0]) cylinder(r=2, h=22, $fn=30); 
                     translate([-24,11,18]) rotate([45,0,0]) cube([20,10,10]); 
                     }
                 }
@@ -226,8 +224,8 @@ module final_cutout(){
     translate([-43,0,16]) rotate([0,45,0]) cube([5,15,5]);
     translate([5,0,16]) rotate([0,45,0]) cube([5,15,5]);
     
-    translate([-4.5,0,18.7]) rotate([0,45,0]) cube([5,15,5]);
-    translate([-34.5,0,18.7]) rotate([0,45,0]) cube([5,15,5]);
+    translate([-4.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
+    translate([-34.5,0,18.5]) rotate([0,45,0]) cube([5,15,5]);
     
    
     translate([-19,7,13.5]) rotate([-15,0,0]) cube([5,5,50]);      
@@ -237,8 +235,9 @@ module final_cutout(){
 module x_carriage(){
  difference(){
       union(){
-         difference(){
-      x_carriage_base();
+         difference()
+     {
+        x_carriage_base();
       x_carriage_holes();
       x_carriage_fancy();
      }
@@ -256,12 +255,44 @@ module x_carriage(){
 difference(){
 union(){
     x_carriage();
-    
+    //translate([7.3,-16,0]) 
+    //translate([2,-19,0]) cube([7.5,12,0.5]);        
+    //translate([5,-16,0]) cube([4.5,1,5]);        
+    //translate([5,-11.2,0]) cube([4.5,1,5]);        
+    //translate([5.5,7.5,0]) cube([4,3.5,0.5]);    
 }
-translate([2.5,67.5,-50]) rotate([0,0,0]) cylinder(r=1.5, h=100, $fn=30);
+translate([2.5,67.5,-50]) rotate([0,0,0]) cylinder(r=1.8, h=100, $fn=30);
+#translate([2.5,67.5,-0.1])cylinder(r1=2.1,r2=1.8, h=0.5, $fn=25);
 translate([2.5,67.5,5]) rotate([0,0,0]) cylinder(r=3.2, h=8, $fn=30);
 translate([0,21,0]) rotate([0,90,0]) cylinder(r=5.2, h=5.5, $fn=25);
 //translate([2 ,-5,-5])cube([20,50,30]);
+
+translate([-36.5,21.25,1.5]) cube([0.1,4.5,13.3]);      
+translate([-38.6,21,1.5]) cube([0.1,6,13.3]);      
+translate([-41,21,1.5]) cube([0.1,6,13.3]);      
+
+
+translate([3.5,21,6]) cube([0.1,2,8.8]);      
+translate([5,21,6]) cube([0.1,3,8.8]);      
+translate([6.8,21,1.5]) cube([0.1,3,13.3]);      
+translate([8.5,21,5]) cube([0.1,3,9.8]);      
+
+    translate([5,-15.4,-1]) rotate([0,45,0]) cube([0.3,4.6,8]);        
+    translate([7.45,6,-1]) cube([0.5,1,5]);        
+    translate([7.45,11.5,-1]) cube([0.5,1.8,5]);        
+    
+    translate([5,-16.4,-1]) rotate([0,45,0]) cube([0.3,0.5,8]);        
+    translate([5,-10.3,-1]) rotate([0,45,0]) cube([0.3,0.5,8]);    
+    translate([6,-16.5,-1]) cube([1,0.5,5]);        
+    translate([3,-16.5,-1]) cube([2,0.5,5]);  
+    translate([6,-10.2,-1]) cube([1,0.5,5]);        
+    translate([3,-10.2,-1]) cube([2,0.5,5]);  
+    translate([6,7.5,-1]) cube([1,0.5,5]);  
+    translate([6,10.5,-1]) cube([1,0.5,5]);  
+
+//half cut
+//translate([-50 ,-50,8])cube([100,100,30]);
+
 }
 
 
