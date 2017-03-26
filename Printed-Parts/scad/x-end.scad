@@ -7,6 +7,11 @@
 
 use <bearing.scad>
 use <polyholes.scad>
+
+// Parameters 
+rod_distance = 45; // Distance between vertical rods
+tr_hole 14= ; // Diameter of hole for threaded rod (mm). For 22mm flange, this is 10.5mm
+tr_nut_distance = 19; // Distance between anchors of threaded rod (mm). For 22mm flange, this is 16mm
 rod_distance = 45;
 
 module x_end_base(){
@@ -62,17 +67,17 @@ translate(v=[-15,-41.5,rod_distance+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 
 // TR Nut trap
    // Hole for the nut
-    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 7, $fn = 25);
-    translate(v=[0,-17, -0.1]) cylinder(h = 0.5, r1 = 6.8+0.8,r2 = 7, $fn = 25);
+    translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = tr_hole/2, $fn = 25);
+    translate(v=[0,-17, -0.1]) cylinder(h = 0.5, r1 = (tr_hole/2)+0.6, r2 = tr_hole/2, $fn = 25);
 
 // Screw holes for TR nut
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -1]) cylinder(h = 10, r = 1.8, $fn=25);
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -1]) cylinder(h = 10, r = 1.8, $fn=25);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, tr_nut_distance/2, -1]) cylinder(h = 10, r = 1.8, $fn=25);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -tr_nut_distance/2, -1]) cylinder(h = 10, r = 1.8, $fn=25);
 
 // Nut traps for TR nut screws
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.45, $fn=6);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, tr_nut_distance/2, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.45, $fn=6);
 
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, 6]) rotate([0, 0, 30])cylinder(h = 3, r = 3.2, $fn=6);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -tr_nut_distance/2, 6]) rotate([0, 0, 30])cylinder(h = 3, r = 3.2, $fn=6);
     translate([-5.5,-17.2,6]) rotate([0,0,30]) cube([5,5,3]);
     translate([-0,-17.2,6]) rotate([0,0,60]) cube([5,10,3]);
 }
@@ -96,4 +101,3 @@ module pushfit_rod(diameter,length){
  	translate(v=[0,-diameter/4-diameter/2-0.4,length/2]) rotate([0,0,0]) cube(size = [diameter,diameter/2,length], center = true);
  }
  }
-
