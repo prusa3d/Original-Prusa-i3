@@ -1,4 +1,4 @@
-# Original Prusa i3 MK2
+# Original Prusa i3 MK2 + Multi Material upgrade
 
 
 Original Prusa i3 MK2 is a 3D printer project maintained by PRUSA RESEARCH.
