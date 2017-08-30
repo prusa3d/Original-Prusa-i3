@@ -6,6 +6,34 @@
 // http://prusamendel.org
 
 
+module CubicPattern(Xdim, Ydim){
+        for (x =[0:12:Xdim-10])
+        {
+            for (y =[0:12:Ydim-10])
+            {
+                translate([x,y,-0.2])cube([10,10,0.4]);
+            }
+        }
+    
+        
+}
+
+module BottomCubic()
+{
+    difference()
+    {
+        translate([5,5,0]) CubicPattern(110,90);
+        translate([11,0,-1]) cube( [ 11, 40 , 4 ] );  
+        translate([0,0,-1]) cube( [ 11, 28 , 4 ] );  
+        translate([0,64,-1]) cube( [ 16, 28 , 4 ] ); 
+        translate([95,64,-1]) cube( [ 20, 28 , 4 ] );  
+        translate([95,0,-1]) cube( [ 20, 28 , 4 ] );  
+        translate([76,-10,-1]) cube( [ 20, 20 , 4 ] );  
+        translate([52,76,-1]) cube( [ 12, 20 , 4 ] );  
+    }
+}
+
+
 
 // main body
 module main_body(){
@@ -74,7 +102,7 @@ difference()
     translate( [ 89 , 2 , 0 ] ) cylinder( h = 5, r = 6, $fn=6);   
 }
 
-
+/*
     module ventilation_holes()
     {
      for ( i = [-6 : 8] ){
@@ -83,8 +111,9 @@ difference()
       translate([46 + (i*5.5),10.5+25,-1]) cube([3.65,19,10]);
       translate([46 + (i*5.5),10.5+50,-1]) cube([3.65,19,10]);
     }
-}
 
+}
+*/
 module cutouts(){
     // side     
     translate( [ 12 , 19 , 1 ] ) cube( [ 85.5 , 51 , 3 ] );   
@@ -100,7 +129,7 @@ module cutouts(){
     translate( [ 102.5 , 75 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);  
     translate( [ 7.5 , 75 , 6 ] ) cylinder( h = 3, r1 = 1.9, r2=2.4, $fn=30);     
 
-    translate( [ 2 , 0 , 0 ] )ventilation_holes();
+    //translate( [ 2 , 0 , 0 ] )ventilation_holes();
     
     // frame mounting screws
     //upper    
@@ -182,10 +211,10 @@ module cutouts(){
     rotate([0,0,120]) resize([0,2,0]) cylinder( h = 4, r = 3.5, $fn=6);  
     }
 
-    translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-    translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-    translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
-    translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 5, r2=3.2, $fn=6);  
+    translate( [ 7.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 6, r2=3.2, $fn=6);  
+    translate( [ 102.5 , 14 , -1 ] ) cylinder( h = 1.5, r1 = 6, r2=3.2, $fn=6);  
+    translate( [ 102.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 6, r2=3.2, $fn=6);  
+    translate( [ 7.5 , 75 , -1 ] ) cylinder( h = 1.5, r1 = 6, r2=3.2, $fn=6);  
     translate( [ 58.5 , 88 , -1 ] ) cylinder( h = 4, r = 3.2, $fn=30);   
 
     // door closing corners
@@ -260,11 +289,19 @@ difference(){
 }
 
 
+
+
 difference(){
 
 rambo_cover();
-
-
+    
+    
+    BottomCubic();
+    translate( [ 14.5, 10, -2 ] ) cube( [ 4 , 24 , 10 ] ); 
+    translate( [ 16.5, 10, -2 ] ) cylinder( h = 20, r = 2, $fn=30);  
+    translate( [ 16.5, 34, -2 ] ) cylinder( h = 20, r = 2, $fn=30);  
+    
+    
     // upper extruder cable opening
     translate( [ -5 , 28 , 26 ] ) rotate([0,90,-15]) cylinder( h = 20, r = 1.4, $fn=30);  
     
@@ -277,9 +314,10 @@ rambo_cover();
     translate( [ -15 , 20 , 35 ] ) cube( [ 30 , 20 , 20 ] );  
 
     // opening slot cuts
-    translate( [ -1.5 , 26 , 33] ) rotate([45,0,45]) cube( [ 3 , 3 , 3 ] );  
+    translate( [ -2.5 , 26 , 30] ) rotate([40,0,30]) cube( [ 9 , 2 , 8 ] );  
+    translate( [ -2.5 , 24 , 30] ) rotate([0,0,20]) cube( [ 9 , 2 , 8 ] );  
     translate( [ 1 , 28 , 33] ) rotate([45,0,45]) cube( [ 3 , 3 , 3 ] );  
-
+    translate( [ -2.5 , 28 , 28] ) rotate([40,0,30]) cube( [ 9 , 2 , 8 ] );  
 
     // screw body edge
     translate( [ 65 ,74.2 , 2] ) rotate([0,0,45]) cube( [ 10 , 10 , 50 ] );     
