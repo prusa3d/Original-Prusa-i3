@@ -44,8 +44,13 @@ difference()
     translate([2,40,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
 
     // M3 nuts 
-    translate([0,46,9]) m3nut();
-    translate([0,37,9]) m3nut();
+    //translate([0,46,9]) m3nut();
+    translate([0,42,9]) m3nut();
+    translate([2,45,11.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([2,45,12])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([2,45,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([-20,45,12])rotate([0,90,0])cylinder(r=1.7, h=24, $fn=20);    
+    
     }
     
 
@@ -185,24 +190,24 @@ difference()
 
     
     // M3 screws 
-    translate([-20,49,12])rotate([0,90,0])cylinder(r=1.7, h=24, $fn=20);    
-    translate([-20,40,12])rotate([0,90,0])cylinder(r=1.7, h=24, $fn=20);    
-    translate([-14,49,12])rotate([0,90,0])cylinder(r=3, h=5, $fn=20);    
-    translate([-14,40,12])rotate([0,90,0])cylinder(r=3, h=5, $fn=20);   
+    //translate([-20,49,12])rotate([0,90,0])cylinder(r=1.7, h=24, $fn=20);    
+    translate([-20,45,12])rotate([0,90,0])cylinder(r=1.7, h=24, $fn=20);    
+    //translate([-14,49,12])rotate([0,90,0])cylinder(r=3, h=5, $fn=20);    
+    translate([-14,45,12])rotate([0,90,0])cylinder(r=3, h=5, $fn=20);   
 
     // lower M3 screw end opening
-    translate([2,49,11.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
-    translate([2,49,12])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
-    translate([2,49,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
+    //translate([2,49,11.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
+    //translate([2,49,12])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
+    //translate([2,49,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20);    
 
     // upper M3 screw end opening
-    translate([2,40,11.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
-    translate([2,40,12])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
-    translate([2,40,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([2,45,11.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([2,45,12])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
+    translate([2,45,12.5])rotate([0,90,0])cylinder(r=1.6, h=3, $fn=20); 
     
     // M3 nuts opening
-    translate([0,46,9]) m3nut();
-    translate([0,37,9]) m3nut();
+    translate([0,42,9]) m3nut();
+    //translate([0,37,9]) m3nut();
 
     // flat bottom side
     translate([-20,33,-10]) cube([30,35,10]);
