@@ -5,7 +5,9 @@ This is the fork of the Prusa i3 MK3, except I have converted the OpenSCAD files
 
 Unfortunately, the Assembly STEP file is too large for Github, so I also have the files on GrabCAD.
 
-You can view the GrabCAD here: https://grabcad.com/library/prusa-i3-mk3-solidworks-1
+GrabCAD link: https://grabcad.com/library/prusa-i3-mk3-solidworks-1
+
+Thingiverse link: https://www.thingiverse.com/thing:2699771
 
 Thanks to these users for helping me make this: themzlab, dan.d4, martin.m25
 
