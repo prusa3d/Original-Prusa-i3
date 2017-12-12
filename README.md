@@ -1,18 +1,31 @@
-# Original Prusa i3 MK3
+# Original Prusa i3 MK2.5 upgrade
 
 
-Original Prusa i3 MK3 is a 3D printer project maintained by PRUSA RESEARCH.
-Originates in RepRap project.
+Original Prusa i3 MK2.5 upgrade is a 3D printer project maintained by PRUSA RESEARCH. Originates in RepRap project.
 
-This repository contains SCAD files and STLs of the printed parts.
+This repository contains SCAD files and STLs of the printed parts related to MK2.5 upgrade. 
+This branch contains only parts that are needed for upgrade and are different from MK3 version.
 
-**Links**
+Parts might change until final version of upgrade is released.
 
- * Prusa Research website : http://prusa3d.com
- * Product page: https://shop.prusa3d.com/en/3d-printers/180-original-prusa-i3-mk3-kit.html
- * Build manual: http://manual.prusa3d.com/c/Original_Prusa_i3_MK3_kit_assembly
- * Firmware : https://github.com/prusa3d/Prusa-Firmware
- * MK52 heatbed : https://github.com/prusa3d/Heatbed_MK52_magnetic
- * Laser filament sensor : https://github.com/prusa3d/PRUSA_Laser_filament_sensor
- * MK3 Power panic : https://github.com/prusa3d/MK3_Power_Panic
+
+**List of printed parts needed for MK2.5 upgrade with versions :**
+
+**MK2.5**
+* X-carriage-back.stl
+* X-carriage.stl
+* Cable-holder.stl
+* Rambo-base.stl
+* Rambo-doors.stl
+* Rambo-hinges.stl
+* Extruder-cable-clip.stl
+* Heatbed-cable-clip.stl
+
+**MK3 repository**
+* Extruder-body.stl
+* Extruder-idler.stl
+* Extruder-cover.stl
+* Fan-nozzle.stl
+* Filament-sensor-cover.stl
+* Idler-plug.stl
  
