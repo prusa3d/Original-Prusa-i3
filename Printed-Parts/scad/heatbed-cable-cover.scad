@@ -1,95 +1,192 @@
 // PRUSA iteration4
-// Heatbed cable cover
+// Heatbed cover
 // GNU GPL v3
 // Josef Průša <iam@josefprusa.cz> and contributors
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
 
+
 module cover()
 {
-    translate([ -17.5, 0, 0 ]) cube([ 35, 21, 8 ]);  // cover
-    translate([ -7, 19, 0 ]) cube([ 3, 6.5, 3 ]);  // tube reinforcement
-    translate([ 4, 19, 0 ]) cube([ 3, 6.5, 3 ]);  // tube reinforcement
-    translate( [ 0 , 32 , 3 ] ) rotate( [90,0,0] ) cylinder( h = 12, r = 7, $fn=6);  // cable tube outer
-}
+    difference()
+    {
+        // base block
+        translate([-18,0,0]) cube([36,32,8.6]);
+        
+        // inner cut
+        translate([-15,-0.5,-3]) cube([30,16.5,9]);
+        translate([-0,33,3]) rotate([90,0,0]) cylinder(h = 15, r=4, $fn=60);    
+        translate([-15,15,-6]) cube([30,19,9]);
 
-module inside_cut()
-{
-    translate([ -15, -1, -1 ]) cube( [30,20,5] );     // inside cut
-    translate([ -14, 2, 4 ])  cube( [28,17,2.5 ] );     // inside cut
-    
-    translate( [ 0 , 32 , 2 ] ) rotate( [90,0,0] ) cylinder( h = 16, r = 4.5, $fn=30);  // cable tube inner
-    
-    translate([ -14, 10, -5 ])  cube( [28,25,5 ] );     // inside cut
-    translate([ -14, 10, 8 ])  cube( [28,25,3 ] );     // inside cut
-    
-    translate([ -2.5, -6, 1 ])  rotate([15,0,0]) cube( [5,10,3 ] );     // LED
-    
-    translate([ -22, -5, 7 ]) rotate([0,25,0])  cube( [5,40,6 ] );     // corners
-    translate([ 15, -5, 9 ]) rotate([0,60,0])  cube( [6,40,5 ] );     // corners
-    translate([ 20, -5, 7 ]) rotate([0,25,90])  cube( [5,40,5 ] );     // corners
-    
-    translate([ 15, -5, -1 ]) rotate([0,0,45])  cube( [5,5,5 ] );     // corners
-    translate([ -15, -5, -1 ]) rotate([0,0,45])  cube( [5,5,5 ] );     // corners
-    
-    
-    translate([ 8, 13, -10]) rotate([0,-45,45])  cube( [10,10,10 ] );     // corners
-    translate([ -8, 13, -10]) rotate([0,-45,-45])  cube( [10,10,10 ] );     // corners
+        // inner edges
+        translate([-4,4.5,0]) rotate([0,0,45])  cube([15,15,6]);
+        translate([4.0,4.51,0]) rotate([0,0,45])  cube([15,15,6]);
+        
+        // outer edges
+        translate([-18.0,25,-1]) rotate([0,0,45])  cube([11,11,10]);
+        translate([18,25,-1]) rotate([0,0,45])  cube([11,11,10]);
 
-}
+        // screw holes for clip
+        translate([-10,25,0]) cylinder(h = 10, r=1.6, $fn=50);    
+        translate([10,25,0]) cylinder(h = 10, r=1.6, $fn=50);    
 
-module ziptie()
-{
+
+        // clip nuts entry
+        translate([-10,25,8]) cylinder(h = 4, r1=3.15, r2=5, $fn=6);    
+        translate([10,25,8]) cylinder(h = 4, r1=3.15, r2=5, $fn=6);    
+
+        // clip nuts with print supports
         difference()
         {
-            translate( [ 0 , 29 , 3 ] ) rotate( [90,0,0] ) cylinder( h = 3.5, r = 10, $fn=30);  // cable tube outer
-            translate( [ 0 , 29 , 3 ] ) rotate( [90,0,0] ) cylinder( h = 3.5, r = 5.8, $fn=30);  // cable tube outer
-        }
-}
-
-module filament_holder()
-{
-        difference(){
-        translate([ -3.5,15, 2 ]) rotate([0,0,0])  cube( [7,7,6 ] );     // body ; 
-        translate( [ 0 , 24 , 4.5 ] ) rotate( [90,0,0] ) cylinder( h = 10, r = 1.4, $fn=12);  // filament
-        translate( [ 0 , 22.1 , 4.5 ] ) rotate( [90,0,0] ) cylinder( h = 1.5, r1 = 1.8, r2=1.4, $fn=12);  // filament
-
-        translate([ -6,15, 2 ]) rotate([0,45,0])  cube( [4,15,3 ] );     // corners ; previous ([ -5,15, 1 ]) cube( [3,15,3 ] )           
-        translate([ 1,15, 1 ]) rotate([0,45,0])  cube( [3,15,4 ] );     // corners ; previous  cube( [3,15,3 ] ) 
-        }
-}
-
-module m3_screw()
-{
+        union()
+            {
+                translate([-10,25,5.4]) cylinder(h = 4, r=3.15, $fn=6);    
+                translate([10,25,5.4]) cylinder(h = 4, r=3.15, $fn=6);    
+            }
+            translate([-8.4,0,0]) cube([16.8,40,5.7]);
+            translate([-16.6,0,0]) cube([5,40,5.7]);
+            translate([11.6,0,0]) cube([5,40,5.7]);
+            translate([-20,13.4,0]) cube([70,10,6]);
+            translate([-20,26.6,0]) cube([70,10,6]);
         
-    translate( [ 0 , 7.5 , 6 ] ) rotate( [0,0,90] ) cylinder( h = 2.5, r = 3.3, $fn=6);  // M3 HEAD
-    translate( [ 0 , 7.5 , 7.8] ) rotate( [0,0,90] ) cylinder( h = 0.8, r1 = 3.3, r2=5, $fn=6);  // M3 HEAD
-    translate( [ 0 , 7.5 , -10 ] ) rotate( [0,0,0] ) cylinder( h = 20, r = 1.5, $fn=30);  // M3 thread
+        }
+          
+        difference()
+        {
+        union()
+            {
+                translate([0,7.5,5.7]) cylinder(h = 4, r=3.15, $fn=6);    
+            }
+            translate([-11.6,0,0.9]) cube([10,40,5.7]);
+            translate([1.6,0,0.9]) cube([10,40,5.7]);
+            translate([-5,-4.1,0.9]) cube([10,10,6]);
+            translate([-5,9.1,0.9]) cube([10,10,6]);
+        }
+
+    // heatbed screw    
+    translate([0,7.5,8]) cylinder(h = 4, r1=3.15, r2=5, $fn=6);    
+    translate([0,7.5,3]) cylinder(h = 4, r=1.6, $fn=50);    
+
+    // LED window
+    translate([-2.5,-1,-4]) cube([5,3.5,10]);
+    translate([-14,-4,-6]) rotate([0,0,45]) cube([5,5,10]);
+    translate([14,-4,-6]) rotate([0,0,45]) cube([5,5,10]);
+
+    // edges
+    translate([-20,-0,6.5]) rotate([45,0,0]) cube([40,5,5]);
+    translate([-23,-1,8.5]) rotate([0,45,0]) cube([5,45,6]);
+    translate([15.8,-1,8.7]) rotate([0,45,0]) cube([6,45,5]);
+    translate([30,12,8.7]) rotate([0,45,45]) cube([6,45,5]);
+    translate([-40.6,12,9.7]) rotate([0,45,-45]) cube([6,45,5]);
 }
-    
-module nut_trap()
-{
-    translate( [ 0 , 7.5 , 4.5 ] ) rotate( [0,0,90] ) cylinder( h = 2.5, r = 4.6, $fn=6);  // M3 HEAD
-    translate( [ 0 , 7.5 , 4 ] ) rotate( [0,0,0] ) cylinder( h = 1, r = 3, $fn=30);    
+
+    // heatbed pcb support
+    translate([-17,0,4]) cube([3,20,2]);
+    translate([14,0,4]) cube([3,20,2]);
+    translate([-17,0,4]) cube([14,2,2]);
+    translate([3,0,4]) cube([14,2,2]);
+
+
+    // heatbed screw body
+    difference()
+    {
+        translate([0,7.5,4]) cylinder(h = 4, r=5, $fn=6);    
+        translate([0,7.5,6.3]) cylinder(h = 4, r=3.15, $fn=6);    
+        translate([0,7.5,3]) cylinder(h = 4, r=1.6, $fn=50);    
+    }
+
+    // filament holder
+    difference()
+    {
+        translate([-3.5,15,2]) cube([7,7,6]);    
+        translate([-0,28,4.5]) rotate([90,0,0]) cylinder(h = 15, r=1.5, $fn=60);    
+        translate([-10.2,11,2]) rotate([0,45,0]) cube([7,12,6]);    
+        translate([1.95,11,2]) rotate([0,45,0]) cube([7,12,6]);    
+    }
 }
-    
-difference()
+
+
+
+
+
+module clip()
 {
-    union()
+    
+    difference()
+    {
+        // base body
+        translate([-15,15.5,-3]) cube([30,16.5,6]);    
+        
+        // cables cut
+        translate([-0,33,3]) rotate([90,0,0]) cylinder(h = 15, r=4, $fn=60); 
+    
+        // screws
+        translate([-10,25,-3]) cylinder(h = 10, r=1.6, $fn=50);    
+        translate([10,25,-3]) cylinder(h = 10, r=1.6, $fn=50);
+        translate([-10,25,-5.5]) cylinder(h = 3, r2=3.1, r1=5, $fn=50);    
+        translate([10,25,-5.5]) cylinder(h = 3, r2=3.1, r1=5,$fn=50);
+       
+    // print support for nut heads    
+    difference()
+    {
+        union()
+        {
+            translate([-10,25,-3.5]) cylinder(h = 3, r=3.1, $fn=50);    
+            translate([10,25,-3.5]) cylinder(h = 3, r=3.1, $fn=50);
+        }
+        translate([-30,13.4,-0.8]) cube([60,10,2]);
+        translate([-30,26.6,-0.8]) cube([60,10,2]);
+        translate([-8.4,20,-1.1]) cube([16.8,10,2]);
+        translate([-21.6,20,-1.1]) cube([10,10,2]);
+        translate([11.6,20,-1.1]) cube([10,10,2]);
+    }    
+    
+    // thermistor cable entry
+    translate([-0,22,4]) rotate([115,0,0]) cylinder(h = 15, r=3, $fn=60);     
+    
+    
+    // edges    
+    translate([-18.0,25,-5]) rotate([0,0,45])  cube([11,11,15]);
+    translate([18,25,-5]) rotate([0,0,45])  cube([11,11,15]);
+
+    // inner angled cut
+        difference()
+        {
+            translate([-15,15,0]) cube([30,11,4]);
+            translate([-14.5,14.5,-1]) rotate([0,0,45])  cube([17,17,6]);
+            translate([14.5,14.5,-1]) rotate([0,0,45])  cube([17,17,6]);
+                
+            translate([-13,11,-1]) rotate([-45,0,45])  cube([20,20,6]);
+            translate([13,11,-1]) rotate([0,45,45])  cube([20,20,6]);
+            translate([-10,16,-10]) rotate([30,0,0])  cube([20,20,6]);
+        }
+        
+    }
+    
+    // cable rims
+    difference()
     {
         difference()
         {
-            cover();
-            inside_cut();
-            ziptie();
+            translate([-0,32,3]) rotate([90,0,0]) cylinder(h = 7, r=4.5, $fn=60); 
+            translate([-0,34,3]) rotate([90,0,0]) cylinder(h = 17, r=3.5, $fn=60); 
         }
-        nut_trap();
-    }   
-    m3_screw();
-    translate( [ 0 , 7.5 , 6.2 ] ) rotate( [0,0,0] ) cube( [5.7,3,1], center=true);   
-    translate( [ 0 , 7.5 , 5.7 ] ) rotate( [0,0,0] ) cube( [3,3,1], center=true); 
+        translate([-15,17,3]) cube([30,20,6]);    
+        translate([-15,26,-5]) cube([30,2,16]);    
+        translate([-15,29,-5]) cube([30,2,16]);    
+        
+        
+    }
 }
-    
-filament_holder();
-    
+
+   
+
+translate([0,20,5.5]) rotate([0,180,0]) clip();
+cover();
+
+
+
+
+
+
