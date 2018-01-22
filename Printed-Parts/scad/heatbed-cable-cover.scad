@@ -180,11 +180,12 @@ module clip()
     }
 }
 
-   
-
-translate([0,20,5.5]) rotate([0,180,0]) clip();
+ 
+translate([0,0,8.6]) rotate([0,180,0])
+{
+translate([0,20,5.6]) rotate([0,180,0]) clip();
 cover();
-
+}
 
 
 
