@@ -48,7 +48,7 @@ module x_carriage_base()
         union()
         {
             translate([2,26.9,0]) cube([10,6.2,15]);
-            translate([2,24-2.3-4.5,0]) cube([7.5,7.5,15]);
+            translate([2,24-2.3-4.5,0]) cube([7.5,7.8,15]);
             translate([-0.5,27,0]) cube([8,7,2]);
         }
         translate([-3,25,5.5]) rotate([0,0,-40]) cube([5,5.5,10]);
