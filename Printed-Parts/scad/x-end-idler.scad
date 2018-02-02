@@ -13,7 +13,7 @@ module x_end_idler_holes()
     translate([0,3.5,0])
     {
         // pulley screw
-        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
+        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.6, $fn=30);
         translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3.1, $fn=30);
         translate(v=[-21.5,-19,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 10, r=3.2, $fn=6);
             
@@ -61,7 +61,7 @@ module x_end_idler_base()
     {
         translate(v=[-19,-16.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r1=9, r2=12, $fn=30);
         translate([-25,-11.5,19]) cube([20,10,24]);
-        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
+        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.6, $fn=30);
     }
 
 }
@@ -116,11 +116,11 @@ module x_end_idler()
         waste_pocket();
         selective_infill();
         reinforcement_selective_infill();
-        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.8, $fn=30);
+        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.6, $fn=30);
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
         //version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=3, center=true); }   
+        { text("R1a",font = "helvetica:style=Bold", size=3, center=true); }   
     }
     
     difference()
