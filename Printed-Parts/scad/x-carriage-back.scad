@@ -44,11 +44,11 @@ module x_carriage_back()
         translate([-32,20,11.75]) rotate([0,90,0]) cylinder( h=80, r=7, $fn=30 );
       
         // hold together screws
-        translate([-9.5,-36,10]) rotate([0,0,0]) cylinder( h=50, r=1.6, $fn=30 );
-        translate([10.5,-36,10]) rotate([0,0,0]) cylinder( h=50, r=1.6, $fn=30 );
-        translate([1,4,10]) rotate([0,0,0]) cylinder( h=50, r=1.6, $fn=30 );
-        translate([13,31,10]) rotate([0,0,0]) cylinder( h=50, r=1.6, $fn=30 );
-        translate([-10.5,31,10]) rotate([0,0,0]) cylinder( h=50, r=1.6, $fn=30 ); 
+        translate([-9.5,-36,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
+        translate([10.5,-36,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
+        translate([1,4,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
+        translate([13,31,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
+        translate([-10.5,31,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 ); 
         translate([13,31,19]) cylinder( h=50, r=3.1, $fn=30 );
         translate([-10.5,31,19]) cylinder( h=50, r=3.1, $fn=30 ); 
         
@@ -104,6 +104,7 @@ module x_carriage_back()
         translate([4.5,28.5,12]) rotate([0,0,0]) cube([3.5,4,20]);
         translate([0.5,28.5,12]) rotate([0,0,0]) cube([4.5,7,20]);
         translate([4.5,-5,19.5]) rotate([0,0,0]) cube([3.5,35,4.3]);
+        translate([4.5,17.5,16.5]) rotate([0,0,0]) cube([3.5,5,4.3]);
         translate([-1.55,-9.60,19.5]) rotate([0,0,-45]) cube([3.5,10,4]);
         translate([-1.9,-9.95,15]) rotate([45,0,-45]) cube([3.5,10,4]);
         translate([4.5,29,16]) rotate([45,0,0]) cube([3.5,5,5]);
@@ -112,8 +113,8 @@ module x_carriage_back()
         // version
         translate([-14.5,13,22.8]) rotate([0,0,0]) linear_extrude(height = 0.4) 
         { text("MK3",font = "helvetica:style=Bold", size=6, center=true); }
-        translate([-15,3,15.5]) rotate([0,180,0]) linear_extrude(height = 0.8) 
-        { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+        translate([-15,3,15.8]) rotate([0,180,0]) linear_extrude(height = 0.8) 
+        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
         translate([-23,2.3,14.3]) cube([9,5.0,1]);
 
         // upper ziptie left
