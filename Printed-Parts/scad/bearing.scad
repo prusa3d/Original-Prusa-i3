@@ -67,7 +67,7 @@ module vertical_bearing_base(){
 }
 
 module vertical_bearing_holes(){
-  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=(bearing_diameter/2));
+  translate(v=[0,0,-1]) poly_cylinder(h = 62, r=(14.80/2));
   translate(v=[0,0,-0.1]) cylinder(r1=(bearing_diameter/2)+0.7,r2=(bearing_diameter/2), h=0.5);
   rotate(a=[0,0,-40]) translate(v=[bearing_diameter/2-2.9,-0.5,0.5]) cube(size = [thinwall*2,1,62]);
 
@@ -75,9 +75,9 @@ module vertical_bearing_holes(){
 
 //difference(){
 //vertical_bearing_base();
-//vertical_bearing_holes();
+vertical_bearing_holes();
 //}
 //horizontal_bearing_test();
 //horizontal_bearing_base(1);
 //horizontal_bearing_holes(1);
-horizontal_bearing_holes_nozip(1);
+//horizontal_bearing_holes_nozip(1);
