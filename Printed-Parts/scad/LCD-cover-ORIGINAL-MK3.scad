@@ -189,6 +189,12 @@ difference()
 
     // version
     translate([-73,15,4]) rotate([90,0,90]) linear_extrude(height = 2) 
-    { text("R1",font = "helvetica:style=Bold", size=7, center=true); }
+    { text("R2",font = "helvetica:style=Bold", size=7, center=true); }
+    
+    
 }
+
+// print support for SD card opening
+translate( [ -76.5 , 15 , 16.70 ] ) cube( [ 1 , 5 , 4.1 ] );
+translate( [ -76.5 , 25 , 16.70 ] ) cube( [ 1 , 5 , 4.1 ] );
 
