@@ -19,23 +19,23 @@ module Y_belt_idler()
         translate([-15,-20,29.5]) rotate([38,0,0]) cube([30,20,20]); 
 
         // screws
-        translate([0,1,36]) rotate([90,0,0]) cylinder( h=25, r=1.65, $fn=30 ); 
-        translate([0,-2,36]) rotate([90,0,0]) cylinder( h=6, r=3.2 , $fn=6 ); 
-        translate([0,1,10]) rotate([90,0,0]) cylinder( h=25, r=1.65, $fn=30 ); 
-        translate([0,-2,10]) rotate([90,0,0]) cylinder( h=6, r=3.2 , $fn=6 ); 
-        translate([0,-5,36]) rotate([90,0,0]) cylinder( h=6, r=3.2 , r2=3.9, $fn=6 ); 
-        translate([0,-5,10]) rotate([90,0,0]) cylinder( h=6, r=3.2 , r2=3.9, $fn=6 );
-        translate([0,1,36]) rotate([90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 
-        translate([0,1,10]) rotate([90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 
+        translate([0,1,36]) rotate([90,0,0]) cylinder( h=25, r=1.65, $fn=50 ); 
+        translate([0,-2,36]) rotate([90,0,0]) cylinder( h=6, r=3.1 , $fn=6 ); 
+        translate([0,1,10]) rotate([90,0,0]) cylinder( h=25, r=1.65, $fn=50 ); 
+        translate([0,-2,10]) rotate([90,0,0]) cylinder( h=6, r=3.1 , $fn=6 ); 
+        translate([0,-5,36]) rotate([90,0,0]) cylinder( h=6, r=3.1 , r2=3.9, $fn=6 ); 
+        translate([0,-5,10]) rotate([90,0,0]) cylinder( h=6, r=3.1 , r2=3.9, $fn=6 );
+        translate([0,1,36]) rotate([90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=50 ); 
+        translate([0,1,10]) rotate([90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=50 ); 
         
         // pulley cut
         translate([-5,-14,22.5]) rotate([0,90,0]) cylinder( h=10, r=10, $fn=30 ); 
            
         // pulley screw axis 
-        translate([-13.5,-14,22.5]) rotate([0,90,0]) cylinder( h=30, r=1.6, $fn=30 ); 
-        translate([-14,-14,22.5]) rotate([0,90,0]) cylinder( h=7, r=3.2, $fn=6 ); 
-        translate([-14,-14,22.5]) rotate([0,90,0]) cylinder( h=4, r2=3.2, r1=4, $fn=6 ); 
-        translate([8,-14,22.5]) rotate([0,90,0]) cylinder( h=6, r=3.2, $fn=30 ); 
+        translate([-13.5,-14,22.5]) rotate([0,90,0]) cylinder( h=30, r=1.6, $fn=50 ); 
+        translate([-14,-14,22.5]) rotate([0,90,0]) cylinder( h=7, r=3.1, $fn=6 ); 
+        translate([-14,-14,22.5]) rotate([0,90,0]) cylinder( h=4, r2=3.1, r1=4, $fn=6 ); 
+        translate([8,-14,22.5]) rotate([0,90,0]) cylinder( h=6, r=3.1, $fn=50 ); 
         
         // selective infill
         translate([-10,-18,18]) cube([3,17,0.5]);
@@ -54,7 +54,7 @@ module Y_belt_idler()
         
         //version   
         translate([3.5,-0.5,20]) rotate([90,0,180]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
     }
     
 }   

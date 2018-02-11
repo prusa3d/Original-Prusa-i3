@@ -48,19 +48,19 @@ module y_belt_holder()
         translate([-12.2,-30,44.4]) rotate([0,45,0]) cube([5,60,5]);
         
         // mounting screw holes
-        translate([0,-19.50,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.50,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,-19.25,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.25,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,-19.0,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.0,40]) cylinder( h=30, r=1.65, $fn=30 );
+        translate([0,-19.50,40]) cylinder( h=30, r=1.65, $fn=50 );
+        translate([0,19.50,40]) cylinder( h=30, r=1.65, $fn=50 );
+        translate([0,-19.25,40]) cylinder( h=30, r=1.65, $fn=50 );
+        translate([0,19.25,40]) cylinder( h=30, r=1.65, $fn=50 );
+        translate([0,-19.0,40]) cylinder( h=30, r=1.65, $fn=50 );
+        translate([0,19.0,40]) cylinder( h=30, r=1.65, $fn=50 );
         
-        translate([0,-19.5,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.5,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,-19.25,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.25,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,-19.0,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.0,43.5]) cylinder( h=7, r=3.1, $fn=30 );
+        translate([0,-19.5,43.5]) cylinder( h=7, r=3.1, $fn=50 );
+        translate([0,19.5,43.5]) cylinder( h=7, r=3.1, $fn=50 );
+        translate([0,-19.25,43.5]) cylinder( h=7, r=3.1, $fn=50 );
+        translate([0,19.25,43.5]) cylinder( h=7, r=3.1, $fn=50 );
+        translate([0,-19.0,43.5]) cylinder( h=7, r=3.1, $fn=50 );
+        translate([0,19.0,43.5]) cylinder( h=7, r=3.1, $fn=50 );
         
     
     }
@@ -73,6 +73,6 @@ difference()
     translate([-40,0,7]) rotate([0,90,0]) y_belt_holder();
     //version   
     translate([8.5,3.5,0.5]) rotate([0,180,90]) linear_extrude(height = 0.6) 
-    { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+    { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
 }
     
