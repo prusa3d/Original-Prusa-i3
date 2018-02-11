@@ -13,10 +13,11 @@ module x_end_idler_holes()
     translate([0,3.5,0])
     {
         // pulley screw
-        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
-        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3.1, $fn=30);
-        translate(v=[-21.5,-19,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 10, r=3.2, $fn=6);
-            
+        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=50);
+        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3, $fn=50);
+        translate(v=[-21.5,-19,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 10, r=3.1, $fn=6);
+        translate(v=[-5.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=3, r1=4, $fn=50);
+        
         // pulley side cut
         translate(v=[-9,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 9, r=9.5, $fn=30);        
         translate([-19,-35,21.25]) cube([10,20,18]);    
@@ -51,8 +52,12 @@ module x_end_idler_base()
                 translate(v=[-6,-16.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 0.5, r1=9, r2=12, $fn=30);
                 translate([-25,-11.5,19]) cube([20,10,24]);
             }
+            
         }
         x_end_idler_holes();
+            
+        
+        
     }
     translate([-15,10.5,6]) rotate([90,0,0]) cylinder( h=13, r=6, $fn=30);
     translate([-15,10.5,51]) rotate([90,0,0]) cylinder( h=13, r=6, $fn=30);
@@ -61,7 +66,7 @@ module x_end_idler_base()
     {
         translate(v=[-19,-16.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r1=9, r2=12, $fn=30);
         translate([-25,-11.5,19]) cube([20,10,24]);
-        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.8, $fn=30);
+        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=30);
     }
 
 }
@@ -101,11 +106,7 @@ mirror([0,1,0]) translate([-50, -33, 0.6])
 } 
     
    
-module reinforcement_selective_infill()
-{
-    rotate([90,0,-15,]) translate ([-1.5,8,26])linear_extrude(height = 0.2) polygon( points=[[-2,0],[0,12],[8,0]] ); // bearings
-    rotate([90,0,-50,]) translate ([8.5,8,1.4])linear_extrude(height = 0.2) polygon( points=[[0,0],[0,12],[8,0]] ); //body
-}
+ 
     
 module x_end_idler()
 {
@@ -114,24 +115,49 @@ module x_end_idler()
     {
         x_end_idler_base();
         waste_pocket();
-        selective_infill();
-        reinforcement_selective_infill();
-        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.8, $fn=30);
+
+        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.55, $fn=30);
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
         //version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=3, center=true); }   
+        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }   
     }
     
+    // bearings stop
     difference()
     {
-        // bearings stop
         translate([0,0,57]) rotate([0,0,90]) cylinder( h=1, r=8, $fn=30);
         translate([0,0,56.9]) rotate([0,0,90]) cylinder( h=0.5, r1=8, r2=7,$fn=30);    
         translate([0,0,56.5]) rotate([0,0,90]) cylinder( h=2, r=7, $fn=30);
         translate([0.2,-0.5,50]) rotate([0,0,40]) cube([12,1,10]);
     }
+    
+    // bearings spacer
+    difference()
+    {
+        translate([0,0,26]) rotate([0,0,90]) cylinder( h=6, r=8, $fn=30);
+        translate([0,0,25]) rotate([0,0,90]) cylinder( h=8, r=7.55, $fn=60);    
+        translate([0,0,25.9]) rotate([0,0,90]) cylinder( h=2, r2=7.5, r1=7.7,$fn=30);    
+        translate([0,0,31.4]) rotate([0,0,90]) cylinder( h=2, r1=7.5, r2=8.3,$fn=30);    
+        
+        rotate([0,0,310]) translate([-2.5,0,26]) cube([5,15,10]);
+        rotate([0,0,310-120]) translate([-2.5,0,26]) cube([5,15,10]);
+        rotate([0,0,310-240]) translate([-2.5,0,26]) cube([5,15,10]);
+    }
+    
+    
+    
 }
 
-x_end_idler();
+difference()
+{
+    union()
+    {
+        x_end_idler();
+        translate([-8,15,13.0]) rotate([0,0,-45.4]) cube([10,1.5,1]);
+    }
+    translate([-47,-40,60]) rotate([0,45,0]) cube([20,80,20]);    
+    translate([-20,10.5,69]) rotate([0,45,0]) cube([20,20,20]);    
+    translate([-25,37,49]) rotate([45,0,0]) cube([30,20,20]);    
+}
  
