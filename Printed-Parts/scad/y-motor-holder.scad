@@ -13,29 +13,29 @@ module holder()
         translate([-6,-1.5,0]) cube([19,42,47]);
 
         // shape cuts
-        translate([-20,19.5,26]) rotate([0,90,0]) cylinder( h=35, r=12, $fn=30 );   
+        translate([-20,19.5,26]) rotate([0,90,0]) cylinder( h=35, r=11.5, $fn=50 );   
         translate([-11,20,15]) cube([26,23,64]);
         translate([-20,5.5,-1]) cube([26,41,64]);
         translate([-20,-5,37]) cube([26,21,20]);
         translate([-20,-1,37]) cube([26,30,20]);
         
         // lower motor screw
-        translate([-20,35 ,10.5]) rotate([0,90,0]) cylinder( h=40, r=1.65, $fn=30 ); 
-        translate([-7,35,10.5]) rotate([0,90,0]) cylinder( h=15, r=3.1, $fn=30 );         
+        translate([-20,35 ,10.5]) rotate([0,90,0]) cylinder( h=40, r=1.65, $fn=50 ); 
+        translate([-7,35,10.5]) rotate([0,90,0]) cylinder( h=15, r=3.1, $fn=50 );         
         
         // upper motor screw    
-        translate([-20,4,41.5]) rotate([0,90,0]) cylinder( h=40, r=1.65, $fn=30 );         
-        translate([4,4,41.5]) rotate([0,90,0]) cylinder( h=4, r=3.1, $fn=30 );         
+        translate([-20,4,41.5]) rotate([0,90,0]) cylinder( h=40, r=1.65, $fn=50 );         
+        translate([4,4,41.5]) rotate([0,90,0]) cylinder( h=4, r=3.1, $fn=50 );         
         
         // lower frame screw    
-        translate([0,12,7]) rotate([90,0,0]) cylinder( h=40, r=1.6, $fn=30 ); 
-        translate([0,7,7]) rotate([90,0,0]) cylinder( h=5, r=3.2, $fn=6 ); 
-        translate([0,6.6,7]) rotate([90,0,0]) cylinder( h=2, r2=3.2, r1=4, $fn=6 ); 
+        translate([0,12,7]) rotate([90,0,0]) cylinder( h=40, r=1.6, $fn=50 ); 
+        translate([0,7,7]) rotate([90,0,0]) cylinder( h=5, r=3.1, $fn=6 ); 
+        translate([0,6.6,7]) rotate([90,0,0]) cylinder( h=2, r2=3.1, r1=4, $fn=6 ); 
         
         // upper frame screw    
-        translate([0,12,29]) rotate([90,0,0]) cylinder( h=40, r=1.6, $fn=30 ); 
-        translate([0,7,29]) rotate([90,0,0]) cylinder( h=5, r=3.2, $fn=6 ); 
-        translate([0,6.6,29]) rotate([90,0,0]) cylinder( h=2, r2=3.2, r1=4, $fn=6 );
+        translate([0,12,29]) rotate([90,0,0]) cylinder( h=40, r=1.6, $fn=50 ); 
+        translate([0,7,29]) rotate([90,0,0]) cylinder( h=5, r=3.1, $fn=6 ); 
+        translate([0,6.6,29]) rotate([90,0,0]) cylinder( h=2, r2=3.1, r1=4, $fn=6 );
 
         // corners
         translate([-10,20,42]) rotate([45,0,0]) cube([60,10,10]);        
@@ -71,7 +71,7 @@ module y_motor_holder()
         
         //version
         translate([-1,-1,15]) rotate([90,0,0]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
         }
 }    
     
