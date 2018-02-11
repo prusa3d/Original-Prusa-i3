@@ -5,6 +5,9 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+//import("extruder_body.stl");
+//translate([11.5,-0.5,-37.5]) cylinder( h=30, r=3.0, $fn=50 );
+
 module m3head()
 {
     intersection()
@@ -101,17 +104,17 @@ module extruder_cover()
     translate([19,-5.5,-36]) rotate([0,90,0]) cylinder( h=2, r1=1.4, r2=2, $fn=30 );     
 
     // left hold together screw
-    translate([17,3,-44]) rotate([0,0,0]) cylinder( h=40, r=1.6, $fn=30 );     
+    translate([17,3,-44]) rotate([0,0,0]) cylinder( h=40, r=1.6, $fn=60 );     
     translate([17,3,-41]) rotate([0,0,0]) cylinder( h=8, r=3.1, $fn=30 );  
     translate([13.9,3.1,-41]) cube([6.2,10,9]);    
             
     // right hold together screw
-    translate([-11.5,-0.5,-43]) cylinder( h=60, r=1.7, $fn=30 ); 
+    translate([-11.5,-0.5,-43]) cylinder( h=60, r=1.65, $fn=50 ); 
     translate([-11.5,-0.5,-41]) cylinder( h=5, r=3.1, $fn=30 ); 
     
     // upper cooling fan screw
-    translate([5.5,-0.5,-40]) cylinder( h=15, r=1.7, $fn=30 );
-    translate([5.5,-0.5,-42]) cylinder( h=3, r1=3, r2=1.7, $fn=30 );
+    translate([5.5,-0.5,-40]) cylinder( h=15, r=1.65, $fn=50 );
+    translate([5.5,-0.5,-42]) cylinder( h=3, r1=3, r2=1.65, $fn=50 );
     
     // nuts
     translate([2.8,-4,-39]) cube([5.6,15,2.1]); 
@@ -120,9 +123,9 @@ module extruder_cover()
     translate([2.8,5.4,-38.4]) rotate([45,0,0]) cube([5.6,10,2]);  
     
     // lower cooling fan screw
-    translate([-37.75,-38.5,-42]) cylinder( h=20, r=1.7, $fn=30 );
-    translate([-37.75,-38.5,-39.4]) cylinder( h=4, r=3.2, $fn=6 );
-    translate([-37.75,-38.5,-37.5]) cylinder( h=3, r1=3.2, r2=4.0, $fn=6 );
+    translate([-37.75,-38.5,-42]) cylinder( h=20, r=1.6, $fn=30 );
+    translate([-37.75,-38.5,-39.4]) cylinder( h=4, r=3.1, $fn=6 );
+    translate([-37.75,-38.5,-37.5]) cylinder( h=3, r1=3.1, r2=4.0, $fn=6 );
     
     // nozzle screw
     translate([14.5,-40.5,-42]) cylinder( h=10, r=1.4, $fn=30 );
@@ -139,9 +142,13 @@ module extruder_cover()
         
     //version
     translate([-3,-36,-38]) rotate([90,0,0]) linear_extrude(height = 0.6) 
-    { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
-        
+    { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
+       
+   
+   
+    translate([11.5,-0.5,-21]) cylinder( h=5, r=2.0, $fn=50 ); 
     }
+    
 }       
 
 extruder_cover();
