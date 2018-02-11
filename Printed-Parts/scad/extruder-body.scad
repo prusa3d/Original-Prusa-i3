@@ -5,7 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
-
+ 
 module m3head()
 {
 intersection()
@@ -17,6 +17,7 @@ intersection()
     translate([30,5,17-3.5])cylinder(r=3.1,h = 20, $fn=30); // head cut
 }
 
+
 module m3nuthead()
 {
     intersection()
@@ -27,6 +28,7 @@ module m3nuthead()
     translate([30,5,17-4]) cube([3.4,3.4,1], center=true);
     translate([30,5,17-3.5])cylinder(r=3.1,h = 20, $fn=6); // head cut
 }
+ 
 
 module grill()
 {
@@ -52,8 +54,8 @@ module pinda_holder()
             translate([-26,-18,-3]) cube([9,11,3]);     
             translate([-23,-38,-3]) cube([6,15,3]);  
             }
-        translate([-23,-5,-12]) rotate([90,0,0]) cylinder( h=50, r=4.1, $fn=30 ); 
-        translate([-35,-38.5,-5]) rotate([0,90,0]) cylinder( h=25, r=1.7, $fn=30 );
+        translate([-23,-5,-12]) rotate([90,0,0]) cylinder( h=50, r=4.05, $fn=30 ); 
+        translate([-35,-38.5,-5]) rotate([0,90,0]) cylinder( h=25, r=1.6, $fn=30 );
         
         translate([-33,-38.5,-5]) rotate([0,90,0]) cylinder( h=6, r=3.1, $fn=30 );
         
@@ -213,7 +215,7 @@ difference()
     translate([0,80,-17]) rotate([90,0,0]) cylinder( h=80, r=1.0, $fn=50 );
     
     // upper PTFE housing
-    translate([0,50.5,-17]) rotate([90,0,0]) cylinder( h=4, r=2.1, $fn=50 );
+    translate([0,50.8,-17]) rotate([90,0,0]) cylinder( h=4, r=2.1, $fn=50 );
     translate([0,49,-17]) rotate([90,0,0]) cylinder( h=4.5, r=1.5, $fn=50 );
     translate([0,51,-17]) rotate([90,0,0]) cylinder( h=22, r=1.1, $fn=50 );
     translate([0,41,-17]) rotate([90,0,0]) cylinder( h=5, r1=2, r2=1, $fn=50 );
@@ -222,35 +224,40 @@ difference()
     translate([0,10,-17]) rotate([90,0,0]) cylinder( h=3, r=7, $fn=50 );
     
     // motor screws
-    translate([-11.5,11.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.7, $fn=30 );    
-    translate([19.5,11.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.7, $fn=30 );    
-    translate([-11.5,42.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.65, $fn=30 );    
-    translate([19.5,42.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.7, $fn=30 );     
+    translate([-11.5,11.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.65, $fn=50 );    
+    translate([19.5,11.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.65, $fn=50 );    
+    translate([-11.5,42.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.65, $fn=50 );    
+    translate([19.5,42.5,-40]) rotate([0,0,0]) cylinder( h=60, r=1.65, $fn=50 );     
 
-    translate([-11.5,11.5,-3.75]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=30 );    
-    translate([19.5,11.5,-3.75]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=30 );    
-    translate([-11.5,42.5,-3]) rotate([0,0,0]) cylinder( h=4, r=3.1, $fn=30 );    
-    translate([19.5,42.5,-4.5]) rotate([0,0,0]) cylinder( h=5, r1=1.7,r2=2.3, $fn=30 ); 
+    translate([-11.5,11.5,-3.75]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=50 );    
+    translate([19.5,11.5,-3.75]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=50 );    
+    translate([-11.5,42.5,-3]) rotate([0,0,0]) cylinder( h=4, r=3.1, $fn=50 );    
+    translate([19.5,42.5,-4.5]) rotate([0,0,0]) cylinder( h=5, r1=1.6,r2=2.4, $fn=50 ); 
 
+ 
     // better printing 
     translate([-10.5,6.5,-17]) m3head();
     translate([-41.5,6.5,-17]) m3head();
     translate([-41.5,37.5,-16.2]) m3head();
     translate([-13,-2,-26]) m3nuthead();
-    
+     
     translate([-8,16.5,-33.5]) rotate([0,0,45]) cube([10,10,32]);
     translate([-18,16.5,-33.5]) cube([10,10,32]);
     
     // hold together screws
     translate([-20.5,-3.2,-14]) cube([12,5.6,2.1]);
     translate([-20.5,-3.2,-5]) cube([12,5.6,2.1]);
-    translate([-20.5,-2,-14.3]) cube([12,3,2.3]);
-    translate([-20.5,-2,-5.3]) cube([12,3,2.3]);
+    translate([-13.2,-3.2,-14.3]) cube([3.4,5.6,2]);
+    translate([-13.2,-2.2,-14.6]) cube([3.4,3.4,2]);
+    
+    translate([-13.2,-3.2,-5.3]) cube([3.4,5.6,2.3]);
+    translate([-13.2,-2.2,-5.6]) cube([3.4,3.4,2.3]);
+
    
-    translate([-11.5,-0.5,-35]) cylinder( h=65, r=1.7, $fn=30 ); 
-    translate([-11.5,-0.5,-2]) cylinder( h=5, r1=1.7, r2=2.2,$fn=30 ); 
-    translate([11.5,-0.5,-30]) cylinder( h=60, r=1.7, $fn=30 );
-    translate([11.5,-0.5,-2]) cylinder( h=5, r1=1.7, r2=2.2,$fn=30 );
+    translate([-11.5,-0.5,-35]) cylinder( h=65, r=1.65, $fn=50 ); 
+    translate([-11.5,-0.5,-2]) cylinder( h=5, r1=1.65, r2=2.2,$fn=50 ); 
+    translate([11.5,-0.5,-30]) cylinder( h=60, r=1.65, $fn=50 );
+    translate([11.5,-0.5,-3]) cylinder( h=5, r1=1.65, r2=2.2,$fn=50 );
     
     translate([11.5,-0.5,-16]) cylinder( h=5, r1=3.5, r2=3.1, $fn=6 );
     translate([11.5,-0.5,-21]) cylinder( h=7, r=3.5, $fn=6 );
@@ -326,6 +333,9 @@ difference()
 
     // filament sensor window
     translate([-9.5,43,-17]) rotate([0,90,0]) cylinder( h=13, r=3, $fn=30 );       
+    translate([0,40,-17.5]) cube([5,11,2]);
+    translate([0,40,-18.5]) rotate([0,40,0]) cube([5,11,2]);
+    
     translate([3.5,38,-1]) cube([5,11,2]);
     
 }
@@ -347,7 +357,7 @@ module final_part()
 
             //version
             translate([-4,-34,-0.4]) rotate([0,0,0]) linear_extrude(height = 0.6) 
-            { text("R1",font = "helvetica:style=Bold", size=4, center=true); }    
+            { text("R2",font = "helvetica:style=Bold", size=4, center=true); }    
             
         // selective infill
         translate([-15,-7,-16]) cube([5,0.4,15]);
@@ -366,9 +376,7 @@ module final_part()
 }
 
 
-final_part();
-
-
+rotate([0,180,0]) final_part();
 
 
 
