@@ -8,7 +8,7 @@
 module z_top_base()
 {
     translate([0,-5,0]) cube([8,45,16]); // plate touching the base
-    translate([0,-5,0]) cube([33,3.9,12]); // plate touching the base
+    translate([0,-5,0]) cube([33,3.6,12]); // plate touching the base
     translate([0,-5,0]) cube([38,45,5]); // plate touching the base   
     translate([25+4.3,3.2,5]) rotate([0,0,0]) cylinder(h = 2.5, r=7, $fn=60);
 }
@@ -46,8 +46,8 @@ module z_top_fancy()
 module z_top_holes()
 {
     // Screw holes frame
-    translate([-1,10,10])      rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
-    translate([-1,10+20,10])   rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
+    translate([-1,10,10])      rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=30);
+    translate([-1,10+20,10])   rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=30);
 
     // Screw heads
     translate([4,10,10]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
@@ -56,8 +56,8 @@ module z_top_holes()
     translate([4,10+20-3.1,10]) cube([10,6.2,10]);
 
     // Z rod holder
-    translate([25+4.3,3,0.6]) rotate([0,0,0]) cylinder(h = 50, r=4.10, $fn=50);
-    translate([25+4.3,3,3.4]) rotate([0,0,0]) cylinder(h = 4.2, r2=4.3, r1=4, $fn=50);
+    translate([25+4.3,3,0.6]) rotate([0,0,0]) cylinder(h = 50, r=4.05, $fn=50);
+    translate([25+4.3,3,3.4]) rotate([0,0,0]) cylinder(h = 4.2, r2=4.3, r1=4.05, $fn=50);
     
     // material saving cut
     translate([16,10,-4]) rotate([0,0,0]) cylinder(h = 50, r=8, $fn=6);  
@@ -84,7 +84,7 @@ module z_top_right(){
         z_top_holes();
          //version
         translate([12,-1.5,10]) rotate([90,180,180]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
     }
 }
 
@@ -97,7 +97,7 @@ module z_top_left(){
         z_top_holes();
         //version
         translate([19,-1,10]) rotate([90,180,0]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
     }
 }
 
