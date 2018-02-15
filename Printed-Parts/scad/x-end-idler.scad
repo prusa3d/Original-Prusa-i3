@@ -16,7 +16,7 @@ module x_end_idler_holes()
         translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.5, $fn=50);
         translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=2.8, $fn=50);
         translate(v=[-21.5,-19,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 10, r=3.1, $fn=6);
-        translate(v=[-5.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=3, r1=4, $fn=50);
+        translate(v=[-5.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=2.8, r1=4, $fn=50);
         
         // pulley side cut
         translate(v=[-9,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 9, r=9.5, $fn=30);        
