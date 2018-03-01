@@ -20,12 +20,14 @@ Parts might change until final version of upgrade is released.
 * Rambo-hinges.stl
 * Extruder-cable-clip.stl
 * Heatbed-cable-clip.stl
+* Heatbed-cable-cover.stl
 
 **MK3 repository**
 * Extruder-body.stl
 * Extruder-idler.stl
 * Extruder-cover.stl
-* Fan-nozzle.stl
+* Fan-nozzle.stl*
 * Filament-sensor-cover.stl
 * Idler-plug.stl
  
+(*fan-nozzle is included in the official upgrade package)
