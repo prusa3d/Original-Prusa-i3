@@ -1,0 +1,32 @@
+Original Prusa i3 MK2S to Original Prusa i3 MK3 upgrade
+
+Recommended print settings:
+0.2 mm layer height, infill 20% GRID and material PETG.
+
+Orange parts bundle (parts can be also printed in black):
+X-end-motor (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-end-motor.stl
+X-end-idler (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-end-idler.stl
+Y-rod-holder (4x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/y-rod-holder.stl
+Y-motor-holder (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/y-motor-holder.stl
+Y-belt-holder (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/y-belt-holder.stl
+Y-belt-idler (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/y-belt-idler.stl
+Z-axis-top (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/z-axis-top.stl
+Z-axis-bottom (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/z-axis-bottom.stl
+LCD-supports (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/lcd-supports.stl
+
+Black parts bundle (*extruder parts MUST BE printed in BLACK):
+X-carriage* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage.stl
+X-carriage-back* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage-back.stl     
+Cable-holder* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/cable-holder.stl
+Extruder-body* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-body.stl
+Extruder-cover* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-cover.stl
+Extruder-idler-plug* (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-idler-plug.stl
+Extruder-idler* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-idler.stl
+Filament-sensor-cover* (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/filament-sensor-cover.stl
+Heatbed-cable-cover (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/heatbed-cable-cover.stl
+Einsy-base (1x)			https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-base.stl
+Einsy-doors (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-doors.stl
+Einsy-hinges (1x) 		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-hinges.stl
+
+License GNU GPL v3
+https://www.prusa3d.com/prusa-i3-printable-parts/
