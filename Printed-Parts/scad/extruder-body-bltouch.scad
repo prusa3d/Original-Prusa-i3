@@ -60,51 +60,6 @@ module bltouch_mount()
     }
 }
 
-module pinda_holder()
-{
-        difference()
-        {
-            union()
-            {
-            translate([-32,-45,-20]) cube([18,15,20]);   
-            translate([-26,-18,-3]) cube([9,11,3]);     
-            translate([-23,-38,-3]) cube([6,15,3]);  
-            }
-        translate([-23,-5,-12]) rotate([90,0,0]) cylinder( h=50, r=4.05, $fn=30 ); 
-        translate([-35,-38.5,-5]) rotate([0,90,0]) cylinder( h=25, r=1.6, $fn=30 );
-        
-        translate([-33,-38.5,-5]) rotate([0,90,0]) cylinder( h=6, r=3.1, $fn=30 );
-        
-        translate([-35,-52.5,-24]) rotate([0,0,45]) cube([10,10,30]);   
-        translate([-36.5,-39,-25]) rotate([0,0,45]) cube([20,10,30]);   
-        translate([-11,-36,-26]) rotate([0,0,50]) cube([10,10,23]);   
-        translate([-22.5,-30,-20]) rotate([0,0,45]) cube([10,8,23]);   
-        translate([-35,-29,-30]) rotate([45,0,0]) cube([30,10,10]);   
-        translate([-35,-46,-30]) rotate([45,0,0]) cube([30,10,10]);   
-        translate([-41,-52,-19.5]) rotate([0,45,0]) cube([12,30,10]);  
-        translate([-12.5,-53,-21]) rotate([0,0,45]) cube([10,10,30]);   
-        translate([-10,-54,-25]) rotate([0,0,65]) cube([14.5,10,30]);   
-            
-        translate([-19.6,-41.5,-8.1]) cube([2.4,6,10]);       
-        translate([-24,-48,-10]) cube([1.4,20,12]);       
-        translate([-23.7,-48,-10]) rotate([0,-5,0]) cube([1.4,20,12]);       
-        translate([-25.5,-48,-0]) rotate([0,45,0]) cube([3,30,3]);       
-      
-        translate([-17.5,-37,-22]) cube([5,7,5]);   
-        
-        // hook cut
-        translate([-23,-20,-3.5]) cube([6,8,4.5]);   
-        translate([-26,-10,-3.5]) rotate([0,0,45]) cube([5,5,5]);   
-        translate([-26,-23,-3.5]) rotate([0,0,45]) cube([5,5,5]);  
-       
-        translate([-29,-34,-16]) cube([1,1,15]);   
-        translate([-29,-43,-16]) cube([1,1,15]);   
-        translate([-17,-33,-16]) cube([1,1,15]);   
-        
-        }
-}
-
-
 module extruder_body()
 {
 difference()
