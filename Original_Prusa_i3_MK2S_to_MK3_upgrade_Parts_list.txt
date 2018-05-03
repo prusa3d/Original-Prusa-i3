@@ -1,5 +1,10 @@
 Original Prusa i3 MK2S to Original Prusa i3 MK3 upgrade
 
+ATTENTION: Before printing the parts, check the version of the heatbed you have in your package. There are two versions with different cable cover.
+Soldered power cable - old design, use "MK3_Black_parts_PETG_18H_soldered.gcode" or respective parts labeled "old".
+Not soldered power cable - new design, use "MK3_Black_parts_PETG_18H_V2_notsoldered.gcode" or respective part labeled "new".
+G-codes can be downloaded here: https://www.prusa3d.com/downloads/others/mk3_upgrade_gcodes.zip
+
 Recommended print settings:
 0.2 mm layer height, infill 20% GRID and material PETG.
 
@@ -14,7 +19,7 @@ Z-axis-top (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3
 Z-axis-bottom (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/z-axis-bottom.stl
 LCD-supports (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/lcd-supports.stl
 
-Black parts bundle (*extruder parts MUST BE printed in BLACK):
+Black parts bundle (Extruder parts MUST BE printed in BLACK):
 X-carriage* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage.stl
 X-carriage-back* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage-back.stl     
 Cable-holder* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/cable-holder.stl
@@ -23,10 +28,16 @@ Extruder-cover* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i
 Extruder-idler-plug* (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-idler-plug.stl
 Extruder-idler* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-idler.stl
 Filament-sensor-cover* (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/filament-sensor-cover.stl
-Heatbed-cable-cover (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/heatbed-cable-cover.stl
+Heatbed-cable-cover-new** (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/heatbed-cable-cover.stl
+Heatbed-cable-cover-old*** (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/heatbed-cable-cover-no-screw.stl
+Heatbed-cable-clip-old*** (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/heatbed-cable-cover-clip-no-screw.stl
 Einsy-base (1x)			https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-base.stl
 Einsy-doors (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-doors.stl
 Einsy-hinges (1x) 		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/Einsy-hinges.stl
 
 License GNU GPL v3
 https://www.prusa3d.com/prusa-i3-printable-parts/
+
+* Extruder parts MUST BE printed in BLACK.
+** Use this part for heatbed WITHOUT soldered power cable.
+*** Use these parts for heatbed WITH soldered power cable.
