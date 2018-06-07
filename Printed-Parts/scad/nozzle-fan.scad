@@ -172,7 +172,7 @@ module fan_nozzle()
     translate([-11.2,-53,-41.0]) rotate([0,-30,0]) cube([0.8,9,4.5]); 
 
 
-    translate([10,-51,-50.8]) rotate([0,180,0]) linear_extrude(height = 2) 
+    translate([10,-51,-52]) rotate([0,180,0]) linear_extrude(height = 0.8) 
     { text("HOT!2",font = "helvetica:style=Bold", size=5, center=true); }
 }
 
