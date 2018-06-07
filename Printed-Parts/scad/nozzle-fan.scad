@@ -126,8 +126,8 @@ module inner_shape()
     }
 
     // fan cut
-    translate([-10.25,-46,-51]) cube([20.5,10,15.5]);    
-    translate([10.25,-52,-44]) cube([2,15,3]);    
+    translate([-10,-46,-51]) cube([20,10,15.5]);    
+    translate([10,-52,-44]) cube([1,75,15,3]);    
 
 }
 
