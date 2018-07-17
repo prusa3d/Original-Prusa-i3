@@ -126,8 +126,8 @@ module inner_shape()
     }
 
     // fan cut
-    translate([-10.25,-46,-51]) cube([20.5,10,15.5]);    
-    translate([10.25,-52,-44]) cube([2,15,3]);    
+    translate([-10,-46,-51]) cube([20,10,15.5]);    
+    translate([10,-52,-44]) cube([1.75,15,3]);    
 
 }
 
@@ -172,7 +172,7 @@ module fan_nozzle()
     translate([-11.2,-53,-41.0]) rotate([0,-30,0]) cube([0.8,9,4.5]); 
 
 
-    translate([10,-51,-50.8]) rotate([0,180,0]) linear_extrude(height = 2) 
+    translate([10,-51,-52]) rotate([0,180,0]) linear_extrude(height = 0.8) 
     { text("HOT!2",font = "helvetica:style=Bold", size=5, center=true); }
 }
 
