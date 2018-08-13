@@ -6,7 +6,7 @@ Not soldered power cable - new design, use "MK3_Black_parts_PETG_18H_V2_notsolde
 G-codes can be downloaded here: https://www.prusa3d.com/downloads/others/mk3_upgrade_gcodes.zip
 
 Recommended print settings:
-0.2 mm layer height, infill 20% GRID and material PETG.
+0.2 mm layer height, infill 20% GRID and material PETG, only exception is nozzle-fan, which must be from ABS!
 
 Orange parts bundle (parts can be also printed in black):
 X-end-motor (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-end-motor.stl
@@ -18,6 +18,8 @@ Y-belt-idler (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK
 Z-axis-top (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/z-axis-top.stl
 Z-axis-bottom (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/z-axis-bottom.stl
 LCD-supports (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/lcd-supports.stl
+nozzle-fan-45deg (1x)	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/nozzle-fan-45deg.stl
+nozzle-fan-45deg-support (1x) 	https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/nozzle-fan-45deg-support.stl
 
 Black parts bundle (Extruder parts MUST BE printed in BLACK):
 X-carriage* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage.stl
