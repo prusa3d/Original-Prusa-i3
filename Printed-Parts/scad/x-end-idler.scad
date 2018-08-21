@@ -13,10 +13,10 @@ module x_end_idler_holes()
     translate([0,3.5,0])
     {
         // pulley screw
-        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=50);
-        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3, $fn=50);
+        translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.5, $fn=50);
+        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=2.8, $fn=50);
         translate(v=[-21.5,-19,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 10, r=3.1, $fn=6);
-        translate(v=[-5.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=3, r1=4, $fn=50);
+        translate(v=[-5.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=2.8, r1=4, $fn=50);
         
         // pulley side cut
         translate(v=[-9,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 9, r=9.5, $fn=30);        
@@ -66,7 +66,7 @@ module x_end_idler_base()
     {
         translate(v=[-19,-16.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r1=9, r2=12, $fn=30);
         translate([-25,-11.5,19]) cube([20,10,24]);
-        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=30);
+        translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.5, $fn=30);
     }
 
 }
@@ -116,7 +116,7 @@ module x_end_idler()
         x_end_idler_base();
         waste_pocket();
 
-        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.55, $fn=30);
+        translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.5, $fn=30);
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
         //version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
