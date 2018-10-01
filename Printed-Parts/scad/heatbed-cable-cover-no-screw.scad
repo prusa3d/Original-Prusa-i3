@@ -156,7 +156,7 @@ module clip()
     }    
     
     // thermistor cable entry
-    translate([-0,22,4]) rotate([115,0,0]) cylinder(h = 15, r=3, $fn=60);     
+    translate([-0,22,4]) rotate([115,0,0]) cylinder(h = 15, r=3.3, $fn=60);     
     
     
     // edges    
