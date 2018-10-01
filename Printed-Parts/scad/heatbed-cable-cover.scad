@@ -19,7 +19,7 @@ module cover()
         
         // inner cut
         translate([-15,-0.5,-3]) cube([30,16,9]);
-        translate([-0,37,3]) rotate([90,0,0]) cylinder(h = 15, r=4, $fn=60);    
+        translate([-0,37,3]) rotate([90,0,0]) cylinder(h = 15, r=3.3, $fn=60);    
         translate([-15,15,-6]) cube([30,22,9]);
 
         // inner edges
@@ -36,7 +36,8 @@ module cover()
         translate([-3.96,18.45,0]) rotate([0,0,70])  cube([6,5,6]);
         
         
-        translate([-0,36,3]) rotate([90,0,0]) cylinder(h = 21, r=4, $fn=60);
+        
+        translate([-0,20,0.5]) rotate([90,0,0]) cube([11,11,11], center = true);
         
         translate([2,14,-1]) rotate([0,0,10])  cube([8,13,6]);
         translate([-9.88,15.21,-1]) rotate([0,0,-10])  cube([8,13,6]);
@@ -51,8 +52,8 @@ module cover()
 
 
         // clip nuts entry
-        translate([-11,30,8]) rotate([0,0,30]) cylinder(h = 4, r1=3.15, r2=5, $fn=6);    
-        translate([11,30,8]) rotate([0,0,-30]) cylinder(h = 4, r1=3.15, r2=5, $fn=6); 
+       translate([-11,30,8.2]) rotate([0,0,0]) cylinder(h = 4, r1=3.15, r2=6, $fn=6);    
+        translate([11,30,8.2]) rotate([0,0,0]) cylinder(h = 4, r1=3.15, r2=6, $fn=6); 
      
         // heatbed terminal screw pockets
     
@@ -65,14 +66,24 @@ module cover()
         {
         union()
             {
-                translate([-11,30,5.4]) rotate([0,0,30]) cylinder(h = 4, r=3.15, $fn=6);    
-                translate([11,30,5.4])  rotate([0,0,-30]) cylinder(h = 4, r=3.15, $fn=6);    
+                   
+                 
+    translate( [ 11 , 30 , 6 ] ){
+    cylinder( h = 4, r = 3.15, $fn=6);  
+    
+    }  
+      
+                
+              translate( [ -11 , 30 , 6 ] ){
+    cylinder( h = 4, r = 3.15, $fn=6);  
+     
+    }  
             }
-            translate([-9.4,4,0]) cube([18.8,40,5.7]);
-            translate([-17.6,4,0]) cube([5,40,5.7]);
-            translate([12.6,4,0]) cube([5,40,5.7]);
-            translate([-22,18.4,0]) cube([70,10,6]);
-            translate([-20,31.6,0]) cube([70,10,6]);
+            translate([-9.4,4,0.6]) cube([18.8,40,5.7]);
+            translate([-17.6,4,0.6]) cube([5,40,5.7]);
+            translate([12.6,4,0.6]) cube([5,40,5.7]);
+            translate([-22,18.4,0.6]) cube([70,10,6]);
+            translate([-20,31.6,0.6]) cube([70,10,6]);
         
         }
           
@@ -80,17 +91,25 @@ module cover()
         {
         union()
             {
-                translate([0,7.5,5.7]) cylinder(h = 4, r=3.15, $fn=60);    
+              
+               
+             translate( [ 0 , 7.5 , 5.4 ] ){
+    cylinder( h = 4, r = 3.15, $fn=6);  
+     
+    }  
+             
+                
             }
-            translate([-11.6,0,0.9]) cube([10,40,5.7]);
-            translate([1.6,0,0.9]) cube([10,40,5.7]);
-            translate([-5,-4.1,0.9]) cube([10,10,6]);
-            translate([-5,9.1,0.9]) cube([10,10,6]);
+            translate([-11.6,0,1]) cube([10,40,5.7]);
+            translate([1.6,0,1]) cube([10,40,5.7]);
+            translate([-5,-4.1,1]) cube([10,10,6]);
+            translate([-5,9.1,1]) cube([10,10,6]);
         }
 
-    // heatbed screw    
-    translate([0,7.5,8]) cylinder(h = 4, r1=2.75, r2=5, $fn=50);    
-    translate([0,7.5,3]) cylinder(h = 4, r=1.6, $fn=50);    
+    // heatbed screw nut entry   
+
+    translate([0,7.5,8.2]) rotate([0,0,0]) cylinder(h = 4, r1=3.15, r2=6, $fn=6);    
+       
 
     // LED window
     translate([-2.5,-1,-4]) cube([5,3.5,10]);
@@ -116,9 +135,9 @@ module cover()
     {
         
        
-        translate([0,7.5,4]) rotate(90, v = [0,0,1]) cylinder(h = 4, r=2.75, $fn=50);   
-        translate([0,7.5,6.3]) cylinder(h = 4, r=2.76, $fn=50);    
-        translate([0,7.5,3]) cylinder(h = 4, r=1.6, $fn=50);    
+       translate([0,7.5,4]) rotate(90, v = [0,0,1]) cylinder(h = 3.9, r=2.75, $fn=50);   
+       translate([0,7.5,6.5]) cylinder(h = 4, r=2.76, $fn=50);    
+       translate([0,7.5,3]) cylinder(h = 4, r=1.6, $fn=50);    
     }
 
 
@@ -193,7 +212,7 @@ module clip()
         difference()
         {
             translate([-0,36,3]) rotate([90,0,0]) cylinder(h = 10, r=4.5, $fn=60); 
-            translate([-0,37,3]) rotate([90,0,0]) cylinder(h = 17, r=3.5, $fn=60);
+            translate([-0,37,3]) rotate([90,0,0]) cylinder(h = 17, r=3, $fn=60);
             
         }
         translate([-15,18,3]) cube([30,20,6]);    
