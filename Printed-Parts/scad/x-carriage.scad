@@ -178,15 +178,29 @@ module final_cutout()
     translate([0.5,10+3,-1])cube([7,9.2,6]);    
     
     // filament hole
-    translate([-14.5,8.8,0]) rotate([-5,0,0]) cylinder(r=1.52, h=40, $fn=10);  
-    translate([-14.5,9.7,10]) rotate([-5,0,0]) cylinder(r=1.52,r2=2, h=6, $fn=10);  
+      
+    
+    difference () {
+        
+        union() {
+    translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);    
+    translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r=1.62,r2=3, h=8, $fn=8);  
+        }
+   //translate([-18,6.7,12])   cube([7,7,5]); 
+        
+    }
     
     // bottom back mounting screws
     translate([-6.5,-11,4]) cylinder(r=1.65, h=20, $fn=50);  
-    translate([-26.5,-11,4]) cylinder(r=1.65, h=20, $fn=50);  
+    translate([-26.5,-11,4]) cylinder(r=1.65, h=20, $fn=50); 
+   
+    difference() {
+    union(){    
     translate([-29.3,-14,10]) cube([5.6,7,2.1]);
     translate([-09.3,-14,10]) cube([5.6,7,2.1]);
-    
+    }
+         translate([-36,-8.1,10]) cube([40,1,0.5]);
+    } 
     // better printing bridges
     translate([-29.3,-12.65,10.35]) cube([5.6,3.3,2.1]);
     translate([-09.3,-12.65,10.35]) cube([5.6,3.3,2.1]);
@@ -297,7 +311,7 @@ module x_carriage()
             
             //version
             translate([-2,-8,0.5]) rotate([0,180,0]) linear_extrude(height = 0.6) 
-            { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
+            { text("R3",font = "helvetica:style=Bold", size=5, center=true); }
 
     }
 }
@@ -359,10 +373,9 @@ module right_belt_cut()
         translate([-5,30.3,7]) rotate([0,0,0]) cylinder(r=0.2, h=100, $fn=30);
     }
 
-
 x_carriage();
     
+  
     
-    
-    
+ 
   
