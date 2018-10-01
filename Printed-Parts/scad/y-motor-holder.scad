@@ -65,13 +65,31 @@ module y_motor_holder()
         holder();
        
         // selective infill
-        translate([-0,1,33]) cube([12,0.5,2]);        
-        translate([-3,1,2]) cube([15,0.5,1]);        
-        translate([-5,1.5,13]) cube([17,0.5,8]);        
+        translate([-0,3.4,33.3]) cube([12,0.5,2]);    
+        translate([-0,1.6,33.3]) cube([12,0.5,2]);
+        translate([-0,-0.2,32.8]) cube([12,0.5,2.5]);        
         
+        translate([-1.75,-0.2,1.4]) cube([13.75,0.5,2.2]);
+        translate([-1.75,1.6,1.4]) cube([13.75,0.5,1.6]);
+       translate([-1.75,3.4,1.4]) cube([13.75,0.5,1.6]);       
+      
+        translate([-5,-0.1,14.1]) cube([17,0.5,6.4]);     
+        translate([-5,1.9,14.1]) cube([17,0.5,6.4]);
+        
+        translate([-5,3.7,14.1]) cube([17,0.5,6.4]);    
+            
+        translate([-5,4.2,13]) rotate([90,0,0]) cube([17,0.5,4.3]);
+        
+        translate([-5,4.2,11.5]) rotate([90,0,0]) cube([17,0.5,4.3]);    
+        
+        translate([-5,4.2,21]) rotate([90,0,0]) cube([17,0.5,4.3]);
+        translate([-5,4.2,22.5]) rotate([90,0,0]) cube([17,0.5,4.3]); 
+        translate([-5,4.2,24]) rotate([90,0,0]) cube([17,0.5,4.3]);    
         //version
         translate([-1,-1,15]) rotate([90,0,0]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
+        { text("R3",font = "helvetica:style=Bold", size=5, center=true); }
+        
+
         }
 }    
     
