@@ -13,7 +13,7 @@ difference()
      // body
      cylinder( h = 26, r = 2.4, $fn=30); 
      translate([0,0,26]) cylinder( h = 2, r1 = 2.4, r2 = 1.8, $fn=30); 
-     translate( [ -5 , -11 , 0 ] ) cube( [ 7 , 11 , 21 ] );  
+     translate( [ -5 , -10.7 , 0 ] ) cube( [ 7 , 10.7 , 21 ] );  
     }
      // M3 screw hole
      translate( [ -12.5 , -2.5 , 17 ] ) rotate( [0,90,0] ) cylinder( h = 20, r = 1.75, $fn=30);  
@@ -32,7 +32,7 @@ difference()
     translate( [ 0 , 6 , 0 ] ) cylinder( h = 15, r = 2.4, $fn=30); 
     translate( [ 0 , 6 , 0 ] ) cylinder( h = 10, r = 2.8, $fn=30);  
     translate( [ 0 , 6 , 15 ] ) cylinder( h = 2, r1 = 2.4, r2=1.8, $fn=30);  
-    translate( [ -5 , 6 , 0 ] ) cube( [ 7 , 11 , 10 ] ); 
+    translate( [ -5 , 6 , 0 ] ) cube( [ 7 , 10.7 , 10 ] ); 
    }
     // M3 screw
     translate( [ -0.5 , 8.5 , 4 ] ) rotate( [0,90,0] ) cylinder( h = 20, r = 3, $fn=30); 
