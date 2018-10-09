@@ -14,7 +14,7 @@ module x_end_idler_holes()
     {
         // pulley screw
         translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=50);
-        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3, $fn=50);
+        translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 3.2, r=3, $fn=50);
 
        translate(v=[-21.5,-19,30.25]) rotate([0,-90,0]){
       rotate([0,0,30])cylinder( h = 4, r = 3.1, $fn=6);  
