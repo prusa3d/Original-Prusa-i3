@@ -83,6 +83,12 @@ module x_end_idler_base()
                 
                 
             }
+            
+            difference() {
+                translate(v=[-6,-16.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 0.5, r1=9, r2=12, $fn=30);
+                translate([-24,-11.5,19]) cube([20,10,24]);
+            }
+            
             // pulley nut support
             difference() {
         translate(v=[-23.5,-15.5,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 1,r1=5.5, r2=3.7, $fn=30);
