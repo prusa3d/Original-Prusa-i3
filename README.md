@@ -15,4 +15,3 @@ This repository contains SCAD files and STLs of the printed parts.
  * MK52 heatbed : https://github.com/prusa3d/Heatbed_MK52_magnetic
  * Laser filament sensor : https://github.com/prusa3d/PRUSA_Laser_filament_sensor
  * MK3 Power panic : https://github.com/prusa3d/MK3_Power_Panic
- 
