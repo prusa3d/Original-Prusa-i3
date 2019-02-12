@@ -1,4 +1,4 @@
-# Original Prusa i3 MK3
+# Original Prusa i3 MK3S
 
 
 Original Prusa i3 MK3S is a 3D printer project maintained by PRUSA RESEARCH.
