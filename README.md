@@ -1,7 +1,7 @@
 # Original Prusa i3 MK3
 
 
-Original Prusa i3 MK3 is a 3D printer project maintained by PRUSA RESEARCH.
+Original Prusa i3 MK3S is a 3D printer project maintained by PRUSA RESEARCH.
 Originates in RepRap project.
 
 This repository contains SCAD files and STLs of the printed parts.
