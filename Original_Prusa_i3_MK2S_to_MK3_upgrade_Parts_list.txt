@@ -24,7 +24,7 @@ nozzle-fan-45deg-support (1x) 	https://raw.githubusercontent.com/prusa3d/Origina
 
 Black parts bundle (Extruder parts MUST BE printed in BLACK):
 X-carriage* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage.stl
-X-carriage-back* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage-back.stl     
+X-carriage-back* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/x-carriage-back.stl
 Cable-holder* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/cable-holder.stl
 Extruder-body* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-body.stl
 Extruder-cover* (1x)		https://raw.githubusercontent.com/prusa3d/Original-Prusa-i3/MK3/Printed-Parts/stl/extruder-cover.stl
