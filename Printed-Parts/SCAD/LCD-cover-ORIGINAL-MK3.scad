@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+rev = "R2";
 
 module main_body()
 {
@@ -189,7 +190,7 @@ difference()
 
     // version
     translate([-73,15,4]) rotate([90,0,90]) linear_extrude(height = 2) 
-    { text("R2",font = "helvetica:style=Bold", size=7, center=true); }
+    { text(rev, font = "helvetica:style=Bold", size=7, center=true); }
     
     
 }

@@ -6,6 +6,7 @@
 // http://prusamendel.org
 
 use <x-end.scad>
+rev = "R3";
 
 module x_end_idler_holes()
 {
@@ -172,7 +173,7 @@ module x_end_idler()
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
         //version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R3",font = "helvetica:style=Bold", size=4, center=true); }   
+        { text(rev, font = "helvetica:style=Bold", size=4, center=true); }   
     }
     
     // bearings stop

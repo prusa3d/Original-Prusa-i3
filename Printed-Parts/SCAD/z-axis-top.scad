@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+rev = "R2";
 module z_top_base()
 {
     translate([0,-5,0]) cube([8,45,16]); // plate touching the base
@@ -84,7 +85,7 @@ module z_top_right(){
         z_top_holes();
          //version
         translate([12,-1.5,10]) rotate([90,180,180]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
+        { text(rev, font = "helvetica:style=Bold", size=4, center=true); }
     }
 }
 
@@ -97,7 +98,7 @@ module z_top_left(){
         z_top_holes();
         //version
         translate([19,-1,10]) rotate([90,180,0]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
+        { text(rev, font = "helvetica:style=Bold", size=4, center=true); }
     }
 }
 

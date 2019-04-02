@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+rev = "R4";
  
 module m3head()
 {
@@ -132,7 +133,7 @@ module x_carriage_back()
         
         // version
         translate([-13,-30,22.5]) rotate([0,0,0]) linear_extrude(height = 0.75) 
-        { text("R4",font = "helvetica:style=Bold", size=6, center=true); }
+        { text(rev, font = "helvetica:style=Bold", size=6, center=true); }
         
 
         // upper ziptie left

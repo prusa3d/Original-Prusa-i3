@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+rev = "R4";
 
 module fs_cover()
 {
@@ -12,7 +13,7 @@ difference()
 {
     union()
     {
-        translate([-17,-17,0]) cube([39,28,5]);
+        translae([-17,-17,0]) cube([39,28,5]);
         
         translate([0,-10,5]) cylinder(h=1,r=5,$fn = 60);  
         translate([0,0,5]) cylinder(h=1,r=5,$fn = 60);  
@@ -43,7 +44,7 @@ difference()
     
     // version
     translate([-13,-9,0.7]) rotate([180,0,90]) linear_extrude(height = 0.75) 
-    { text("R4",font = "helvetica:style=Bold", size=7, center=true); }
+    { text(rev, font = "helvetica:style=Bold", size=7, center=true); }
 }
 }
 

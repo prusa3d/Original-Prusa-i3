@@ -6,6 +6,7 @@
 // http://prusamendel.org
 
 use <bearing.scad>
+rev = "R4";
 
 module belt_cut()
 {
@@ -389,7 +390,7 @@ module x_carriage()
             
             //version
             translate([-11,-2,0.7]) rotate([0,180,0]) linear_extrude(height = 0.75) 
-            { text("R4",font = "helvetica:style=Bold", size=6, center=true); }
+            { text(rev, font = "helvetica:style=Bold", size=6, center=true); }
 
 
     }

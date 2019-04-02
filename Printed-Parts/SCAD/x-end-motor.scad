@@ -6,6 +6,7 @@
 // http://prusamendel.org
 
 use <x-end.scad>
+rev = "R3";
 
 module x_end_motor_base()
 {
@@ -108,7 +109,7 @@ module x_end_motor()
             
             // version
             translate([-23.2,-20,2]) rotate([90,0,270]) linear_extrude(height = 0.6) 
-            { text("R3",font = "helvetica:style=Bold", size=4, center=true); }   
+            { text(rev, font = "helvetica:style=Bold", size=4, center=true); }   
         }
 
     translate([-15,10,6]) rotate([90,0,0]) cylinder(h=3, r=5, $fn=30);   

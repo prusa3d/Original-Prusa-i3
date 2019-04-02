@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+rev = "R3a";
 
 module CubicPattern(Xdim, Ydim)
 {
@@ -209,7 +210,7 @@ module main_body()
         
         translate( [ 13.5 , 41.7 , -1] )  cube( [ 12.7 , 9 , 9] );
         translate( [ 17.2 , 38 , -1] )  cube( [ 9, 5 , 9] );     
-  }  
+            } 
   
   
         translate( [ 60 , 0 , 0] )  difference() 
@@ -220,7 +221,7 @@ module main_body()
         translate( [ 9.0 , 42 , -1] )  cube( [ 12 , 9 , 9] );
         translate( [ 8.8 , 38.5 , -1] )  cube( [ 9, 5 , 9] );   
              
-}          
+            }          
         translate( [ 60 , 26 , 0] )  difference() 
            {   
         translate( [ 17.3 , 41.8 , -1.1] )  cylinder( h = 9.2, r = 8, $fn=40);
@@ -228,7 +229,7 @@ module main_body()
         
         translate( [ 8.5 , 33.5 , -1] )  cube( [ 9 , 12 , 9] );
         translate( [ 17 , 33 , -1] )  cube( [ 4, 9 , 9] ); 
-}           
+            }           
            
         translate( [ 0 , 26 , 0] )  difference() 
            {   
@@ -237,7 +238,10 @@ module main_body()
         
         translate( [ 17.5 , 33.5 , -1] )  cube( [ 9 , 12 , 9] );
         translate( [ 14 , 33.5 , -1] )  cube( [ 5, 9 , 9] );     
-              }  }}
+              }
+       }
+       
+       }
 
 
 
@@ -457,31 +461,36 @@ module cutouts(){
        
   }  }}
 
-
-
+//optional Raspberry cover for reference
+module raspberry_cover()
+  {
+//add loose inserted cover
+    import_stl("../STL/raspberry_cover.stl", convexity=5);
+  }
 module rambo_cover()
 {
-    
-
+// to print without the basic cover comment the following four lines
     difference(){
     rambo_popout_cover ();
     cutouts();    
     }
-        
-    difference(){
+//    raspberry_cover();   //raspberry cover printed seperately, stl just for reference
+            
+   difference(){
     main_body();
         
     cutouts();
      
     raspberry();    
-        
+    
+       
     // main hole
     translate( [ -10 , 28 , 26 ] ) rotate([0,90,0]) cylinder( h = 24, r = 6.8, $fn=30);   
     // cable opening slot
     translate( [ -15 , 25 , 30 ] ) cube( [ 30 , 6 , 10 ] ); 
         
       
-     
+    translate( [17, 40, -1] ) cube( [62, 30, 10] );
     
     
     }
@@ -674,8 +683,8 @@ translate([-5.6,-0.4,0.35])  cube([15,4,0.75]);
     translate([21+58,81,-5]) cylinder( h = 24, r = 0.8, $fn=30);   
 
 
-    translate([115,68,1.5]) rotate([0,0,90]) linear_extrude(height = 0.8) 
-    { text("R3",font = "helvetica:style=Bold", size=6, center=true); }   
+    translate([115,65,1.5]) rotate([0,0,90]) linear_extrude(height = 0.8) 
+    { text(rev, font = "helvetica:style=Bold", size=6, center=true); }   
        
 }
 
