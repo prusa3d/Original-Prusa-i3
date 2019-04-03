@@ -141,7 +141,7 @@ module idler()
     
     // version
     translate([6,-1.5,10.5]) rotate([0,0,0]) linear_extrude(height = 0.8) 
-    { text("M1",font = "helvetica:style=Bold", size=5, center=true); }    
+    { text("R1",font = "helvetica:style=Bold", size=5, center=true); }    
     }
 }
 

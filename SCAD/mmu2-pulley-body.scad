@@ -267,7 +267,7 @@ module pulley_body()
 
             //version
             translate([-14,-5.5,-24.4]) rotate([0,180,180]) linear_extrude(height = 0.8) 
-            { text("M1",font = "helvetica:style=Bold", size=5, center=true); }    
+            { text("R1",font = "helvetica:style=Bold", size=5, center=true); }    
         }
 
 }

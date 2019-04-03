@@ -142,7 +142,7 @@ translate([-29,-21,23]) cube([125,56,15]);
 
             //version
             translate([-19,-4.5,36.5]) rotate([0,180,180]) linear_extrude(height = 0.8) 
-            { text("M1",font = "helvetica:style=Bold", size=6, center=true); }            
+            { text("R1",font = "helvetica:style=Bold", size=6, center=true); }            
     }
         
 

@@ -54,7 +54,7 @@ module front_PTFE_holder()
         
         //version
         translate([-2,-15.5,-7]) rotate([-90,180,0]) linear_extrude(height = 0.8) 
-        { text("M1",font = "helvetica:style=Bold", size=6, center=true); }    
+        { text("R1",font = "helvetica:style=Bold", size=6, center=true); }    
     
         
         

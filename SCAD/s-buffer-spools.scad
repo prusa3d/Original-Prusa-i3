@@ -137,7 +137,7 @@ module buffer_rear()
     
         //version
         translate([-5,5,232.75]) rotate([0,0,0]) linear_extrude(height = 0.3) 
-        { text("M1",font = "helvetica:style=Bold", size=6, center=true); }   
+        { text("R1",font = "helvetica:style=Bold", size=6, center=true); }   
          
     }
 }

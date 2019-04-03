@@ -147,7 +147,7 @@
     
             //version
             translate([-5,15,-2.75]) rotate([0,180,180]) linear_extrude(height = 0.3) 
-            { text("M1",font = "helvetica:style=Bold", size=6, center=true); } 
+            { text("R1",font = "helvetica:style=Bold", size=6, center=true); } 
 
 
     }

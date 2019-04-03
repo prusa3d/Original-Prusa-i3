@@ -42,7 +42,7 @@ module rear_PTFE_holder()
         }
         //version
         translate([49,17,6.6]) rotate([0,0,0]) linear_extrude(height = 0.8) 
-        { text("M1",font = "helvetica:style=Bold", size=5, center=true); }    
+        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }    
     
     }
     
