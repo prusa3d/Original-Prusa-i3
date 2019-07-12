@@ -7,9 +7,15 @@
 
 module main_body()
 {
-translate([-1, -1, -1 ]) cube([ 30, 27, 15 ]);
-translate([-10, 16, -1 ]) cube([ 50.5, 10, 15 ]);
-translate([-10, 23, -1 ]) cube([ 52, 3, 15 ]);
+difference() {
+    union() {
+        translate([-1, -1, -1 ]) cube([ 30, 27, 15 ]);
+        translate([-10, 16, -1 ]) cube([ 50.5, 10, 15 ]);
+        translate([-10, 23, -1 ]) cube([ 52, 3, 15 ]);
+    }
+    translate([ 16, 18, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // upper belt space cutaway
+translate([ 12, 5, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // lower belt space cutaway
+    }
 }
 
 module belt_holders()
@@ -41,19 +47,18 @@ module screws()
     translate([35.5, 15, 4.5 ]) cube([ 6, 7, 6 ]);
 }
 
-belt_holders();
 
 difference()
 {
-main_body();
+union() {
+    main_body();
+    belt_holders();
+}
     
-translate([ 16, 18, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // upper belt space cutaway
-translate([ 12, 5, 2 ]) cylinder( h = 16, r = 7.2, $fn=30 );  // lower belt space cutaway
-
 translate([-20, 9, 2]) cube([ 28, 2.1, 16 ]); 
-rotate([0,0,40]) translate([11, 1, 2 ]) cube([ 10, 4, 16 ]);     
+rotate([0,0,40]) translate([11, 1, 2 ]) cube([ 8, 4, 16 ]);     
     
-translate([10, 7, 2 ]) cube([ 32, 2.1, 16 ]); 
+translate([16, 7, 2 ]) cube([ 16, 2.1, 16 ]); 
     
 translate([16, 8, 11 ]) rotate([45,0,0]) cube([ 15, 5, 5 ]);     
 translate([-2, 10, 11 ]) rotate([45,0,0]) cube([ 10, 5, 5 ]);     
