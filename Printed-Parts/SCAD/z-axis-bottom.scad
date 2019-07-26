@@ -127,8 +127,12 @@ module z_bottom_right()
             z_bottom_fancy();
             z_bottom_holes();
         }
-        translate([7.3,25,14]) rotate([90,180,90]) linear_extrude(height = 0.6) 
-        { text("R3",font = "helvetica:style=Bold", size=5, center=true); }
+        translate([7.3,24,14]) rotate([90,180,90]) linear_extrude(height = 0.6) 
+        { text("R5",font = "helvetica:style=Bold", size=5, center=true); }
+        
+        translate([7,24,25]) rotate([90,180,90]) linear_extrude(height = 0.9) 
+        { text("R",font = "helvetica:style=Bold", size=8, center=true); }
+        
     }
 }
 
@@ -144,7 +148,11 @@ module z_bottom_left()
             z_bottom_holes();
         }
         translate([7.3,-28.5,14]) rotate([90,180,90]) linear_extrude(height = 0.6) 
-        { text("R3",font = "helvetica:style=Bold", size=5, center=true); }
+        { text("R5",font = "helvetica:style=Bold", size=5, center=true); }
+        
+        translate([7,-29,25]) rotate([90,180,90]) linear_extrude(height = 0.9) 
+        { text("L",font = "helvetica:style=Bold", size=8, center=true); }
+        
     }
 }
 
