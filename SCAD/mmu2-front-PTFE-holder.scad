@@ -12,13 +12,18 @@ module front_PTFE_holder()
         union()
         {
             // base shape
-            translate([-16,-30,-15]) cube([84,15,19]);
+            translate([-16,-30.3,-15]) cube([84,15,19.5]);
             translate([-16,-25,-15]) cube([84,10,22.5]);
         }
 
         // blade space
-        translate([-17,-28,2.2]) rotate([45,0,0]) cube([86,2.7,2.7]);
-        translate([-17,-31,3.5]) cube([86,2.7,2.7]);
+        difference()
+        {
+            translate([-17,-28.2,2.2]) rotate([45,0,0]) cube([86,4,4]);
+            translate([-17,-27.8,2.2]) cube([86,4,4]);
+        }
+        
+        translate([-17,-31,3.8]) cube([86,2.7,2.7]);
         translate([-17,-25,5.5]) rotate([45,0,0]) cube([86,4,4]);
         
         // PTFE housing
@@ -33,29 +38,24 @@ module front_PTFE_holder()
         
         // angled front side
         translate([-19,-21,-25]) rotate([52,0,0]) cube([95,10,19]);
-        translate([-19,-38.5,-15]) rotate([5,0,0]) cube([91,10,19]);
+        translate([-19,-38.8,-15]) rotate([5,0,0]) cube([91,10,19]);
         translate([-10,-42,-15]) rotate([0,0,50]) cube([15,30,30]);
         translate([60,-39,-15]) rotate([0,0,-20]) cube([15,30,30]);
         
         // front PTFE tubes holder screws
         translate([9,-14,-1.5]) rotate([90,0,0]) cylinder(r=1.65, h=20, $fn=50); 
         translate([9,-14,-1.5]) rotate([90,0,0]) cylinder(r2=1.65, r1=2.5, h=2, $fn=50); 
-        translate([9,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=10, $fn=50); 
+        translate([9,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=11, $fn=50); 
         translate([23,-14,-1.5]) rotate([90,0,0]) cylinder(r=1.65, h=20, $fn=50); 
         translate([23,-14,-1.5]) rotate([90,0,0]) cylinder(r2=1.65, r1=2.5, h=2, $fn=50); 
-        translate([23,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=10, $fn=50); 
+        translate([23,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=11, $fn=50); 
         
         translate([37,-14,-1.5]) rotate([90,0,0]) cylinder(r=1.65, h=20, $fn=50); 
         translate([37,-14,-1.5]) rotate([90,0,0]) cylinder(r2=1.65, r1=2.5, h=2, $fn=50); 
-        translate([37,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=10, $fn=50); 
+        translate([37,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=11, $fn=50); 
         translate([51,-14,-1.5]) rotate([90,0,0]) cylinder(r=1.65, h=20, $fn=50); 
         translate([51,-14,-1.5]) rotate([90,0,0]) cylinder(r2=1.65, r1=2.5, h=2, $fn=50); 
-        translate([51,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=10, $fn=50); 
-        
-        //version
-        translate([-2,-15.5,-7]) rotate([-90,180,0]) linear_extrude(height = 0.8) 
-        { text("R1",font = "helvetica:style=Bold", size=6, center=true); }    
-    
+        translate([51,-20,-1.5]) rotate([90,0,0]) cylinder(r=3.1, h=11, $fn=50); 
         
         
     }

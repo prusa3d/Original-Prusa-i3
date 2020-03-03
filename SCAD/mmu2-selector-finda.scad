@@ -5,13 +5,15 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+
 module blade()
 {
         difference()
         {
-            translate([0,0,0]) cube([17,0.5,9]);
+            translate([0,0,0]) cube([17,1,9]);
             translate([11.5,-0.5,10]) rotate([0,61,0]) cube([21,1.5,9]);
             translate([-9.3,-0.5,9]) rotate([0,61,0]) cube([21,1.5,9]);
+            translate([-9.3,-0.5,9]) rotate([0,59,0]) cube([21,1.5,9]);
         }
 }
 
@@ -35,6 +37,8 @@ module selector()
         translate([59,-27,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=1.4,h=15, $fn=50); 
         translate([59,-60,4]) rotate([90,0,0]) cylinder(r2=2.5, r1=1.3,h=2, $fn=50);
        
+        translate([59,-27,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=2,h=10, $fn=50); 
+        
         translate([59,-55,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=2.5,h=3, $fn=50);
         translate([59,-52,4]) rotate([90,0,0]) cylinder(r2=2.5, r1=1.3,h=3, $fn=50);
        
@@ -87,11 +91,9 @@ module selector()
         translate([58,-43,-19]) rotate([0,90,0]) cylinder(r2=3.05,r1=3.3, h=4, $fn=50); 
         
         // blade holder
-        difference()
-            {
-                translate([39.4,-28.15,6.0]) rotate([0,10.0,0]) blade();
-                translate([40.5,-29,3.1]) rotate([0,-24,0]) cube([4,2,11]);
-            }
+        translate([39.4,-27.75-0.75,6.0]) rotate([0,10.0,0]) blade();
+                
+        
             
         // blade holder screws
         translate([45,-27,16]) rotate([90,0,0]) cylinder(r=1.7, h=10, $fn=50); 
@@ -131,6 +133,9 @@ module selector()
         translate([62,-57,26.5]) rotate([0,90,0]) cylinder(r=3.2, h=6, $fn=50);
         translate([53,-67+2.9,21+2.8]) cube([2.2,10,5.6]);
         
+        translate([35,-52,10]) rotate([0,90,0]) cylinder(r=2.5, h=35, $fn=50);
+        
+        
         // edges
         translate([47,-45,32]) rotate([-45,0,0]) cube([20,15,10]);
         translate([30,-82,32]) rotate([-50,0,0]) cube([20,30,30]);
@@ -148,10 +153,6 @@ module selector()
             translate([59-1.65,-58.5,-8-1.65]) cube([3.3,2.7,3.3]);
             translate([59-1.65,-58.5,15-1.65]) cube([3.3,2.7,3.3]);
             
-            
-        //version
-        translate([49,-40,-23.3]) rotate([0,180,180]) linear_extrude(height = 0.8) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); } 
         
     }
 }
@@ -159,8 +160,6 @@ module selector()
 
 rotate([90,0,0]) 
 selector();
-
-
 
 
 
