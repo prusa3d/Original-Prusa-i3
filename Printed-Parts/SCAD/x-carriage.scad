@@ -101,7 +101,7 @@ module x_carriage_holes()
     translate([-7,15.5,4])cylinder(r=3.1, h=4, $fn=6);
     translate([-27,15.5,4])cylinder(r=3.1, h=4, $fn=6);
     translate([-7,15.5,7])cylinder(r=4, h=30, $fn=6);
-    translate([-27,15.5,7])cylinder(r=3.5, h=30, $fn=6);
+    translate([-27,15.5,7])cylinder(r=4, h=30, $fn=6);
     
     
         
