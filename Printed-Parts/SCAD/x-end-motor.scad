@@ -11,11 +11,13 @@ module x_end_motor_base()
 {
     x_end_base();
     translate(v=[-15,31,26.5]) cube(size = [17,44,53], center = true);
+
+		
 }
 
 module x_end_motor_holes()
 {
-    x_end_holes();
+   x_end_holes();
     
     // Position to place
     translate(v=[-1,32,30.25])
@@ -24,28 +26,23 @@ module x_end_motor_holes()
         translate(v=[-19,-21,-12]) cube(size = [10,25,22]);
         
         // Motor mounting holes
-        translate(v=[0,-15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=30, r=1.55, $fn=60);
-        translate(v=[0,-15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=18, r2=1.55, r1=1.7, $fn=60);
-        translate(v=[1,-15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.05, $fn=60);
+
+			for (x =[-1:0.25:1])
+			{
+        	translate(v=[0,-15.5+x,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=30, r=1.55, $fn=60);
+				translate(v=[0,-15.5+x,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=18, r2=1.55, r1=1.7, $fn=60);
+   	     translate(v=[1,-15.5+x,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.05, $fn=60);
         
-        translate(v=[20,-15,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,-15,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,-15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,-15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,-16,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,-16,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,-16.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,-16.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        
-        translate(v=[20,16.,-15.0]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,16.,-15.0]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,15,-16]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,15,-16]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-        translate(v=[20,14.5,-16.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
-        translate(v=[1,14.5,-16.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
-      
+     	   	translate(v=[20,-15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
+				translate(v=[0,-15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=18, r2=1.55, r1=1.7, $fn=60);
+     		  	translate(v=[1,-15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
+
+	       	translate(v=[20,15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=70, r=1.6, $fn=30);
+				translate(v=[0,15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=18, r2=1.55, r1=1.7, $fn=60);
+   	     translate(v=[1,15.5+x,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h=10, r=3.1, $fn=30);
+     		};
+
+
         // Material saving cutout 
         translate(v=[-10,12,12]) cube(size = [60,42,42], center = true);
         translate(v=[-25,10.5,-11]) rotate([45,0,0]) cube(size = [60,10,10]);
@@ -55,11 +52,9 @@ module x_end_motor_holes()
         translate(v=[-10,41,-30.5]) rotate(a=[45,0,0])  cube(size = [60,42,42], center = true);
         
         
-        translate([-15,-2,-33]) rotate([-45,0,0]) cylinder(h=25, r=1.7, $fn=30);
-        translate([-15,-2,-33]) rotate([-45,0,0]) cylinder(h=28-18, r=3.2, $fn=30);
-        translate([-35+2.8,10,-25]) rotate([45,0,0])  cube(size = [20,2,5.6]);
         
     }
+
 }
 
 // Motor shaft cutout
@@ -106,9 +101,6 @@ module x_end_motor()
             translate([-17,3,-8]) cube([4,4,10]);
             translate([-30,-30,58]) cube([30,30,10]);
             
-            // version
-            translate([-23.2,-20,2]) rotate([90,0,270]) linear_extrude(height = 0.6) 
-            { text("R3",font = "helvetica:style=Bold", size=4, center=true); }   
         }
 
     translate([-15,10,6]) rotate([90,0,0]) cylinder(h=3, r=5, $fn=30);   
@@ -136,15 +128,13 @@ module x_end_motor()
         rotate([0,0,310-240]) translate([-2.5,0,26]) cube([5,15,10]);
     }
     
-    // nut trap print supoorts
+    // nut trap print suports
     
-    translate(v=[-5.8,-13.149,13.5]) rotate([0,0,45]) cube(size = [10,2.1,1], center = true);
+    	translate(v=[-5.8,-13.149,13.5]) rotate([0,0,45]) cube(size = [10,2.1,1], center = true);
+    	translate(v=[-9.8,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
         
-        translate(v=[-9.8,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-        
-        translate(v=[-5.2,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-        
-         translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
+     translate(v=[-5.2,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
+     translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
       
 }
 
@@ -154,12 +144,37 @@ difference()
     {
         x_end_motor();
         translate([-8,-17,13.0]) rotate([0,0,44.7]) cube([10,1.5,1]);
+
+		// belt tensioner body
+				translate([-24,9,30.25]) rotate(a=[90,30,0]) cylinder(h=27, r=4, $fn=6);
+				difference()
+				{
+					translate([-30,9-27,30.25]) rotate(a=[0,45,0]) cube([11,27,11]);
+					translate([-37.465,9-27-1,20]) cube([10,30,21]);
+					translate([-29,9-27-1,35]) cube([10,30,21]);
+					translate([-20,9-27-1,20]) cube([25,30,21]);
+				}
+				difference()
+				{
+					translate([-24,-18,30.25]) rotate(a=[90,0,0]) cylinder(h=10.5, r=5, $fn=30);
+					translate([-24-19.5,-18,20]) rotate(a=[90,0,0]) cube([20,20,20]);
+				}
+
     }
-    //chamfers
+    
     translate([-47,-40,60]) rotate([0,45,0]) cube([20,80,20]);    
     translate([-20,-30.5,69]) rotate([0,45,0]) cube([20,20,20]);    
     translate([-25,-37,49]) rotate([45,0,0]) cube([30,20,20]);   
     translate([-25,23.5,49]) rotate([45,0,0]) cube([30,20,20]);   
+
+
+			// belt tensioner
+		  translate(v=[0,32,30.25])
+		    {
+				translate([-24,-15.5-2.5,0]) rotate(a=[90,0,0]) cylinder(h=35, r=1.6, $fn=30);
+				translate([-24,-15.5-4.5-30,0]) rotate(a=[90,0,0]) cylinder(h=30, r=3.2, $fn=30);
+				translate([-24-10+2.8,-29,0-2.8]) cube([10,2.1,5.6]);
+			 }
 }   
     
 

@@ -11,35 +11,29 @@ module x_end_idler_holes()
 {
     x_end_holes();
     translate([0,3.5,0])
-    {
+    		{
         // pulley screw
         translate(v=[0,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=50);
         translate(v=[-4,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 4, r=3, $fn=50);
 
-       translate(v=[-21.5,-19,30.25]) rotate([0,-90,0]){
-      rotate([0,0,30])cylinder( h = 4, r = 3.1, $fn=6);  
-     }
+        translate(v=[-21.5,-19,30.25]) rotate([0,-90,0]){
+        rotate([0,0,30])cylinder( h = 4, r = 3.1, $fn=6);  
+     		}
         
-    translate(v=[-24,-19,30.25]) rotate([0,-90,0]){
+      translate(v=[-24,-19,30.25]) rotate([0,-90,0]){
       rotate([0,0,30])cylinder( h = 4, r1 = 3.1, r2 = 7,  $fn=6);  
      }
+
+      translate(v=[-4.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=3, r1=4, $fn=50);
         
-        
-        
-        
-        translate(v=[-4.5,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 1, r2=3, r1=4, $fn=50);
-        
-        
-        
-        
-        // pulley side cut
-        translate(v=[-9,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 9, r=9.5, $fn=30);        
-        translate([-19,-35,21.25]) cube([10,20,18]);    
-        translate([-16.1,-35,21.3]) rotate([0,45,0]) cube([5,20,5]);    
-        translate([-16.1,-35,39.25]) rotate([0,45,0]) cube([5,20,5]);    
+      // pulley side cut
+      translate(v=[-9,-19,30.25]) rotate(a=[0,-90,0]) cylinder(h = 9, r=9.5, $fn=30);        
+      translate([-19,-35,21.25]) cube([10,20,18]);    
+      translate([-16.1,-35,21.3]) rotate([0,45,0]) cube([5,20,5]);    
+      translate([-16.1,-35,39.25]) rotate([0,45,0]) cube([5,20,5]);    
     }
     
-    }
+}
 
 
 module waste_pocket()
@@ -65,34 +59,21 @@ module x_end_idler_base()
             x_end_base();
             difference()
             {
-               
                 
                translate(v=[-6.5,-21,13.5])  cube([1,12.5,42]); 
                 
-                
-                translate([-24,-11.5,19]) cube([20,10,24]);
-                translate(v=[-6.5,-10,55.5]) rotate([180,-45,0])  cube([1.5,19,5]);
-                translate(v=[-6.5,-29,13.5]) rotate([0,45,0])  cube([1.5,19,5]);
+               translate([-24,-11.5,19]) cube([20,10,24]);
+               translate(v=[-6.5,-10,55.5]) rotate([180,-45,0])  cube([1.5,19,5]);
+               translate(v=[-6.5,-29,13.5]) rotate([0,45,0])  cube([1.5,19,5]);
                translate(v=[-5.5,-19,13.5]) rotate([90,0,-35])  cube([1.5,45,6]);
-                
-           
-                
-                
-                
-                
-                
                 
             }
             // pulley nut support
-            difference() {
-        translate(v=[-23.5,-15.5,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 1,r1=5.5, r2=3.7, $fn=30);
-          translate([-26,-11.5,19]) cube([20,10,24]); 
-          
-         
-                
-                
-        }
-            
+            difference() 
+					{
+               translate(v=[-23.5,-15.5,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 1,r1=5.5, r2=3.7, $fn=30);
+		          translate([-26,-11.5,19]) cube([20,10,24]); 
+					}
  
         }
         x_end_idler_holes();
@@ -110,16 +91,11 @@ module x_end_idler_base()
         translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=30);
     }
 
-// nut trap print supoorts
-    
+		// nut trap print supoorts
     translate(v=[-5.8,-13.149,13.5]) rotate([0,0,45]) cube(size = [10,2.1,1], center = true);
-        
-        translate(v=[-9.8,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-        
-        translate(v=[-5.2,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-        
-         translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
-
+    translate(v=[-9.8,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
+    translate(v=[-5.2,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
+    translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
 
 }
 
@@ -170,9 +146,6 @@ module x_end_idler()
 
         translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.55, $fn=30);
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
-        //version
-        translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R3",font = "helvetica:style=Bold", size=4, center=true); }   
     }
     
     // bearings stop
@@ -209,8 +182,6 @@ difference()
         x_end_idler();
         translate([-8,15,13.0]) rotate([0,0,-45.4]) cube([10,1.5,1]);
     }
-    
-    // chamfers
     translate([-47,-40,60]) rotate([0,45,0]) cube([20,80,20]);    
     translate([-20,10.5,69]) rotate([0,45,0]) cube([20,20,20]);    
     translate([-25,37,49]) rotate([45,0,0]) cube([30,20,20]);    
