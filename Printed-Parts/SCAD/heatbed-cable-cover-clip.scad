@@ -26,10 +26,31 @@ module m3_nut()
     }
 }
 
+/**
+* These protusions prevent cable breakage in the event of the build platform colliding
+* with an object behind the printer. Hours of wasted life will be saved :)
+*
+* square collision ends allow a solid easily detected hit and will not cause the 
+* machine to jump up or down. 
+**/
+module cable_break_preventer() 
+{
+    z_offset = -3;
+    center_offset = 4.4;
+    block_length = 12;
+    block_width = 5;
+    block_height = 6;
+    
+    translate([center_offset, 20.5 + 15.5, z_offset])
+    cube([block_width, block_length, block_height]);
+
+    translate([-block_width - center_offset, 20.5 + 15.5, z_offset])
+    cube([block_width, block_length, block_height]);
+    
+}
 
 module clip()
 {
-    
     difference()
     {
         // base body
@@ -89,11 +110,8 @@ module clip()
        
 }
 
-
-  
-
-
 clip();
+cable_break_preventer();
 
 
 
