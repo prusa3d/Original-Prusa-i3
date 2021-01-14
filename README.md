@@ -23,14 +23,14 @@ Parts might change until final version of upgrade is released.
 * Heatbed-cable-cover.stl
 
 **MK3 repository**
-* Extruder-body.stl*
-* Extruder-cover.stl*
-* nozzle-fan-45deg-support.stl*
-* nozzle-fan-45deg.stl**
+* Extruder-body.stl
+* Extruder-cover.stl
+* nozzle-fan-45deg-support.stl
+* nozzle-fan-45deg.stl*
 * Extruder-idler.stl
 * Filament-sensor-cover.stl
 * Idler-plug.stl
  
 
-( *included in the MMU2 upgrade package , **nozzle-fan-45deg is included in the official upgrade package )
+( *nozzle-fan-45deg is included in the official upgrade package )
 
