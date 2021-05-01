@@ -17,6 +17,9 @@ module plug()
             translate([-17,43+3,-21.3]) cube([10.6,4.5,5.6]);
             }
         
+            // chamfer for no direct laser reflection
+            translate([0,0,-21.30]) linear_extrude(height = 5.6) polygon(points=[[-17+10,43+3],[-17+10,40.2],[-19.5+10,40.2]]);
+        
             // Motor screw slot
             translate([-11.5,42.5,-32])  cylinder( h=30, r=1.5, $fn=30 ); 
             translate([-11.5-1.5,42.5-5,-25])  cube([3,5,10]); 
