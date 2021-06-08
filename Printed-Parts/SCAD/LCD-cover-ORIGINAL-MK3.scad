@@ -14,10 +14,10 @@ module main_body()
         {
             // main body
             translate( [ -77 , -4.5 , 0 ] ) cube( [ 155 , 59.8 , 2 ] ); 
-            translate( [ -77 , -4.5 , 0 ] ) rotate([35,0,0]) cube( [ 155 , 2 , 20.08 ] );
+            translate( [ -77 , -4.5 , 0 ] ) rotate([35,0,0]) cube( [ 155 , 3 , 20.08 ] );
             translate( [ -77 , -3.5 , -1 ] ) rotate([35,0,0]) cube( [ 7 , 5 , 15 ] );
             translate( [ 71 , -3.5 , -1 ] ) rotate([35,0,0]) cube( [ 7 , 5 , 15 ] );
-            translate( [ -77 , -14.7 , 14.2 ] )  cube( [ 155 , 2 , 11.8 ] );
+            translate( [ -77 , -15.2 , 14.2 ] )  cube( [ 155 , 3.1 , 11.8 ] );
             translate( [ -77 , 54 , 0 ] ) cube( [ 155 , 2 , 17 ] );
             
             // M3 hole body
@@ -27,25 +27,14 @@ module main_body()
         
         // LCD window
         translate( [ -61.5 , 1 , 1.2 ] ) cube( [ 98.5 , 42 , 10 ] ); 
-        translate( [ -54.5 , 8 , -1 ] ) cube( [ 85 , 30.5 , 10 ] );  
-
-        // buzzer holes
-        translate( [ 55 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 57 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 59 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 61 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 63 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 65 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-        translate( [ 67 , 1.5 , -1 ] ) cube( [ 1.3 , 4 , 10 ] );  
-
-        // buzzer holes corners
-        translate( [ 66.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 64.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 62.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 60.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 58.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 56.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
-        translate( [ 54.25 , 1.5 , -0.5 ] ) rotate([0,45,0]) cube( [ 2 , 4 , 2 ] );  
+        translate( [ -52.5 , 8 , -1 ] ) cube( [ 80 , 30.5 , 10 ] );  
+        
+        for(buzz = [55 : 2 : 67])
+        {
+            translate([buzz,1.5,-1]) cube([1.3,4,10]);
+            translate([buzz-0.75,1.5,-0.5]) rotate([0,45,0]) cube([2,4,2]);  
+            if(buzz<67) translate([buzz+1.25,1.5,-0.5]) rotate([0,45,0]) cube([2,4,2]);  
+        }
 
         // knob hole
         translate( [ 62.5 , 21 , -1 ] ) cylinder( h = 10, r = 6, $fn=30);
@@ -62,9 +51,16 @@ module main_body()
         translate( [ 48.7 , 27.8 , -1 ] ) rotate([0,0,45]) cube( [ 3.55 , 1 , 9 ] );
 
         // rear support cutout
-        translate( [ -64.5 , -12.7 , 14 ] ) cube( [ 10 , 3 , 16 ] );  
-        translate( [ 55.5 , -12.7 , 14 ] ) cube( [ 10 , 3 , 16 ] );  
+        translate( [ -64.5 , -12.1 , 14 ] ) cube( [ 10 , 3 , 16 ] );  
+        translate( [ 55.5 , -12.1 , 14 ] ) cube( [ 10 , 3 , 16 ] );  
 
+    }
+    
+    difference()
+    {
+        translate([-70,55.5,-2]) rotate([55,0,0]) cube([120,5,5]);  
+        translate([-100,40,-9.5]) cube([200,50,10]); 
+        
     }
 }
 
@@ -145,7 +141,7 @@ difference()
     translate( [ -80 , 9 , 16.5 ] ) cube( [ 10 , 28 , 4.5 ] );  
 
     // front and rear angle
-    translate( [ -81 , -9.3 , -17 ] ) rotate([35,0,0]) cube( [ 164 , 14 , 54.08 ] );  
+    translate( [ -81 , -10.5 , -17 ] ) rotate([32,0,0]) cube( [ 164 , 14 , 54.08 ] );  
     translate( [ -78 , 72.7 , -3 ] ) rotate([45,0,0]) cube( [ 160 , 14 , 54.08 ] );  
 
     // M3 screw thread
@@ -164,37 +160,37 @@ difference()
     translate( [ -21 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
 
     // front cleanup
-    translate( [ -100 , -64 , 0 ] ) cube( [ 200 , 50 , 50 ] ); 
+    translate( [ -100 , -64.6 , 0 ] ) cube( [ 200 , 50 , 50 ] ); 
 
     // X sign on reset button
     translate( [ 63 , 34 , -1 ] ) rotate([0,0,45]) cube( [ 2, 8, 2 ] );  
     translate( [ 57.5 , 35.5 , -1 ] ) rotate([0,0,-45]) cube( [ 2, 8, 2 ] );  
 
     // corners
-    translate( [ 73 , -5 , -1 ] ) rotate([0,45,0]) cube( [ 7, 80, 7 ] );  
-    translate( [ -82 , -5 , -1 ] ) rotate([0,45,0]) cube( [ 7, 80, 7 ] );  
-
-    translate( [ -82 , 58 , -5 ] ) rotate([45,0,0]) cube( [ 200, 7, 7 ] );  
+    translate([74.05,-5,-2.7]) rotate([0,35,0]) cube([7,80,7]);  
+    translate([-82.8,-5,-1]) rotate([0,55,0]) cube([7,80,7]);  
+    translate( [ -82 , 58.5 , -5 ] ) rotate([55,0,0]) cube( [ 200, 7, 7 ] );  
     translate( [ -77 , 51 , -4 ] ) rotate([0,0,45]) cube( [ 8, 8, 50 ] );  
     translate( [ 78 , 51 , -4 ] ) rotate([0,0,45]) cube( [ 8, 8, 50 ] );  
     translate( [ 78 , -19 , -4 ] ) rotate([0,0,45]) cube( [ 5, 5, 50 ] );  
     translate( [ -77 , -19 , -4 ] ) rotate([0,0,45]) cube( [ 5, 5, 50 ] );  
 
     // LCD corners
-    translate( [ -54.5 , 9.5 , -5.2 ] ) rotate([45,0,0]) cube( [ 85 , 5 , 5 ] );  // LCD window
-    translate( [ -54.5 , 37 , -5.2 ] ) rotate([45,0,0]) cube( [ 85 , 5 , 5 ] );  // LCD window
-    rotate([35,0,0]) translate( [ -78 , -8 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
-    rotate([35,0,0]) translate( [ 79 , -8 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
+    translate( [ -52.5 , 9.5 , -5.2 ] ) rotate([45,0,0]) cube( [ 80 , 5 , 5 ] );  // LCD window
+    translate( [ -52.5 , 37 , -5.2 ] ) rotate([45,0,0]) cube( [ 80 , 5 , 5 ] );  // LCD window
+    rotate([32,0,0]) translate( [ -78 , -9.1 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
+    rotate([32,0,0]) translate( [ 79 , -9.1 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
     translate( [ -100 , -40 , -50 ] ) cube( [ 200 , 50 , 50 ] ); 
+  
 
-    // version
-    translate([-73,15,4]) rotate([90,0,90]) linear_extrude(height = 2) 
-    { text("R2",font = "helvetica:style=Bold", size=7, center=true); }
-    
-    
 }
 
-// print support for SD card opening
+// SD card window support
 translate( [ -76.5 , 15 , 16.70 ] ) cube( [ 1 , 5 , 4.1 ] );
 translate( [ -76.5 , 25 , 16.70 ] ) cube( [ 1 , 5 , 4.1 ] );
+     
+    
 
+
+    
+ 

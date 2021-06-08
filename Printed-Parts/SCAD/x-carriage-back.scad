@@ -40,11 +40,15 @@ module x_carriage_back()
         translate([-20,-19.5,9]) cube([50,7.5,10]);
         
         // bearings
-        translate([-15,-25,11.75]) rotate([0,90,0]) cylinder( h=31, r=7.6, $fn=30 );
-        translate([-30,20,11.75]) rotate([0,90,0]) cylinder( h=60, r=7.6, $fn=30 );
+        translate([-15,-25,11.75]) rotate([0,90,0]) cylinder( h=31, r=7.6, $fn=150 );
+        translate([-30,20,11.75]) rotate([0,90,0]) cylinder( h=60, r=7.6, $fn=150 );
         translate([-17,-25,11.75]) rotate([0,90,0]) cylinder( h=60, r=7, $fn=30 );
         translate([-32,20,11.75]) rotate([0,90,0]) cylinder( h=80, r=7, $fn=30 );
       
+        translate([-15,-25-2,18]) cube([30,4,2]);
+        translate([-30,20-2,18]) cube([60,4,2]);
+
+
         // hold together screws
         translate([-5,-36,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
         translate([1,4,10]) rotate([0,0,0]) cylinder( h=50, r=1.65, $fn=50 );
@@ -76,7 +80,7 @@ module x_carriage_back()
             }
         // cable holder screw
         translate([0.5,-27,11]) rotate([0,0,90]) cylinder( h=40, r=1.6, $fn=30 );
-        translate([0.5,-27,16.5]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=6 );
+        translate([0.5,-27,16.75]) rotate([0,0,0]) cylinder( h=5, r=3.1, $fn=6 );
         
         // x-carriage screws in belt holders
         translate([-11.5,-0.5,10]) rotate([0,0,90]) cylinder( h=40, r=3, $fn=30 );
@@ -129,11 +133,7 @@ module x_carriage_back()
         // inner cable cleanup
         translate([-1,-19.5,14]) rotate([0,30,0]) cube([10,7.5,10]);
         translate([-5,-19.5,10]) rotate([0,-30,0]) cube([10,7.5,10]);
-        
-        // version
-        translate([-13,-30,22.5]) rotate([0,0,0]) linear_extrude(height = 0.75) 
-        { text("R4",font = "helvetica:style=Bold", size=6, center=true); }
-        
+       
 
         // upper ziptie left
         translate([-21.5,-25,0])difference()

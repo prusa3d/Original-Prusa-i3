@@ -66,10 +66,13 @@ module x_carriage_base()
 module x_carriage_holes()
 {
     // Small bearing holder holes cutter
-    translate([-33/2,0,0]) rotate([0,0,90]) horizontal_bearing_holes_nozip(1);
+    translate([-33/2,0,0]) rotate([0,0,90]) horizontal_bearing_holes_nozip_smooth(1);
+    translate([-4,-2.5,4]) rotate([0,0,90]) cube([5,25,2]);
     
     // Long bearing holder holes cutter
-    translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_holes_nozip(2);
+    translate([-33/2,45,0]) rotate([0,0,90]) horizontal_bearing_holes_nozip_smooth(2);
+    translate([8.5,45-2.5,4]) rotate([0,0,90]) cube([5,50,2]);
+
   
     // upper ziptie right
     translate([2,0,0])
@@ -387,9 +390,6 @@ module x_carriage()
             translate([0,-0.5,0]) left_belt_cut();
             translate([0,0.5,0]) right_belt_cut();
             
-            //version
-            translate([-11,-2,0.7]) rotate([0,180,0]) linear_extrude(height = 0.75) 
-            { text("R4",font = "helvetica:style=Bold", size=6, center=true); }
 
 
     }
