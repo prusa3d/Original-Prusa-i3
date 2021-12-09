@@ -381,11 +381,11 @@ module x_carriage()
             
             
             // hold together screws clearance
-            translate([-4.5,25.5,-1]) cylinder(r1=2.2,r2=1.5, h=10, $fn=25);    
-            translate([-28.5,25.5,-1]) cylinder(r1=2.2,r2=1.5, h=10, $fn=25);    
-            translate([-4.5,25.5,-1]) cylinder(r2=2,r1=3,h=3, $fn=25);    
-            translate([-28.5,25.5,-1]) cylinder(r2=2,r1=3,h=3, $fn=25);    
-            
+            for (_x = [-5,-29]) 
+                translate([_x,25.5,-1]) {
+                    cylinder(r1=2.2,r2=1.5, h=10, $fn=25);
+                    cylinder(r2=2,r1=3,h=3, $fn=25);    
+            }
             
             translate([0,-0.5,0]) left_belt_cut();
             translate([0,0.5,0]) right_belt_cut();
