@@ -42,11 +42,11 @@ module ventilation_holes()
         translate([40 + (i*6),10.5+25,-1]) cube([3.65,19,10]);
         translate([40 + (i*6),10.5+50,-1]) cube([3.65,19,10]);
     }
-    for ( i = [0 : -4] )
+    for ( i = [-4 : 0] )
     {
       translate([40 + (i*6),10.5,-1]) cube([3.65,19+50,1.2]);
     }
-    for ( i = [-6 : -7] )
+    for ( i = [-7 : -6] )
     {
       translate([46 + (i*6),20.5,-1]) cube([3.65,19+40,1.2]);
     }
@@ -112,7 +112,7 @@ difference()
     translate( [0 , -20, -3] ) rotate([0,45,45]) cube( [ 30, 30 , 20 ] );  
 
     translate([30,79,1]) rotate([0,0,-90]) linear_extrude(height = 0.8) 
-    { text("R1",font = "helvetica:style=Bold", size=6, center=true); }    
+    { text("R1",font = "helvetica:style=Bold", size=6); }    
 }
 }
  

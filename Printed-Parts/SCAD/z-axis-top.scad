@@ -84,7 +84,7 @@ module z_top_right(){
         z_top_holes();
          //version
         translate([12,-1.5,10]) rotate([90,180,180]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=4); }
     }
 }
 
@@ -97,7 +97,7 @@ module z_top_left(){
         z_top_holes();
         //version
         translate([19,-1,10]) rotate([90,180,0]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=4); }
     }
 }
 

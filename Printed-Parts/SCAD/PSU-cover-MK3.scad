@@ -200,7 +200,7 @@ module upper_part()
         
         //version
         translate([73,7.5,1.5]) rotate([0,0,0]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=6, center=true); }   
+        { text("R1",font = "helvetica:style=Bold", size=6); }   
     }
 
 
@@ -295,7 +295,7 @@ module lower_part()
     
     //version
     translate([10,3.6,20]) rotate([90,-90,180]) linear_extrude(height = 0.8) 
-    { text("R1",font = "helvetica:style=Bold", size=6, center=true); }    
+    { text("R1",font = "helvetica:style=Bold", size=6); }    
     }
 
 
