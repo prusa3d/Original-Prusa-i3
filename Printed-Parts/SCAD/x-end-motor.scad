@@ -100,6 +100,10 @@ module x_end_motor()
             translate([-17,3,55]) cube([4,4,10]);
             translate([-17,3,-8]) cube([4,4,10]);
             translate([-30,-30,58]) cube([30,30,10]);
+	                
+            // version
+            translate([-23.2,-20,2]) rotate([90,0,270]) linear_extrude(height = 0.6) 
+            { text("R6",font = "helvetica:style=Bold", size=4, center=true); }   
             
         }
 
