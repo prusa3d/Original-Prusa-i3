@@ -146,6 +146,9 @@ module x_end_idler()
 
         translate(v=[-8,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 20, r=1.55, $fn=30);
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
+	//version
+        translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
+        { text("R6",font = "helvetica:style=Bold", size=4, center=true); }   
     }
     
     // bearings stop
