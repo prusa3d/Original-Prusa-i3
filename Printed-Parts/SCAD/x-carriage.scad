@@ -390,6 +390,9 @@ module x_carriage()
             translate([0,-0.5,0]) left_belt_cut();
             translate([0,0.5,0]) right_belt_cut();
             
+					 //version
+            translate([-12,-2,0.5]) rotate([0,180,0]) linear_extrude(height = 0.6) 
+            { text("R7",font = "helvetica:style=Bold", size=5, center=true); }
 
 
     }

@@ -181,6 +181,11 @@ difference()
     rotate([32,0,0]) translate( [ -78 , -9.1 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
     rotate([32,0,0]) translate( [ 79 , -9.1 , -4 ] ) rotate([0,0,45]) cube( [ 6, 6, 50 ] );  
     translate( [ -100 , -40 , -50 ] ) cube( [ 200 , 50 , 50 ] ); 
+
+
+    // version
+    translate([-73,15,4]) rotate([90,0,90]) linear_extrude(height = 2) 
+    { text("R7",font = "helvetica:style=Bold", size=7, center=true); }
   
 
 }

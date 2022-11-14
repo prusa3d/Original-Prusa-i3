@@ -165,6 +165,12 @@ module x_carriage_back()
         translate([5,-8,16]) cube([0.5,20,6.5]);
         translate([-3.25,-8,16]) cube([0.5,20,6.5]);
         translate([0.75,-8,16]) cube([0.5,7,6.5]);
+
+				// version
+        translate([-12,-29,22.6]) rotate([0,0,0]) linear_extrude(height = 0.6) 
+        { text("R7",font = "helvetica:style=Bold", size=4, center=true); }
+        
+
     }
 }
 
