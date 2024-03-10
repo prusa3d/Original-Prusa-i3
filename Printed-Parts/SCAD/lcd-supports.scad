@@ -80,7 +80,7 @@ module support()
      
         // version
         translate([-20,2,9.5]) rotate([0,0,0]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }   
+        { text("R1",font = "helvetica:style=Bold", size=5); }   
     }
 }
 

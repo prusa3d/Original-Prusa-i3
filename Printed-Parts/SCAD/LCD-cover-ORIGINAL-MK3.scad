@@ -148,13 +148,13 @@ difference()
     translate( [ 72.5 , 43.2 , 3 ] ) cylinder( h = 20, r = 1.4, $fn=30);  
     translate( [ -72.5 , 42.7 , 3 ] ) cylinder( h = 20, r = 1.4, $fn=30); 
     translate( [ 72.5 , 43.2 , 11.7 ] ) cylinder( h = 3, r1 = 1.4, r2=2.2, $fn=30);  
-    translate( [ -72.5 , 42.7 , 11.7 ] ) cylinder( h = 3, r = 1.4, r2=2.2, $fn=30); 
+    translate( [ -72.5 , 42.7 , 11.7 ] ) cylinder( h = 3, r1 = 1.4, r2=2.2, $fn=30); 
 
     // ORIGINAL PRUSA text
     translate([-67,51,0.6]) rotate([180,0,0]) linear_extrude(height = 2) 
-    { text("ORIGINAL",font = "helvetica:style=Bold", size=7, center=true); }
+    { text("ORIGINAL",font = "helvetica:style=Bold", size=7); }
     translate([-18,51,0.6]) rotate([180,0,0]) linear_extrude(height = 2) 
-    { text("PRUSA",font = "helvetica:style=Bold", size=11, center=true); }
+    { text("PRUSA",font = "helvetica:style=Bold", size=11); }
     translate( [ -66 , 40.5 , -0.4 ] )  cube( [ 45 , 1.6 , 1 ] );  
     translate( [ -66 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
     translate( [ -21 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);  

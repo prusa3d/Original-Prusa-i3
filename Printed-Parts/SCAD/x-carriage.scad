@@ -207,7 +207,7 @@ module final_cutout()
         union() 
         {
         translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);    
-        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r=1.62,r2=3, h=8, $fn=8);  
+        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r1=1.62,r2=3, h=8, $fn=8);  
         }
     }
     

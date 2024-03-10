@@ -675,7 +675,7 @@ translate([-5.6,-0.4,0.35])  cube([15,4,0.75]);
 
 
     translate([115,68,1.5]) rotate([0,0,90]) linear_extrude(height = 0.8) 
-    { text("R3",font = "helvetica:style=Bold", size=6, center=true); }   
+    { text("R3",font = "helvetica:style=Bold", size=6); }   
        
 }
 
